@@ -1,0 +1,13 @@
+using System;
+
+namespace BitService
+{
+    internal class $ServiceInstance.Name$Helper {
+		async public static System.Threading.Tasks.Task<string> GetPage() {
+            System.Net.Http.HttpClient c = new System.Net.Http.HttpClient();
+			c.DefaultRequestHeaders.Add("AccessKey", "$ServiceInstance.accessKey$");
+            string s = await c.GetStringAsync(new System.Uri("$ServiceInstance.url$"));
+            return s;
+		}
+	}
+}

@@ -1,0 +1,13 @@
+<ui:DialogWindow x:Class="BitServiceSMX.LoginWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ui="clr-namespace:Microsoft.VisualStudio.PlatformUI;assembly=Microsoft.VisualStudio.Shell.14.0"
+    Title="Login to Bit Service" Height="179" Width="320">
+    <StackPanel Orientation="Vertical" Margin="0,0,0,2">
+        <Label Content="Username:" Height="25"/>
+        <TextBox Name="usernameText" Height="25" Width="150"/>
+        <Label Content="Password:" Height="25"/>
+        <PasswordBox Name="passwordText" Height="25" Width="150"/>
+        <Button Content="Login" Click="login_Click" Height="25" Margin="10,10,10,10" />
+    </StackPanel>
+</ui:DialogWindow>
