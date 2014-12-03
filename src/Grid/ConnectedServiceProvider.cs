@@ -13,7 +13,7 @@ namespace ConnectedServiceSample
     internal class ConnectedServiceProvider : IConnectedServiceProvider
     {
         public string Name { get { return "Sample"; } }
-        public string Category { get { return "Sample"; } }
+        public string Category { get { return "Sample Grid Provider"; } }
         public string CreatedBy { get { return "Contoso, Inc."; } }
         public string Description { get { return "A sample Connected Service"; ; } }
         public Uri MoreInfoUri { get { return new Uri("http://www.microsoft.com"); } }

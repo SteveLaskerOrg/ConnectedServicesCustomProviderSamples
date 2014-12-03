@@ -7,11 +7,9 @@ namespace Company.ConnectedServiceDemo.ViewModels
 {
     internal class WizardPage : NotifyPropertyChangeBase, IConnectedServiceWizardPage
     {
-        private WizardDemoProvider provider;
-
-        public WizardPage(WizardDemoProvider provider)
+        public WizardPage()
         {
-            this.provider = provider;
+            this.IsEnabled = true;
         }
 
         public string Title { get; set; }
@@ -46,12 +44,7 @@ namespace Company.ConnectedServiceDemo.ViewModels
 
         public Task<WizardNavigationResult> OnPageLeaving()
         {
-            this.PageLeavingCount++;
-
             return Task.FromResult<WizardNavigationResult>(null);
         }
-
-        // this property is used for unit test verification
-        public int PageLeavingCount { get; set; }
     }
 }

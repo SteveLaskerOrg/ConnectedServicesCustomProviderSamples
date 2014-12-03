@@ -1,20 +1,25 @@
-﻿using Microsoft.VisualStudio.ConnectedServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using Company.ConnectedServiceDemo.Views;
 
-namespace Company.ConnectedServiceDemo.ViewModels {
-    internal class Page1ViewModel : WizardPage {
-        public Page1ViewModel(WizardDemoProvider provider)
-            :base(provider) {
+namespace Company.ConnectedServiceDemo.ViewModels
+{
+    internal class Page1ViewModel : WizardPage
+    {
+        private string text;
+
+        public Page1ViewModel()
+            : base()
+        {
             this.Title = "Page 1";
             this.Description = "Page 1 Description";
             this.Legend = "Page 1 Legend";
-            this.IsEnabled = true;
-            this.View = new Views.Page1();
+            this.View = new Page1();
+            this.View.DataContext = this;
+        }
+
+        public string Text
+        {
+            get { return this.text; }
+            set { this.Set(ref this.text, value); }
         }
     }
 }

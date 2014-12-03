@@ -3,6 +3,9 @@
   <PropertyGroup>
     <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files (x86)\Microsoft Visual Studio $(VisualStudioVersion)\Common7\IDE\devenv.exe</StartProgram>
+    <StartArguments>/rootSuffix exp</StartArguments>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -15,9 +18,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Company.ConnectedServiceDemo</RootNamespace>
     <AssemblyName>ConnectedServiceDemo</AssemblyName>
-    <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>false</SignAssembly>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <GeneratePkgDefFile>false</GeneratePkgDefFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,7 +44,10 @@
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.VisualStudio.ConnectedServices">
-      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 14.0\Common7\IDE\Extensions\5jcrn0pk.feg\Microsoft.VisualStudio.ConnectedServices.dll</HintPath>
+      <HintPath>..\..\..\Externals\Microsoft.VisualStudio.ConnectedServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.ConnectedServices.Framework">
+      <HintPath>..\..\..\Externals\Microsoft.VisualStudio.ConnectedServices.Framework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.OLE.Interop" />
     <Reference Include="Microsoft.VisualStudio.Shell.Interop" />
@@ -129,22 +136,15 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Guids.cs" />
     <Compile Include="NotifyPropertyChangeBase.cs" />
-    <Compile Include="ViewModels\Page4ViewModel.cs" />
+    <Resource Include="SampleServiceTemplate.cs" />
+    <Compile Include="Utilities.cs" />
     <Compile Include="ViewModels\Page3ViewModel.cs" />
     <Compile Include="ViewModels\Page2ViewModel.cs" />
     <Compile Include="ViewModels\Page1ViewModel.cs" />
     <Compile Include="Views\Page1.xaml.cs">
       <DependentUpon>Page1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="GlobalSuppressions.cs" />
-    <Compile Include="ConnectedServiceDemoPackage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
@@ -152,24 +152,11 @@
     <Compile Include="Views\Page3.xaml.cs">
       <DependentUpon>Page3.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Page4.xaml.cs">
-      <DependentUpon>Page4.xaml</DependentUpon>
-    </Compile>
     <Compile Include="WizardDemoInstance.cs" />
-    <Compile Include="WizardDemoCSharpHandler.cs" />
+    <Compile Include="WizardDemoHandler.cs" />
     <Compile Include="ViewModels\WizardPage.cs" />
     <Compile Include="WizardDemoProvider.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="VSPackage.resx">
-      <MergeWithCTO>true</MergeWithCTO>
-      <ManifestResourceName>VSPackage</ManifestResourceName>
-    </EmbeddedResource>
+    <Compile Include="WizardDemoProviderWizard.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="source.extension.vsixmanifest">
@@ -177,10 +164,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Key.snk" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\Package.ico" />
     <Resource Include="Wizard.jpg" />
   </ItemGroup>
   <ItemGroup>
@@ -196,15 +179,8 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Page4.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Templates\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <UseCodebase>true</UseCodebase>
   </PropertyGroup>
