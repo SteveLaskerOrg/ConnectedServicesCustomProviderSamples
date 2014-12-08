@@ -8,7 +8,6 @@ namespace ConnectedServiceSample
 {
     [Export(typeof(IConnectedServiceInstanceHandler))]
     [ExportMetadata("ProviderId", "ConnectedServiceSample.ConnectedServiceProvider")]
-    [ExportMetadata("Version", "1.0")]
     [ExportMetadata("AppliesTo", "CSharp+Web")]
     internal class ConnectedServiceHandler : IConnectedServiceInstanceHandler
     {
@@ -16,7 +15,7 @@ namespace ConnectedServiceSample
         {
             await HandlerHelper.AddFileAsync(context, Utilities.GetResourceUri("SampleServiceTemplate.cs").ToString(), "SampleService.cs");
 
-            await HandlerHelper.AddGettingStartedAsync(context, "Sample", new Uri("http://www.microsoft.com"));
+            await HandlerHelper.AddGettingStartedAsync(context, "Sample", new Uri("https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples"));
         }
     }
 }

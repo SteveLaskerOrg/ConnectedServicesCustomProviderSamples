@@ -2,7 +2,7 @@
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
     <Identity Id="8aeb5b01-9313-4073-bea7-8b40190025ed" Version="1.0" Language="en-US" Publisher="Company" />
-    <DisplayName>ConnectedServiceDemo</DisplayName>
+    <DisplayName>ConnectedServiceWizardSample</DisplayName>
     <Description>Information about my package</Description>
   </Metadata>
   <Installation InstalledByMsi="false">

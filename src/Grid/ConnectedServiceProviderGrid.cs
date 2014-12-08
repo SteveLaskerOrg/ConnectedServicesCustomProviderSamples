@@ -58,8 +58,7 @@ namespace ConnectedServiceSample
             }
         }
 
-        public Task<IEnumerable<IConnectedServiceInstance>> EnumerateServiceInstancesAsync(
-            IDictionary<string, string> configuration, CancellationToken ct)
+        public Task<IEnumerable<IConnectedServiceInstance>> EnumerateServiceInstancesAsync(CancellationToken ct)
         {
             if (this.instances == null)
             {
@@ -101,7 +100,7 @@ namespace ConnectedServiceSample
             private set { this.Set(ref this.changeAuthenticationText, value); }
         }
 
-        public Task<bool> ChangeAuthentication(IDictionary<string, string> configuration, CancellationToken ct)
+        public Task<bool> ChangeAuthentication(CancellationToken ct)
         {
             this.IsAuthenticated = !this.IsAuthenticated;
             this.CanCreateServiceInstance = this.IsAuthenticated;
@@ -138,7 +137,7 @@ namespace ConnectedServiceSample
             }
         }
 
-        public Task<bool> ConfigureServiceInstance(IDictionary<string, string> configuration, IConnectedServiceInstance instance, CancellationToken ct)
+        public Task<bool> ConfigureServiceInstance(IConnectedServiceInstance instance, CancellationToken ct)
         {
             ((ConnectedServiceInstance)instance).SetColumn1("Configured");
 
@@ -162,7 +161,7 @@ namespace ConnectedServiceSample
             }
         }
 
-        public Task<IConnectedServiceInstance> CreateServiceInstance(IDictionary<string, string> configuration, CancellationToken ct)
+        public Task<IConnectedServiceInstance> CreateServiceInstance(CancellationToken ct)
         {
             int instanceNumber = this.instances.Count + 1;
             IConnectedServiceInstance newInstance = new ConnectedServiceInstance(

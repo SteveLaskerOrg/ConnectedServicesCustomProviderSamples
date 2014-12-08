@@ -10,7 +10,6 @@ namespace Company.ConnectedServiceDemo
 {
     [Export(typeof(IConnectedServiceProvider))]
     [ExportMetadata("ProviderId", "Microsoft.VisualStudio.ConnectedServices.Sample.WizardProvider")]
-    [ExportMetadata("Version", "1.0")]
     internal class WizardDemoProvider : NotifyPropertyChangeBase, IConnectedServiceProvider
     {
         public WizardDemoProvider()
@@ -42,12 +41,17 @@ namespace Company.ConnectedServiceDemo
 
         public string CreatedBy
         {
-            get { return "Steve Lasker"; }
+            get { return "Contoso, Inc."; }
+        }
+
+        public Version Version
+        {
+            get { return new Version(1, 0, 0); }
         }
 
         public Uri MoreInfoUri
         {
-            get { return new Uri("https://github.com/SteveLasker/ConnectedServiceProviderSample"); }
+            get { return new Uri("https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples"); }
         }
 
         public Task<object> CreateService(Type serviceType, IServiceProvider serviceProvider)

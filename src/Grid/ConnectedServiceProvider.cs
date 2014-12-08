@@ -9,14 +9,14 @@ namespace ConnectedServiceSample
 {
     [Export(typeof(IConnectedServiceProvider))]
     [ExportMetadata("ProviderId", "ConnectedServiceSample.ConnectedServiceProvider")]
-    [ExportMetadata("Version", "1.0")]
     internal class ConnectedServiceProvider : IConnectedServiceProvider
     {
-        public string Name { get { return "Sample"; } }
-        public string Category { get { return "Sample Grid Provider"; } }
+        public string Name { get { return "Sample Grid Provider"; } }
+        public string Category { get { return "Sample"; } }
         public string CreatedBy { get { return "Contoso, Inc."; } }
-        public string Description { get { return "A sample Connected Service"; ; } }
-        public Uri MoreInfoUri { get { return new Uri("http://www.microsoft.com"); } }
+        public string Description { get { return "Sample Provider with Grid functionality."; } }
+        public Version Version { get { return new Version(1, 0, 0); } }
+        public Uri MoreInfoUri { get { return new Uri("https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples"); } }
         public ImageSource Icon
         {
             get
@@ -32,6 +32,8 @@ namespace ConnectedServiceSample
             object service = this.CurrentProviderGrid;
             if (service == null)
             {
+                // The ConnectedServiceProviderGrid provides all supported services
+
                 // cache the grid provider instance, so the same instance is used for all the different service types
                 this.CurrentProviderGrid = new ConnectedServiceProviderGrid(this);
                 service = this.CurrentProviderGrid;
