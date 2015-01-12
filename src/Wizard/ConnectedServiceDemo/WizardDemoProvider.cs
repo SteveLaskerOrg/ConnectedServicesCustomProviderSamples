@@ -1,37 +1,36 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.ComponentModel.Composition;
-using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace Company.ConnectedServiceDemo
 {
-    [Export(typeof(IConnectedServiceProvider))]
-    [ExportMetadata("ProviderId", "Microsoft.VisualStudio.ConnectedServices.Sample.WizardProvider")]
-    internal class WizardDemoProvider : NotifyPropertyChangeBase, IConnectedServiceProvider
+    [Export(typeof(ConnectedServiceProvider))]
+    [ExportMetadata("ProviderId", "Company.ConnectedServiceDemo.WizardDemoProvider")]
+    internal class WizardDemoProvider : ConnectedServiceProvider
     {
         public WizardDemoProvider()
         {
         }
 
-        public string Name
+        public override string Name
         {
             get { return "Sample Wizard Provider"; }
         }
 
-        public string Category
+        public override string Category
         {
             get { return "Sample"; }
         }
 
-        public string Description
+        public override string Description
         {
             get { return "Sample Provider with Wizard functionality."; }
         }
 
-        public ImageSource Icon
+        public override ImageSource Icon
         {
             get
             {
@@ -39,31 +38,25 @@ namespace Company.ConnectedServiceDemo
             }
         }
 
-        public string CreatedBy
+        public override string CreatedBy
         {
             get { return "Contoso, Inc."; }
         }
 
-        public Version Version
+        public override Version Version
         {
             get { return new Version(1, 0, 0); }
         }
 
-        public Uri MoreInfoUri
+        public override Uri MoreInfoUri
         {
             get { return new Uri("https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples"); }
         }
 
-        public Task<object> CreateService(Type serviceType, IServiceProvider serviceProvider)
+        public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderHost host)
         {
-            object service = null;
-
-            if (serviceType == typeof(IConnectedServiceProviderUI))
-            {
-                service = new WizardDemoProviderWizard();
-            }
-
-            return Task.FromResult(service);
+            ConnectedServiceConfigurator configurator = new WizardDemoProviderWizard();
+            return Task.FromResult(configurator);
         }
     }
 }
