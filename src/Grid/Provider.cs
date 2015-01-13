@@ -27,7 +27,7 @@ namespace ConnectedServiceSample
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderHost host)
         {
-            ConnectedServiceConfigurator configurator = new Grid(this);
+            ConnectedServiceConfigurator configurator = new Grid();
             return Task.FromResult(configurator);
         }
     }

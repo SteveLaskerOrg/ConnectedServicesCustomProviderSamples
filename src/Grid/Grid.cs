@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace ConnectedServiceSample
 {
-    internal class Grid : ConnectedServiceGrid, IDisposable, INotifyPropertyChanged
+    internal class Grid : ConnectedServiceGrid
     {
         private List<ConnectedServiceInstance> instances;
 
-        public Grid(ConnectedServiceProvider provider)
+        public Grid()
         {
             this.Description = "A sample Connected Service";
             this.CreateServiceInstanceText = "Create";
