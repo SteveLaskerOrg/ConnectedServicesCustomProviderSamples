@@ -15,7 +15,7 @@ namespace ConnectedServiceSinglePageSample
             this.Category = "Sample";
             this.Name = "Sample Single Page Provider";
             this.Description = "Sample Provider with Single Page functionality.";
-            this.Icon = new BitmapImage(Utilities.GetResourceUri("Image.png"));
+            this.Icon = new BitmapImage(new Uri("pack://application:,,/" + this.GetType().Assembly.ToString() + ";component/Resources/Image.png"));
             this.CreatedBy = "Contoso, Inc.";
             this.Version = new Version(1, 0, 0);
             this.MoreInfoUri = new Uri("https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples");

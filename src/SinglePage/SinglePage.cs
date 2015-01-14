@@ -1,13 +1,11 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
-using System;
 using System.Threading.Tasks;
 
 namespace ConnectedServiceSinglePageSample
 {
     internal class SinglePage : ConnectedServiceSinglePage
     {
-        private string name;
-        private bool isValid;
+        private string serviceName;
         private string extraInformation;
         private string authenticateMessage;
         private Authenticator authenticator;
@@ -19,25 +17,16 @@ namespace ConnectedServiceSinglePageSample
             this.View = new SinglePageView();
             this.View.DataContext = this;
 
-            this.Name = "Default value";
+            this.ServiceName = "Default Service Name";
+            this.ExtraInformation = "Default Extra Information";
         }
 
-        public string Name
+        public string ServiceName
         {
-            get { return this.name; }
+            get { return this.serviceName; }
             set
             {
-                this.name = value;
-                this.OnNotifyPropertyChanged();
-            }
-        }
-
-        public bool IsValid
-        {
-            get { return this.isValid; }
-            set
-            {
-                this.isValid = value;
+                this.serviceName = value;
                 this.OnNotifyPropertyChanged();
                 this.CalculateIsFinishEnabled();
             }
@@ -50,6 +39,7 @@ namespace ConnectedServiceSinglePageSample
             {
                 this.extraInformation = value;
                 this.OnNotifyPropertyChanged();
+                this.CalculateIsFinishEnabled();
             }
         }
 
@@ -71,7 +61,7 @@ namespace ConnectedServiceSinglePageSample
                 {
                     this.authenticator = new Authenticator();
                     this.authenticator.AuthenticationChanged += Authenticator_AuthenticationChanged;
-                    this.CalculateProperties();
+                    this.CalculateAuthentication();
                 }
                 return this.authenticator;
             }
@@ -79,11 +69,11 @@ namespace ConnectedServiceSinglePageSample
 
         private void Authenticator_AuthenticationChanged(object sender, AuthenticationChangedEventArgs e)
         {
-            this.CalculateProperties();
+            this.CalculateAuthentication();
         }
 
-        private void CalculateProperties()
-        { 
+        private void CalculateAuthentication()
+        {
             if (this.Authenticator.IsAuthenticated)
             {
                 this.AuthenticateMessage = null;
@@ -103,13 +93,15 @@ namespace ConnectedServiceSinglePageSample
 
         private void CalculateIsFinishEnabled()
         {
-            this.IsFinishEnabled = this.Authenticator.IsAuthenticated && this.IsValid;
+            this.IsFinishEnabled = this.Authenticator.IsAuthenticated &&
+                !string.IsNullOrEmpty(this.ServiceName) &&
+                !string.IsNullOrEmpty(this.ExtraInformation);
         }
 
         public override Task<ConnectedServiceInstance> GetFinishedServiceInstanceAsync()
         {
             ConnectedServiceInstance instance = new ConnectedServiceInstance();
-            instance.Name = this.Name;
+            instance.Name = this.ServiceName;
             instance.Metadata.Add("ExtraInfo", this.ExtraInformation);
             return Task.FromResult(instance);
         }

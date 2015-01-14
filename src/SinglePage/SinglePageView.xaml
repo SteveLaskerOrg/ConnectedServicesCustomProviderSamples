@@ -9,28 +9,26 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
             <RowDefinition />
         </Grid.RowDefinitions>
 
-        <Label Grid.Column="0" IsEnabled="{Binding Authenticator.IsAuthenticated}">Name:</Label>
-        <TextBox Grid.Column="1" Text="{Binding Name}" IsEnabled="{Binding Authenticator.IsAuthenticated}" />
-
-        <CheckBox Grid.Row="1"
-                  IsEnabled="{Binding Authenticator.IsAuthenticated}"
-                  IsChecked="{Binding IsValid}">IsValid</CheckBox>
-
-        <Label Grid.Row="2" 
-               Grid.Column="0" 
-               IsEnabled="{Binding Authenticator.IsAuthenticated}">Extra Info:</Label>
-        <TextBox Grid.Row="2" 
-                 Grid.Column="1" 
+        <Label Grid.Column="0" IsEnabled="{Binding Authenticator.IsAuthenticated}">Service Name:</Label>
+        <TextBox Grid.Column="1"
                  IsEnabled="{Binding Authenticator.IsAuthenticated}"
-                 Text="{Binding ExtraInformation}" />
-        
-        <TextBlock Grid.Row="3" 
-                   Grid.Column="1" 
-                   FontWeight="ExtraBold"
+                 Text="{Binding ServiceName, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Label Grid.Row="1"
+               Grid.Column="0"
+               IsEnabled="{Binding Authenticator.IsAuthenticated}">Extra Info:</Label>
+        <TextBox Grid.Row="1"
+                 Grid.Column="1"
+                 IsEnabled="{Binding Authenticator.IsAuthenticated}"
+                 Text="{Binding ExtraInformation, UpdateSourceTrigger=PropertyChanged}" />
+
+        <TextBlock Grid.Row="2"
+                   Grid.Column="1"
+                   FontWeight="Bold"
+                   HorizontalAlignment="Center"
                    Text="{Binding AuthenticateMessage}" />
     </Grid>
 </UserControl>

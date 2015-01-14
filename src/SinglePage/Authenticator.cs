@@ -1,7 +1,5 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 using System;
-using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Input;
 
 namespace ConnectedServiceSinglePageSample
@@ -9,25 +7,15 @@ namespace ConnectedServiceSinglePageSample
     internal class Authenticator : ConnectedServiceAuthenticator
     {
         private string linkText;
-        private string userText;
+        private string userName;
+        private ICommand changeAuthentication;
 
         public Authenticator()
         {
             this.LinkText = "Sign in";
-            Run run = new Run();
-            run.SetBinding(Run.TextProperty, "LinkText");
-            Hyperlink hyperlink = new Hyperlink(run);
-            hyperlink.Command = new AuthenticateChangedCommand(this);
-            TextBlock linkTextBlock = new TextBlock(hyperlink);
+            this.changeAuthentication = new ChangeAuthenticationCommand(this);
 
-            TextBlock userTextBlock = new TextBlock();
-            userTextBlock.SetBinding(TextBlock.TextProperty, "UserText");
-
-            StackPanel stackPanel = new StackPanel();
-            stackPanel.Children.Add(linkTextBlock);
-            stackPanel.Children.Add(userTextBlock);
-
-            this.View = stackPanel;
+            this.View = new AuthenticatorView();
             this.View.DataContext = this;
         }
 
@@ -41,39 +29,44 @@ namespace ConnectedServiceSinglePageSample
             }
         }
 
-        public string UserText
+        public string UserName
         {
-            get { return this.userText; }
+            get { return this.userName; }
             set
             {
-                this.userText = value;
+                this.userName = value;
                 this.OnNotifyPropertyChanged();
             }
         }
 
-        private void ChangeAuthentication()
+        public ICommand ChangeAuthentication
+        {
+            get { return this.changeAuthentication; }
+        }
+
+        private void ExecuteChangeAuthentication()
         {
             this.IsAuthenticated = !this.IsAuthenticated;
 
             if (!this.IsAuthenticated)
             {
                 this.LinkText = "Sign In";
-                this.UserText = null;
+                this.UserName = null;
             }
             else
             {
                 this.LinkText = "Sign out";
-                this.UserText = "someone@live.com";
+                this.UserName = "someone@live.com";
             }
 
             this.OnAuthenticationChanged(new AuthenticationChangedEventArgs());
         }
 
-        private class AuthenticateChangedCommand : ICommand
+        private class ChangeAuthenticationCommand : ICommand
         {
             private Authenticator authenticator;
 
-            public AuthenticateChangedCommand(Authenticator authenticator)
+            public ChangeAuthenticationCommand(Authenticator authenticator)
             {
                 this.authenticator = authenticator;
             }
@@ -87,7 +80,7 @@ namespace ConnectedServiceSinglePageSample
 
             public void Execute(object parameter)
             {
-                this.authenticator.ChangeAuthentication();
+                this.authenticator.ExecuteChangeAuthentication();
             }
         }
     }

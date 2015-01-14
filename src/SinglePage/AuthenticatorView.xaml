@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="ConnectedServiceSinglePageSample.AuthenticatorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel>
+        <TextBlock>
+            <Hyperlink Command="{Binding ChangeAuthentication}">
+                <Run Text="{Binding LinkText}" />
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Text="{Binding UserName}" />
+    </StackPanel>
+</UserControl>

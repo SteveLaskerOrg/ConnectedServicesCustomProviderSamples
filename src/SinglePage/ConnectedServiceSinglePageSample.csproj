@@ -86,14 +86,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Authenticator.cs" />
+    <Compile Include="AuthenticatorView.xaml.cs">
+      <DependentUpon>AuthenticatorView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Handler.cs" />
     <Compile Include="Provider.cs" />
     <Compile Include="SinglePage.cs" />
     <Compile Include="SinglePageView.xaml.cs">
       <DependentUpon>SinglePageView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Utilities.cs" />
-    <Resource Include="SampleServiceTemplate.cs" />
+    <Resource Include="Resources\SampleServiceTemplate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -114,9 +116,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Image.png" />
+    <Resource Include="Resources\Image.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="AuthenticatorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="SinglePageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
