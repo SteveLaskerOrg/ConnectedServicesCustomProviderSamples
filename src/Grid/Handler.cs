@@ -13,7 +13,8 @@ namespace ConnectedServiceSample
     {
         public override async Task AddServiceInstanceAsync(ConnectedServiceInstanceContext context, CancellationToken ct)
         {
-            await HandlerHelper.AddFileAsync(context, Utilities.GetResourceUri("SampleServiceTemplate.cs").ToString(), "SampleService.cs");
+            string templateResourceUri = "pack://application:,,/" + this.GetType().Assembly.ToString() + ";component/Resources/SampleServiceTemplate.cs";
+            await HandlerHelper.AddFileAsync(context, templateResourceUri, "SampleService.cs");
 
             await HandlerHelper.AddGettingStartedAsync(context, "Sample", new Uri("https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples"));
         }
