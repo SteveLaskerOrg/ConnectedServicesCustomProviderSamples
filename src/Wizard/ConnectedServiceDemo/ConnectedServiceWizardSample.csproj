@@ -136,8 +136,7 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="SampleServiceTemplate.cs" />
-    <Compile Include="Utilities.cs" />
+    <Resource Include="Resources\SampleServiceTemplate.cs" />
     <Compile Include="ViewModels\Page3ViewModel.cs" />
     <Compile Include="ViewModels\Page2ViewModel.cs" />
     <Compile Include="ViewModels\Page1ViewModel.cs" />
@@ -162,7 +161,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Wizard.jpg" />
+    <Resource Include="Resources\Wizard.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\Page1.xaml">

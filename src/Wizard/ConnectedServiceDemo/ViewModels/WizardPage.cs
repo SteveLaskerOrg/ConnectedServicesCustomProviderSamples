@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Company.ConnectedServiceDemo.ViewModels
 {
-    internal class WizardPage : ConnectedServiceWizardPage
+    internal abstract class WizardPage : ConnectedServiceWizardPage
     {
         internal bool CanFinish { get; set; }
 

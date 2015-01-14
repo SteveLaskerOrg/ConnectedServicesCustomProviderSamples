@@ -21,7 +21,8 @@ namespace Company.ConnectedServiceDemo
 
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "WizardHandler invoked.  Texts entered: " + Environment.NewLine + texts);
 
-            await HandlerHelper.AddFileAsync(context, Utilities.GetResourceUri("SampleServiceTemplate.cs").ToString(), "SampleWizardService.cs");
+            string templateResourceUri = "pack://application:,,/" + this.GetType().Assembly.ToString() + ";component/Resources/SampleServiceTemplate.cs";
+            await HandlerHelper.AddFileAsync(context, templateResourceUri, "SampleWizardService.cs");
 
             await HandlerHelper.AddGettingStartedAsync(context, "SampleWizard", new Uri("https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples"));
         }
