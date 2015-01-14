@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ConnectedServiceSample
 {
     [Export(typeof(ConnectedServiceHandler))]
-    [ExportMetadata("ProviderId", "ConnectedServiceSample.ConnectedServiceProvider")]
+    [ExportMetadata("ProviderId", "ConnectedServiceSample.Provider")]
     [ExportMetadata("AppliesTo", "CSharp+Web")]
     internal class Handler : ConnectedServiceHandler
     {

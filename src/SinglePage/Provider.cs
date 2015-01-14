@@ -2,7 +2,6 @@
 using System;
 using System.ComponentModel.Composition;
 using System.Threading.Tasks;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace ConnectedServiceSinglePageSample
@@ -11,18 +10,15 @@ namespace ConnectedServiceSinglePageSample
     [ExportMetadata("ProviderId", "ConnectedServiceSinglePageSample.Provider")]
     internal class Provider : ConnectedServiceProvider
     {
-        public override string Name { get { return "Sample Single Page Provider"; } }
-        public override string Category { get { return "Sample"; } }
-        public override string CreatedBy { get { return "Contoso, Inc."; } }
-        public override string Description { get { return "Sample Provider with Single Page functionality."; } }
-        public override Version Version { get { return new Version(1, 0, 0); } }
-        public override Uri MoreInfoUri { get { return new Uri("https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples"); } }
-        public override ImageSource Icon
+        public Provider()
         {
-            get
-            {
-                return new BitmapImage(Utilities.GetResourceUri("Image.png"));
-            }
+            this.Category = "Sample";
+            this.Name = "Sample Single Page Provider";
+            this.Description = "Sample Provider with Single Page functionality.";
+            this.Icon = new BitmapImage(Utilities.GetResourceUri("Image.png"));
+            this.CreatedBy = "Contoso, Inc.";
+            this.Version = new Version(1, 0, 0);
+            this.MoreInfoUri = new Uri("https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples");
         }
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderHost host)
