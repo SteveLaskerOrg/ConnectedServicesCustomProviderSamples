@@ -6,6 +6,13 @@ using System.Threading.Tasks;
 
 namespace ConnectedServiceSample
 {
+    /// <summary>
+    /// A sample grid provider that:
+    /// - shows one extra column in the grid and two properties in the details pane on the right
+    /// - allows users to sign in and out by clicking a hyperlink
+    /// - allows users to create new instances when they are signed in
+    /// - allows users to configure instances
+    /// </summary>
     internal class Grid : ConnectedServiceGrid
     {
         private List<ConnectedServiceInstance> instances;
@@ -22,18 +29,18 @@ namespace ConnectedServiceSample
 
         public override IEnumerable<Tuple<string, string>> ColumnMetadata
         {
-            get
-            {
-                yield return Tuple.Create("Column1", "Column1 Display");
-            }
+            get { return new[] { Tuple.Create("Column1", "Column1 Display") }; }
         }
 
         public override IEnumerable<Tuple<string, string>> DetailMetadata
         {
             get
             {
-                yield return Tuple.Create("Detail1", "Detail1 Display");
-                yield return Tuple.Create("Detail2", "Detail2 Display");
+                return new[]
+                {
+                    Tuple.Create("Detail1", "Detail1 Display"),
+                    Tuple.Create("Detail2", "Detail2 Display")
+                };
             }
         }
 
