@@ -1,5 +1,4 @@
-﻿using Company.ConnectedServiceDemo.ViewModels;
-using Microsoft.VisualStudio.ConnectedServices;
+﻿using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading.Tasks;
 
 namespace Company.ConnectedServiceDemo.ViewModels
@@ -20,10 +19,14 @@ namespace Company.ConnectedServiceDemo.ViewModels
             Page3ViewModel page3 = (Page3ViewModel)this.Pages[2];
 
             ConnectedServiceInstance instance = new ConnectedServiceInstance();
-            instance.Name = "wizard";
+
+            // Adding some data that will be available to the ConnectedServiceHandler.
+            // The values that the user entered for these fields will be used in the generated
+            // code file.
             instance.Metadata.Add("Page1.Text", page1.Text);
             instance.Metadata.Add("Page2.Text", page2.Text);
             instance.Metadata.Add("Page3.Text", page3.Text);
+
             return Task.FromResult(instance);
         }
     }
