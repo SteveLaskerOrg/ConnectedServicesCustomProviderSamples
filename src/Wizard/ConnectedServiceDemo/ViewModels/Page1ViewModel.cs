@@ -29,6 +29,7 @@ namespace Company.ConnectedServiceDemo.ViewModels
 
         public override Task<NavigationEnabledState> OnPageEnteringAsync(WizardEnteringArgs args)
         {
+            // The Wizard cannot be finished from this page
             return Task.FromResult(new NavigationEnabledState(null, null, false));
         }
     }
