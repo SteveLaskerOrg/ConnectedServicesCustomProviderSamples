@@ -151,9 +151,8 @@
       <DependentUpon>Page3.xaml</DependentUpon>
     </Compile>
     <Compile Include="WizardDemoHandler.cs" />
-    <Compile Include="ViewModels\WizardPage.cs" />
-    <Compile Include="WizardDemoProvider.cs" />
-    <Compile Include="WizardDemoProviderWizard.cs" />
+    <Compile Include="ViewModels\WizardDemoProviderViewModel.cs" />
+    <Compile Include="ViewModels\WizardDemoWizardViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="source.extension.vsixmanifest">
