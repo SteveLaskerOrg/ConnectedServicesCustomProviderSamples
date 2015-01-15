@@ -12,6 +12,10 @@ namespace Company.ConnectedServiceDemo
     [ExportMetadata("AppliesTo", "CSharp")]
     internal class WizardDemoHandler : ConnectedServiceHandler
     {
+        /// <summary>
+        /// AddServiceInstanceAsync is responsible for adding any artifacts to the project that will be used
+        /// to connect to the service.
+        /// </summary>
         public override async Task AddServiceInstanceAsync(ConnectedServiceInstanceContext context, CancellationToken ct)
         {
             string texts = string.Join(Environment.NewLine, 

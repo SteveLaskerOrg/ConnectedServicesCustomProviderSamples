@@ -21,6 +21,9 @@ namespace ConnectedServiceSinglePageSample
             this.ExtraInformation = "Default Extra Information";
         }
 
+        /// <summary>
+        /// Gets or sets the first value that the user can enter.
+        /// </summary>
         public string ServiceName
         {
             get { return this.serviceName; }
@@ -32,6 +35,9 @@ namespace ConnectedServiceSinglePageSample
             }
         }
 
+        /// <summary>
+        /// Gets or sets the second value that the user can enter.
+        /// </summary>
         public string ExtraInformation
         {
             get { return this.extraInformation; }
@@ -43,6 +49,9 @@ namespace ConnectedServiceSinglePageSample
             }
         }
 
+        /// <summary>
+        /// Gets or sets the message shown to the user when he is not signed in.
+        /// </summary>
         public string AuthenticateMessage
         {
             get { return this.authenticateMessage; }
@@ -67,6 +76,9 @@ namespace ConnectedServiceSinglePageSample
             }
         }
 
+        /// <summary>
+        /// The event handler that is called when the user signs in and out.
+        /// </summary>
         private void Authenticator_AuthenticationChanged(object sender, AuthenticationChangedEventArgs e)
         {
             this.CalculateAuthentication();
@@ -86,11 +98,17 @@ namespace ConnectedServiceSinglePageSample
             this.CalculateIsFinishEnabled();
         }
 
+        /// <summary>
+        /// Creates the ConnectedServiceAuthenticator object, which controls whether the user is signed in.
+        /// </summary>
         public override Task<ConnectedServiceAuthenticator> CreateAuthenticatorAsync()
         {
             return Task.FromResult<ConnectedServiceAuthenticator>(this.Authenticator);
         }
 
+        /// <summary>
+        /// The logic that sets whether the user can finish configuring the service.
+        /// </summary>
         private void CalculateIsFinishEnabled()
         {
             this.IsFinishEnabled = this.Authenticator.IsAuthenticated &&
@@ -98,6 +116,10 @@ namespace ConnectedServiceSinglePageSample
                 !string.IsNullOrEmpty(this.ExtraInformation);
         }
 
+        /// <summary>
+        /// This method is called when the user finishes configuring the service.
+        /// It returns the 'finished' ConnectedServiceInstance that will be passed to the Handler.
+        /// </summary>
         public override Task<ConnectedServiceInstance> GetFinishedServiceInstanceAsync()
         {
             ConnectedServiceInstance instance = new ConnectedServiceInstance();

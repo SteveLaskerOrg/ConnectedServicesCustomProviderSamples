@@ -12,6 +12,10 @@ namespace Company.ConnectedServiceDemo.ViewModels
             this.Pages.Add(new Page3ViewModel());
         }
 
+        /// <summary>
+        /// This method is called when the user clicks the Finish button.
+        /// It returns the 'finished' ConnectedServiceInstance that will be passed to the Handler.
+        /// </summary>
         public override Task<ConnectedServiceInstance> GetFinishedServiceInstanceAsync()
         {
             Page1ViewModel page1 = (Page1ViewModel)this.Pages[0];

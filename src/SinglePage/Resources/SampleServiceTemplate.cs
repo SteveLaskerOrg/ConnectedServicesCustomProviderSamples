@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace $DefaultNamespace$
 {
-    public static class SampleService
+    public static class SampleSinglePageService
     {
-        public static string CallSampleService()
+        public static string CallSampleSinglePageService()
         {
             return "Hello, from $ServiceInstance.Name$ and $ServiceInstance.ExtraInfo$!";
         }

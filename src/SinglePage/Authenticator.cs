@@ -4,6 +4,9 @@ using System.Windows.Input;
 
 namespace ConnectedServiceSinglePageSample
 {
+    /// <summary>
+    /// A simple authenticator that shows a "Sign In/Out" hyperlink
+    /// </summary>
     internal class Authenticator : ConnectedServiceAuthenticator
     {
         private string linkText;
@@ -12,13 +15,16 @@ namespace ConnectedServiceSinglePageSample
 
         public Authenticator()
         {
-            this.LinkText = "Sign in";
+            this.LinkText = "Sign In";
             this.changeAuthentication = new ChangeAuthenticationCommand(this);
 
             this.View = new AuthenticatorView();
             this.View.DataContext = this;
         }
 
+        /// <summary>
+        /// Gets or sets the text of the hyperlink.
+        /// </summary>
         public string LinkText
         {
             get { return this.linkText; }
@@ -29,6 +35,9 @@ namespace ConnectedServiceSinglePageSample
             }
         }
 
+        /// <summary>
+        /// Gets or sets the currently logged in user's name.
+        /// </summary>
         public string UserName
         {
             get { return this.userName; }
@@ -39,11 +48,18 @@ namespace ConnectedServiceSinglePageSample
             }
         }
 
+        /// <summary>
+        /// The command that will be invoked when the user clicks the hyperlink.
+        /// </summary>
         public ICommand ChangeAuthentication
         {
             get { return this.changeAuthentication; }
         }
 
+        /// <summary>
+        /// Fake out the signing in and out process by just toggling whether the
+        /// user is signed in or out.
+        /// </summary>
         private void ExecuteChangeAuthentication()
         {
             this.IsAuthenticated = !this.IsAuthenticated;

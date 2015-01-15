@@ -1,7 +1,6 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -14,7 +13,9 @@ namespace ConnectedServiceSample
         public Grid()
         {
             this.Description = "A sample Connected Service";
+
             this.CreateServiceInstanceText = "Create";
+
             this.CanConfigureServiceInstance = true;
             this.ConfigureServiceInstanceText = "Configure";
         }
@@ -36,17 +37,10 @@ namespace ConnectedServiceSample
             }
         }
 
-        public override Task<ConnectedServiceAuthenticator> CreateAuthenticatorAsync()
-        {
-            ConnectedServiceAuthenticator authenticator = new Authenticator();
-            authenticator.AuthenticationChanged += (sender, e) =>
-            {
-                this.CanCreateServiceInstance = authenticator.IsAuthenticated;
-            };
-
-            return Task.FromResult(authenticator);
-        }
-
+        /// <summary>
+        /// Retrieves the ConnectedServiceInstance objects.  This is called when the grid gets loaded
+        /// and when the user clicks the "Refresh" button.
+        /// </summary>
         public override Task<IEnumerable<ConnectedServiceInstance>> EnumerateServiceInstancesAsync(CancellationToken ct)
         {
             // retrieve the service instances
@@ -59,13 +53,34 @@ namespace ConnectedServiceSample
             return Task.FromResult<IEnumerable<ConnectedServiceInstance>>(this.instances);
         }
 
+        /// <summary>
+        /// Creates the ConnectedServiceAuthenticator object, which controls whether the user is signed in.
+        /// </summary>
+        public override Task<ConnectedServiceAuthenticator> CreateAuthenticatorAsync()
+        {
+            ConnectedServiceAuthenticator authenticator = new Authenticator();
+            authenticator.AuthenticationChanged += (sender, e) =>
+            {
+                this.CanCreateServiceInstance = authenticator.IsAuthenticated;
+            };
+
+            return Task.FromResult(authenticator);
+        }
+
+        /// <summary>
+        /// Configures the selected ConnectedServiceInstance.
+        /// </summary>
         public override Task<bool> ConfigureServiceInstanceAsync(ConnectedServiceInstance instance, CancellationToken ct)
         {
+            // setting the Column1 property to "Configured" to show that this instance has been configured
             instance.Metadata["Column1"] = "Configured";
 
             return Task.FromResult(true);
         }
 
+        /// <summary>
+        /// Adds a new service instance to the grid.
+        /// </summary>
         public override Task<ConnectedServiceInstance> CreateServiceInstanceAsync(CancellationToken ct)
         {
             int instanceNumber = this.instances.Count + 1;
@@ -79,6 +94,9 @@ namespace ConnectedServiceSample
             return Task.FromResult(newInstance);
         }
 
+        /// <summary>
+        /// Creates a new ConnectedServiceInstance with the specified values.
+        /// </summary>
         private ConnectedServiceInstance CreateInstance(string name, string column1, string detail1, string detail2)
         {
             ConnectedServiceInstance instance = new ConnectedServiceInstance();
