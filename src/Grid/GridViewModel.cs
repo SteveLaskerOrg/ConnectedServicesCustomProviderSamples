@@ -13,11 +13,11 @@ namespace ConnectedServiceSample
     /// - allows users to create new instances when they are signed in
     /// - allows users to configure instances
     /// </summary>
-    internal class Grid : ConnectedServiceGrid
+    internal class GridViewModel : ConnectedServiceGrid
     {
         private List<ConnectedServiceInstance> instances;
 
-        public Grid()
+        public GridViewModel()
         {
             this.Description = "A sample Connected Service";
 
@@ -65,7 +65,7 @@ namespace ConnectedServiceSample
         /// </summary>
         public override Task<ConnectedServiceAuthenticator> CreateAuthenticatorAsync()
         {
-            ConnectedServiceAuthenticator authenticator = new Authenticator();
+            ConnectedServiceAuthenticator authenticator = new AuthenticatorViewModel();
             authenticator.AuthenticationChanged += (sender, e) =>
             {
                 this.CanCreateServiceInstance = authenticator.IsAuthenticated;
@@ -115,5 +115,4 @@ namespace ConnectedServiceSample
             return instance;
         }
     }
-
 }

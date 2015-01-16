@@ -151,7 +151,7 @@
       <DependentUpon>Page3.xaml</DependentUpon>
     </Compile>
     <Compile Include="WizardDemoHandler.cs" />
-    <Compile Include="ViewModels\WizardDemoProviderViewModel.cs" />
+    <Compile Include="WizardDemoProvider.cs" />
     <Compile Include="ViewModels\WizardDemoWizardViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

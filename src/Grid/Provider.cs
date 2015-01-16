@@ -15,7 +15,7 @@ namespace ConnectedServiceSample
             this.Category = "Sample";
             this.Name = "Sample Grid Provider";
             this.Description = "Sample Provider with Grid functionality.";
-            this.Icon = new BitmapImage(new Uri("pack://application:,,/" + this.GetType().Assembly.ToString() + ";component/Resources/Image.png"));
+            this.Icon = new BitmapImage(new Uri("pack://application:,,/" + this.GetType().Assembly.ToString() + ";component/Resources/Icon.png"));
             this.CreatedBy = "Contoso, Inc.";
             this.Version = new Version(1, 0, 0);
             this.MoreInfoUri = new Uri("https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples");
@@ -23,7 +23,7 @@ namespace ConnectedServiceSample
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderHost host)
         {
-            ConnectedServiceConfigurator configurator = new Grid();
+            ConnectedServiceConfigurator configurator = new GridViewModel();
             return Task.FromResult(configurator);
         }
     }

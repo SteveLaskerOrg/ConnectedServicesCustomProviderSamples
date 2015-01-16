@@ -2,18 +2,18 @@
 using System;
 using System.Windows.Input;
 
-namespace ConnectedServiceSample
+namespace ConnectedServiceSinglePageSample
 {
     /// <summary>
     /// A simple authenticator that shows a "Sign In/Out" hyperlink
     /// </summary>
-    internal class Authenticator : ConnectedServiceAuthenticator
+    internal class AuthenticatorViewModel : ConnectedServiceAuthenticator
     {
         private string linkText;
         private string userName;
         private ICommand changeAuthentication;
 
-        public Authenticator()
+        public AuthenticatorViewModel()
         {
             this.LinkText = "Sign In";
             this.changeAuthentication = new ChangeAuthenticationCommand(this);
@@ -80,9 +80,9 @@ namespace ConnectedServiceSample
 
         private class ChangeAuthenticationCommand : ICommand
         {
-            private Authenticator authenticator;
+            private AuthenticatorViewModel authenticator;
 
-            public ChangeAuthenticationCommand(Authenticator authenticator)
+            public ChangeAuthenticationCommand(AuthenticatorViewModel authenticator)
             {
                 this.authenticator = authenticator;
             }

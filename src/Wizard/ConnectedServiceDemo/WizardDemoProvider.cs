@@ -1,16 +1,17 @@
-﻿using Microsoft.VisualStudio.ConnectedServices;
+﻿using Company.ConnectedServiceDemo.ViewModels;
+using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.ComponentModel.Composition;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Company.ConnectedServiceDemo.ViewModels
+namespace Company.ConnectedServiceDemo
 {
     [Export(typeof(ConnectedServiceProvider))]
     [ExportMetadata("ProviderId", "Company.ConnectedServiceDemo.WizardDemoProvider")]
-    internal class WizardDemoProviderViewModel : ConnectedServiceProvider
+    internal class WizardDemoProvider : ConnectedServiceProvider
     {
-        public WizardDemoProviderViewModel()
+        public WizardDemoProvider()
         {
             this.Category = "Sample";
             this.Name = "Sample Wizard Provider";

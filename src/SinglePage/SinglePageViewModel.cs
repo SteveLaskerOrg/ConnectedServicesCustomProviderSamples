@@ -3,14 +3,14 @@ using System.Threading.Tasks;
 
 namespace ConnectedServiceSinglePageSample
 {
-    internal class SinglePage : ConnectedServiceSinglePage
+    internal class SinglePageViewModel : ConnectedServiceSinglePage
     {
         private string serviceName;
         private string extraInformation;
         private string authenticateMessage;
-        private Authenticator authenticator;
+        private AuthenticatorViewModel authenticator;
 
-        public SinglePage()
+        public SinglePageViewModel()
         {
             this.Title = "Single Page";
             this.Description = "A sample single page Connected Service";
@@ -62,13 +62,13 @@ namespace ConnectedServiceSinglePageSample
             }
         }
 
-        public Authenticator Authenticator
+        public AuthenticatorViewModel Authenticator
         {
             get
             {
                 if (this.authenticator == null)
                 {
-                    this.authenticator = new Authenticator();
+                    this.authenticator = new AuthenticatorViewModel();
                     this.authenticator.AuthenticationChanged += Authenticator_AuthenticationChanged;
                     this.CalculateAuthentication();
                 }
