@@ -11,7 +11,7 @@ The respository is made up of 3 top-level directories:
 * **Externals**.  Contains the latest Connected Services binaries that you can reference, and the
   latest VSIX installers for both the Connected Services core and the Salesforce extension.
 
-* **src**.  Contains two sample extensions: Grid and Wizard.  You can use these to jumpstart your
+* **src**.  Contains several sample providers for the 3 UI Templates (SinglePage, Grid & Wizard) as well as Design Time Auth and Handlers for adding files to your project.  You can use these to jumpstart your
   development, or as a reference.
 
 [walk-through]: https://github.com/SteveLaskerOrg/ConnectedServicesCustomProviderSamples/blob/master/docs/Creating%20a%20Connected%20Service%20Extension.docx
