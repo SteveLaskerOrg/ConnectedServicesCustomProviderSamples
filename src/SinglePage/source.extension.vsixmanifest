@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="ConnectedServiceSample..032D91A0-623B-4FD6-8558-A93AD5B75198" Version="1.0" Language="en-US" Publisher="Eric Erhardt" />
+    <Identity Id="ConnectedServiceSample..032D91A0-623B-4FD6-8558-A93AD5B75198" Version="1.0" Language="en-US" Publisher="Microsoft" />
     <DisplayName>ConnectedServiceSinglePageSample</DisplayName>
-    <Description xml:space="preserve">Information about my package</Description>
+    <Description xml:space="preserve">A Sample for building a Connected Services Provider using the Single Page Template</Description>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="14.0" />

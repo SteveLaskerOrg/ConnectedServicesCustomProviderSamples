@@ -85,17 +85,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthenticatorViewModel.cs" />
-    <Compile Include="AuthenticatorView.xaml.cs">
+    <Compile Include="ViewModels\AuthenticatorViewModel.cs" />
+    <Compile Include="Views\AuthenticatorView.xaml.cs">
       <DependentUpon>AuthenticatorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Handler.cs" />
     <Compile Include="Provider.cs" />
-    <Compile Include="SinglePageViewModel.cs" />
-    <Compile Include="SinglePageView.xaml.cs">
+    <Compile Include="ViewModels\SinglePageViewModel.cs" />
+    <Compile Include="Views\SinglePageView.xaml.cs">
       <DependentUpon>SinglePageView.xaml</DependentUpon>
     </Compile>
-    <Resource Include="Resources\SampleServiceTemplate.cs" />
+    <Resource Include="Templates\SampleServiceTemplate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -119,11 +119,11 @@
     <Resource Include="Resources\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="AuthenticatorView.xaml">
+    <Page Include="Views\AuthenticatorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SinglePageView.xaml">
+    <Page Include="Views\SinglePageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

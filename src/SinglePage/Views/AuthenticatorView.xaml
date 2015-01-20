@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ConnectedServiceSinglePageSample.AuthenticatorView"
+﻿<UserControl x:Class="ConnectedServiceSinglePageSample.Views.AuthenticatorView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <StackPanel>

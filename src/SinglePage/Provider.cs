@@ -12,6 +12,7 @@ namespace ConnectedServiceSinglePageSample
     {
         public Provider()
         {
+            // Set the values to be displayed in the first Connected Services Selection UI
             this.Category = "Sample";
             this.Name = "Sample Single Page Provider";
             this.Description = "Sample Provider with Single Page functionality.";
@@ -19,11 +20,12 @@ namespace ConnectedServiceSinglePageSample
             this.CreatedBy = "Contoso, Inc.";
             this.Version = new Version(1, 0, 0);
             this.MoreInfoUri = new Uri("https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples");
+            
         }
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderHost host)
         {
-            ConnectedServiceConfigurator configurator = new SinglePageViewModel();
+            ConnectedServiceConfigurator configurator = new ViewModels.SinglePageViewModel();
             return Task.FromResult(configurator);
         }
     }

@@ -19,11 +19,15 @@ namespace ConnectedServiceSinglePageSample
         {
             // Generate a code file into the user's project from a template.
             // The tokens in the template will be replaced by the HandlerHelper.
-            string templateResourceUri = "pack://application:,,/" + this.GetType().Assembly.ToString() + ";component/Resources/SampleServiceTemplate.cs";
-            await HandlerHelper.AddFileAsync(context, templateResourceUri, "SampleSinglePage.cs");
+            // Place service specific scaffolded code under the service folder
+            string templateResourceUri = "pack://application:,,/" + this.GetType().Assembly.ToString() + ";component/Templates/SampleServiceTemplate.cs";
+            string serviceFolder = string.Format("Service References\\{0}\\", context.ServiceInstance.Name);
+            await HandlerHelper.AddFileAsync(context, templateResourceUri, serviceFolder + "SampleSinglePage.cs");
 
             // Adds the 'Getting Started' artifact to the project in the "SampleSinglePage" directory and opens the page
-            await HandlerHelper.AddGettingStartedAsync(context, "SampleSinglePage", new Uri("https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples"));
+            // This would be your guidance on how a developer would complete development for the service
+            // What Happened, and required Next Steps, and Sample code
+            await HandlerHelper.AddGettingStartedAsync(context, context.ServiceInstance.Name, new Uri("https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples"));
         }
     }
 }

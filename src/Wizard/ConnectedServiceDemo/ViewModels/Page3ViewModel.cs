@@ -15,6 +15,7 @@ namespace Company.ConnectedServiceDemo.ViewModels
             this.Legend = "Page 3 Legend";
             this.View = new Page3();
             this.View.DataContext = this;
+            this.IsEnabled = false;
         }
 
         public string Text

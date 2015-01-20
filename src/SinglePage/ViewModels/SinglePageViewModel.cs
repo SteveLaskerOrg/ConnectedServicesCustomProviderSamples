@@ -1,8 +1,7 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading.Tasks;
 
-namespace ConnectedServiceSinglePageSample
-{
+namespace ConnectedServiceSinglePageSample.ViewModels {
     internal class SinglePageViewModel : ConnectedServiceSinglePage
     {
         private string serviceName;
@@ -14,10 +13,10 @@ namespace ConnectedServiceSinglePageSample
         {
             this.Title = "Single Page";
             this.Description = "A sample single page Connected Service";
-            this.View = new SinglePageView();
+            this.View = new Views.SinglePageView();
             this.View.DataContext = this;
 
-            this.ServiceName = "Default Service Name";
+            this.ServiceName = "SampleService";
             this.ExtraInformation = "Default Extra Information";
         }
 
@@ -111,6 +110,7 @@ namespace ConnectedServiceSinglePageSample
         /// </summary>
         private void CalculateIsFinishEnabled()
         {
+            // basic example for toggling the state of the Add/Update/Finish button
             this.IsFinishEnabled = this.Authenticator.IsAuthenticated &&
                 !string.IsNullOrEmpty(this.ServiceName) &&
                 !string.IsNullOrEmpty(this.ExtraInformation);
@@ -123,7 +123,10 @@ namespace ConnectedServiceSinglePageSample
         public override Task<ConnectedServiceInstance> GetFinishedServiceInstanceAsync()
         {
             ConnectedServiceInstance instance = new ConnectedServiceInstance();
+            // Pass the Service Name the user can enter to the Instance Name, 
+            // used to specify the name of the folder under Service References
             instance.Name = this.ServiceName;
+            // An example for how to pass additional info from the Configuration View to the Handler
             instance.Metadata.Add("ExtraInfo", this.ExtraInformation);
             return Task.FromResult(instance);
         }

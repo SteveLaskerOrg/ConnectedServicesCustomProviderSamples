@@ -11,10 +11,11 @@ namespace Company.ConnectedServiceDemo.ViewModels
         public Page2ViewModel()
         {
             this.Title = "Page 2";
-            this.Description = "Page 2 Description";
+            this.Description = "Page 2 Description w/Errorz";
             this.Legend = "Page 2 Legend";
             this.View = new Page2();
             this.View.DataContext = this;
+            this.HasErrors = true;
         }
 
         public string Text

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace ConnectedServiceSinglePageSample
+namespace ConnectedServiceSinglePageSample.Views
 {
     /// <summary>
     /// Interaction logic for SinglePageView.xaml

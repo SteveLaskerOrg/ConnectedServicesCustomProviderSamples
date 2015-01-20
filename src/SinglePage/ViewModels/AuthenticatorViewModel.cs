@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Input;
 
-namespace ConnectedServiceSinglePageSample
+namespace ConnectedServiceSinglePageSample.ViewModels
 {
     /// <summary>
     /// A simple authenticator that shows a "Sign In/Out" hyperlink
@@ -18,7 +18,7 @@ namespace ConnectedServiceSinglePageSample
             this.LinkText = "Sign In";
             this.changeAuthentication = new ChangeAuthenticationCommand(this);
 
-            this.View = new AuthenticatorView();
+            this.View = new Views.AuthenticatorView();
             this.View.DataContext = this;
         }
 
