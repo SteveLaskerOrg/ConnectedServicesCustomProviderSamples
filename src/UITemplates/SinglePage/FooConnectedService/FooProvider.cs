@@ -14,7 +14,7 @@ namespace Microsoft.ConnectedServices.Samples
     {
         public FooProvider()
         {
-            this.Name = "Sample: SinglePage Template Provider";
+            this.Name = "Sample: SinglePage Template";
             this.Category = "Foo";
             this.Description = "A sample provider demonstrating the Single Page UI template";
             this.Icon = new BitmapImage(new Uri("pack://application:,,/" + Assembly.GetExecutingAssembly().ToString() + ";component/" + "Resources/Icon.png"));

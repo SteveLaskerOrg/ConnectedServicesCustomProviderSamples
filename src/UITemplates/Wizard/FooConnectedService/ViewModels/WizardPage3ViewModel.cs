@@ -1,16 +1,8 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.ViewModels
-{
-    internal class WizardPage3ViewModel : ConnectedServiceWizardPage
-    {
-        public WizardPage3ViewModel() : base()
-        {
+namespace Microsoft.ConnectedServices.Samples.ViewModels {
+    internal class WizardPage3ViewModel : ConnectedServiceWizardPage {
+        public WizardPage3ViewModel() : base() {
             this.Title = "Page 3";
             this.Description = "Page 3 Description";
             this.Legend = "Page 3 Legend";

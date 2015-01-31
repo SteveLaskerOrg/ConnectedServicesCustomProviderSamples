@@ -14,7 +14,7 @@ namespace Microsoft.ConnectedServices.Samples
     {
         public FooProvider()
         {
-            this.Name = "Sample: Grid Template Provider";
+            this.Name = "Sample: Grid Template";
             this.Category = "Foo";
             this.Description = "A sample provider demonstrating the Grid UI template";
             this.Icon = new BitmapImage(new Uri("pack://application:,,/" + Assembly.GetExecutingAssembly().ToString() + ";component/" + "Resources/Icon.png"));

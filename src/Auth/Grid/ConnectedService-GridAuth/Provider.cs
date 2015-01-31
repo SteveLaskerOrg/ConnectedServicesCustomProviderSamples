@@ -8,13 +8,13 @@ using System.Windows.Media.Imaging;
 namespace Microsoft.ConnectedServices.Samples
 {
     [Export(typeof(ConnectedServiceProvider))]
-    [ExportMetadata("ProviderId", "Microsoft.ConnectedServices.Samples.FooService.GridAuthProvider")]
+    [ExportMetadata("ProviderId", "Microsoft.ConnectedServices.Samples.FooService.GridAuth")]
     internal class Provider : ConnectedServiceProvider
     {
         public Provider()
         {
             this.Category = "Foo";
-            this.Name = "Sample: Grid Auth Provider";
+            this.Name = "Sample: Grid Auth";
             this.Description = "Sample Provider with Grid Auth functionality.";
             this.Icon = new BitmapImage(new Uri("pack://application:,,/" + this.GetType().Assembly.ToString() + ";component/Resources/Icon.png"));
             this.CreatedBy = "Microsoft";

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Microsoft.ConnectedServices.Samples
 {
     [Export(typeof(ConnectedServiceHandler))]
-    [ExportMetadata("ProviderId", "Microsoft.ConnectedServices.Samples.FooService.GridAuthProvider")]
+    [ExportMetadata("ProviderId", "Microsoft.ConnectedServices.Samples.FooService.GridAuth")]
     [ExportMetadata("AppliesTo", "CSharp")]
     internal class Handler : ConnectedServiceHandler
     {

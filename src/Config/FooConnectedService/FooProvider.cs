@@ -11,7 +11,7 @@ namespace Microsoft.ConnectedServices.Samples {
     [ExportMetadata("ProviderId", "Microsoft.ConnectedServiceSamples.FooService.Config")]
     internal class FooProvider : ConnectedServiceProvider {
         public FooProvider() {
-            this.Name = "Sample: Config Management Provider";
+            this.Name = "Sample: Config Management";
             this.Category = "Foo";
             this.Description = "A sample provider demonstrating config management";
             this.Icon = new BitmapImage(new Uri("pack://application:,,/" + Assembly.GetExecutingAssembly().ToString() + ";component/" + "Resources/Icon.png"));
@@ -26,6 +26,5 @@ namespace Microsoft.ConnectedServices.Samples {
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderHost host) {
             return Task.FromResult<ConnectedServiceConfigurator>(new ViewModels.FooSinglePageViewModel());
         }
-
     }
 }
