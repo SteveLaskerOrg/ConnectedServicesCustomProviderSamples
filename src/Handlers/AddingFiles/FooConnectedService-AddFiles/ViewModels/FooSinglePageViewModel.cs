@@ -18,8 +18,8 @@ namespace Microsoft.ConnectedServices.Samples.ViewModels
         {
             this.Title = "Samples";
             this.Description = "Adding Files to the Project";
-            this.View = new Views.FooSinglePageView();
-            this.View.DataContext = this;
+            //this.View = new Views.FooSinglePageView();
+            //this.View.DataContext = this;
 
             this.ServiceName = "FooService";
             this.ExtraInformation = "Default Extra Information";

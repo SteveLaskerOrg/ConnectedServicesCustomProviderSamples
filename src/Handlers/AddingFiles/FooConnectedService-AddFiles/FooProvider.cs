@@ -30,7 +30,10 @@ namespace Microsoft.ConnectedServices.Samples
         }
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderHost host)
         {
-            return Task.FromResult<ConnectedServiceConfigurator>(new ViewModels.FooSinglePageViewModel());
+            Views.FooSinglePageView view = new Views.FooSinglePageView();
+            ViewModels.FooSinglePageViewModel vm = (ViewModels.FooSinglePageViewModel)view.DataContext;
+            vm.View = view;
+            return Task.FromResult<ConnectedServiceConfigurator>(vm);
         }
 
     }
