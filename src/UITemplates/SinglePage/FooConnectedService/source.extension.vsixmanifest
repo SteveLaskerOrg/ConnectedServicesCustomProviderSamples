@@ -6,7 +6,7 @@
     <Description xml:space="preserve">A sample for building a Connected Service Provider with the Single Page template</Description>
     <Icon>Resources\ExtensionIcon.png</Icon>
     <PreviewImage>Resources\ExtensionPreviewImage.png</PreviewImage>
-    <Tags>Connected Service</Tags>
+    <Tags>Connected Services</Tags>
   </Metadata>
   <Installation>
     <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="14.0" />
