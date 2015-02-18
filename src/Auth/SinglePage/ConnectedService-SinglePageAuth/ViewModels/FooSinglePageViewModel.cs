@@ -24,7 +24,7 @@ namespace Microsoft.ConnectedServices.Samples.ViewModels {
             set
             {
                 this._serviceName = value;
-                this.OnNotifyPropertyChanged();
+                this.OnPropertyChanged();
                 this.CalculateIsFinishEnabled();
             }
         }
@@ -40,7 +40,7 @@ namespace Microsoft.ConnectedServices.Samples.ViewModels {
             set
             {
                 this._authenticateMessage = value;
-                this.OnNotifyPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 

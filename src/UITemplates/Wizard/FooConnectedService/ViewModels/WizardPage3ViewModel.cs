@@ -2,7 +2,7 @@
 
 namespace Microsoft.ConnectedServices.Samples.ViewModels {
     internal class WizardPage3ViewModel : ConnectedServiceWizardPage {
-        public WizardPage3ViewModel() : base() {
+        public WizardPage3ViewModel(FooServiceWizard wizard) : base(wizard) {
             this.Title = "Page 3";
             this.Description = "Page 3 Description";
             this.Legend = "Page 3 Legend";

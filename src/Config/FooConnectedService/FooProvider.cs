@@ -23,7 +23,7 @@ namespace Microsoft.ConnectedServices.Samples {
         public override IEnumerable<Tuple<string, Uri>> GetSupportedTechnologyLinks() {
             yield return Tuple.Create("Azure Redis Cache", new Uri("http://azure.microsoft.com/en-us/services/cache/"));
         }
-        public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderHost host) {
+        public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context) {
             return Task.FromResult<ConnectedServiceConfigurator>(new ViewModels.FooSinglePageViewModel());
         }
     }

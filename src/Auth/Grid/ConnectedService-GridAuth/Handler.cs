@@ -15,10 +15,12 @@ namespace Microsoft.ConnectedServices.Samples
         /// AddServiceInstanceAsync is responsible for adding any artifacts to the project that will be used
         /// to connect to the service.
         /// </summary>
-        public override async Task AddServiceInstanceAsync(ConnectedServiceInstanceContext context, CancellationToken ct)
+        public override async Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken ct)
         {
             // See Handler Samples for how to work with the project system 
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Handler Invoked");
+
+            return new AddServiceInstanceResult("FooGridAuth", null);
         }
     }
 }

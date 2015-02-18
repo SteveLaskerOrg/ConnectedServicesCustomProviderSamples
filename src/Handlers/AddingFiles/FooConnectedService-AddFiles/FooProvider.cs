@@ -28,7 +28,8 @@ namespace Microsoft.ConnectedServices.Samples
             // A list of supported technolgoies, such as which services it supports
             yield return Tuple.Create("Azure Active Directory", new Uri("http://azure.microsoft.com/en-us/services/active-directory/"));
         }
-        public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderHost host)
+
+        public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context)
         {
             // To get Designtime binding, setting the DataContext in XAML, we need to order the creation of objects properly
             // Not ordering them can create a stack overflow of views instancing viewmodels
@@ -42,6 +43,5 @@ namespace Microsoft.ConnectedServices.Samples
             vm.View = view;
             return Task.FromResult<ConnectedServiceConfigurator>(vm);
         }
-
     }
 }

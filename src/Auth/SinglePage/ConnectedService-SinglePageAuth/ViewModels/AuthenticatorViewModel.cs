@@ -30,7 +30,7 @@ namespace Microsoft.ConnectedServices.Samples.ViewModels
             set
             {
                 this._linkText = value;
-                this.OnNotifyPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 
@@ -44,7 +44,7 @@ namespace Microsoft.ConnectedServices.Samples.ViewModels
             set
             {
                 this._userName = value;
-                this.OnNotifyPropertyChanged();
+                this.OnPropertyChanged();
             }
         }
 

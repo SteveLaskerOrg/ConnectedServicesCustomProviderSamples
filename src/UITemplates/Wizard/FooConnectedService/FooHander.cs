@@ -9,8 +9,10 @@ namespace Microsoft.ConnectedServices.Samples {
     [ExportMetadata("ProviderId", "Microsoft.ConnectedServiceSamples.FooService.Wizard")]
     [ExportMetadata("AppliesTo", "CSharp")]
     internal class FooHander : ConnectedServiceHandler {
-        public override async Task AddServiceInstanceAsync(ConnectedServiceInstanceContext context, CancellationToken ct) {
+        public override async Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken ct) {
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Handler Invoked");
+
+            return new AddServiceInstanceResult("FooWizard", null);
         }
     }
 }

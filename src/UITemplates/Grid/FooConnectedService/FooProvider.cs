@@ -33,7 +33,7 @@ namespace Microsoft.ConnectedServices.Samples
             yield return Tuple.Create("Azure Active Directory", new Uri("http://azure.microsoft.com/en-us/services/active-directory/"));
         }
 
-        public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderHost host)
+        public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context)
         {
             return Task.FromResult<ConnectedServiceConfigurator>(new ViewModels.FooServiceGridViewModel());
         }

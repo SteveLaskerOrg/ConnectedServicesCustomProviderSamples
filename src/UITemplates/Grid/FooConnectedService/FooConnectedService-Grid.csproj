@@ -38,6 +38,9 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
+    <StartAction>Program</StartAction>
+    <StartProgram>C:\Program Files (x86)\Microsoft Visual Studio $(VisualStudioVersion)\Common7\IDE\devenv.exe</StartProgram>
+    <StartArguments>/rootSuffix exp</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,9 +62,6 @@
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.ConnectedServices">
       <HintPath>..\..\..\..\Externals\Microsoft.VisualStudio.ConnectedServices.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.VisualStudio.ConnectedServices.Framework">
-      <HintPath>..\..\..\..\Externals\Microsoft.VisualStudio.ConnectedServices.Framework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.CoreUtility" />
     <Reference Include="Microsoft.VisualStudio.Text.Data" />

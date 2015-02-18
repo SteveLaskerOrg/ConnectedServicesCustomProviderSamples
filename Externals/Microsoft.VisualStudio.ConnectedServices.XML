@@ -4,6 +4,139 @@
         <name>Microsoft.VisualStudio.ConnectedServices</name>
     </assembly>
     <members>
+        <member name="T:Microsoft.VisualStudio.ConnectedServices.AddFileOptions">
+            <summary>
+            The options that control the behavior when adding a file to a project.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.AddFileOptions.#ctor">
+            <summary>
+            Instantiates a new instance of the AddFileOptions class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.AddFileOptions.AdditionalReplacementValues">
+            <summary>
+            Gets or sets a dictionary of key/value pairs that will be used to replace tokens in the file.
+            These values are additional to the values in TokenReplacementValues.  In the case of conflicts, the
+            values specified in AdditionalReplacementValues will override the TokenReplacementValues.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.AddFileOptions.SuppressOverwritePrompt">
+            <summary>
+            Gets or sets a value indicating whether to suppress prompting the end user if an existing file
+            is detected and should be overwritten.  The default is false
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.AddFileOptions.OpenOnComplete">
+            <summary>
+            Gets or sets a value indicating whether the file should be opened after being added.  The default is false
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceContext">
+            <summary>
+            A base class for the ConnectedServiceProviderContext and ConnectedServiceHandlerContext classes.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceContext.ExtendedDesignerData">
+            <summary>
+            Gets the designer data for the connected service that is stored in the ConnectedServices.json file for the
+            service.  This data is read/writeable both when the service instance is being added as well as being updated.
+            </summary>
+            <remarks>
+            The Type of values that may be added to the dictionary are Byte, SByte, Int16, Int32, Int64, UInt16, UInt32,
+            UInt64, Double, Single, String, Char, Guid, Boolean, DateTime or an array of theses types.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceContext.ProjectHierarchy">
+            <summary>
+            Gets the project's IVsHierarchy that the current Connected Service dialog is operating on.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceContext.IsUpdating">
+            <summary>
+            Gets a value that indicates whether a connected service is being updated.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceContext.UpdateContext">
+            <summary>
+            Gets the information that is provided when a connected service is being updated, or null if
+            the connected service is not being updated.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceContext.CreateReadOnlyXmlConfigHelper">
+            <summary>
+            Creates an XmlConfigHelper that can be used to read xml configuration files.
+            </summary>
+            <returns>
+            A new XmlConfigHelper object which can be used to read xml configuration files.
+            </returns>
+            <remarks>
+            Xml configuration files are typically app.config or web.config files in the project.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceUpdateContext">
+            <summary>
+            ConnectedServiceUpdateContext holds the information that is provided when
+            a connected service is being updated.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceUpdateContext.#ctor(Microsoft.VisualStudio.Shell.IVsHierarchyItem)">
+            <summary>
+            Initializes a new instance of the ConnectedServiceUpdateContext class.
+            </summary>
+            <param name="serviceFolder">
+            The folder where the service artifacts are stored.
+            </param>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceUpdateContext.ServiceFolder">
+            <summary>
+            Gets the folder where the service artifacts are stored.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.ConnectedServices.UpdateServiceInstanceResult">
+            <summary>
+            Contains information for launching GettingStarted information after UpdateServiceInstanceAsync has completed.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.UpdateServiceInstanceResult.#ctor">
+            <summary>
+            Initializes a new instance of the UpdateServiceInstanceResult class.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.UpdateServiceInstanceResult.GettingStartedUrl">
+            <summary>
+            Gets or sets the Uri that will be launched to show the "Getting Started" documentation to the user.
+            </summary>
+            <remarks>
+            Leaving GettingStartedUrl null will result in the URL not being updated.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.VisualStudio.ConnectedServices.AddServiceInstanceResult">
+            <summary>
+            A result object that contains the information returned from ConnectedServiceHandler.AddServiceInstanceAsync().
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.AddServiceInstanceResult.#ctor(System.String,System.Uri)">
+            <summary>
+            Initializes a new instance of the AddServiceInstanceResult class.
+            </summary>
+            <param name="folderName">
+            The unique name of the folder where the service artifacts are stored.
+            </param>
+            <param name="gettingStartedUrl">
+            The Uri that will be launched to show the "Getting Started" documentation to the user.
+            </param>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.AddServiceInstanceResult.FolderName">
+            <summary>
+            Gets the unique name of the folder where the service artifacts are stored.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.AddServiceInstanceResult.GettingStartedUrl">
+            <summary>
+            Gets the Uri that will be launched to show the "Getting Started" documentation to the user.
+            </summary>
+        </member>
         <member name="T:Microsoft.VisualStudio.ConnectedServices.AuthenticationChangedEventArgs">
             <summary>
             An EventArgs class used when the authenticated state changes.
@@ -13,6 +146,153 @@
             <summary>
             Initializes a new instance of the AuthenticationChangedEventArgs class.
             </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerExportAttribute">
+            <summary>
+            Specifies that a type provides a ConnectedServiceHandler export.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerExportAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the ConnectedServiceHandlerExportAttribute class.
+            </summary>
+            <param name="providerId">
+            The unique Provider ID for the provider/handler.  This is used to match
+            a provider with its handlers.
+            </param>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerExportAttribute.ProviderId">
+            <summary>
+            Gets the unique Provider ID for the provider/handler.  This is used to match
+            a provider with its handlers.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerExportAttribute.AppliesTo">
+            <summary>
+            Gets the "AppliesTo" query string for matching a connected service handler to a project's
+            capabilities.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerExportAttribute.TargetPlatform">
+            <summary>
+            Gets the "TargetPlatform" string for matching a connected service handler to a project's
+            target platform.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerExportAttribute.TargetPlatformVersion">
+            <summary>
+            Gets the "TargetPlatformVersion" string for matching a connected service handler to a project's
+            target platform version.
+            </summary>
+            <remarks>
+            The syntax for specifying a version range is the same syntax as used in the .vsixmanifest InstallationTarget Version
+            attribute.  For more information, see http://msdn.microsoft.com/en-us/library/ee943167.aspx.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerExportAttribute.SupportedOutputType">
+            <summary>
+            Gets the "OutputType" string for matching a connected service handler to a project's
+            target platform.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerExportAttribute.SupportedProjectTypes">
+            <summary>
+            Gets the "ProjectTypes" query string for matching a connected service handler to a project's
+            target platform.
+            </summary>
+            <remarks>
+            The Guids can be in the following formats:
+            "N": 32 digits: 00000000000000000000000000000000.
+            "D": 32 digits separated by hyphens: 00000000-0000-0000-0000-000000000000.
+            You can use the same syntax as the 'AppliesTo' attribute for building a query string.
+            </remarks>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerExportAttribute.CustomEvaluator">
+            <summary>
+            Gets a value indicating whether a connected service handler contains its own logic to
+            specify if it supports a project.  If true, the handler should implement the IVsHierarchyCustomEvaluator
+            interface.
+            </summary>
+            <remarks>
+            For performance reasons, it is recommended to use the other properties if possible.  That way
+            fewer extensions need to be loaded.
+            </remarks>
+        </member>
+        <member name="T:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceProviderExportAttribute">
+            <summary>
+            Specifies that a type provides a ConnectedServiceProvider export.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceProviderExportAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the ConnectedServiceProviderExportAttribute class.
+            </summary>
+            <param name="providerId">
+            The unique Provider ID for the provider/handler.  This is used to match
+            a provider with its handlers.
+            </param>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceProviderExportAttribute.ProviderId">
+            <summary>
+            Gets the unique Provider ID for the provider/handler.  This is used to match
+            a provider with its handlers.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceProviderExportAttribute.SupportsUpdate">
+            <summary>
+            Gets or sets a value indicating whether the ConnectedServiceProvider
+            is capable of updating an existing connected service.
+            </summary>
+        </member>
+        <member name="T:Microsoft.VisualStudio.ConnectedServices.XmlConfigHelper">
+            <summary>
+            Provides methods for reading configuration settings in the user's project.
+            </summary>
+            <remarks>
+            Instances of this class are provided by the Connected Services infrastructure.  It is not intended that you inherit from this class from your production code.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.XmlConfigHelper.#ctor">
+            <summary>
+            This constructor supports unit testing your extension and is not intended to be used directly from your production code.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.XmlConfigHelper.Configuration">
+            <summary>
+            Gets the Configuration object that can be used to inspect the configuration settings.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.XmlConfigHelper.GetAppSetting(System.String)">
+            <summary>
+            Gets the string value of the setting with the specified key in the appSettings config section with the specified key and value.
+            </summary>
+            <param name="key">
+            The key of the app setting.
+            </param>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.XmlConfigHelper.IsPrefixUsedInAppSettings(System.String)">
+            <summary>
+            Gets a value indicating whether an appSetting key exists with the specified keyPrefix.
+            </summary>
+            <param name="keyPrefix">
+            The prefix string to check for.
+            </param>
+            <returns>
+            true if an appSetting already exists that has a key starting with the keyPrefix; otherwise, false.
+            </returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.XmlConfigHelper.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.XmlConfigHelper.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+            <param name="disposing">
+            A value that indicates whether this object is being disposed or finalized.
+            </param>
         </member>
         <member name="T:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceSinglePage">
             <summary>
@@ -44,6 +324,9 @@
             <summary>
             Gets or sets the WPF UI Element that describes the content of the page.
             </summary>
+            <remarks>
+            The default/minimum space available for this view is 756px (w) X 372px (h).
+            </remarks>
         </member>
         <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceSinglePage.GetFinishedServiceInstanceAsync">
             <summary>
@@ -101,7 +384,7 @@
             <param name="propertyName">The name of the property that's changing.</param>
             <returns>Returns true if the field has actually changed; false otherwise.</returns>
         </member>
-        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceViewModelBase.OnNotifyPropertyChanged(System.String)">
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceViewModelBase.OnPropertyChanged(System.String)">
             <summary>
             Notifies clients that a property value has changed.
             </summary>
@@ -122,20 +405,42 @@
             true to release both managed and unmanaged resources; false to release only unmanaged resources.
             </param>
         </member>
-        <member name="T:Microsoft.VisualStudio.ConnectedServices.EnableNavigationEventArgs">
+        <member name="T:Microsoft.VisualStudio.ConnectedServices.EditableXmlConfigHelper">
             <summary>
-            An EventArgs class that contains the navigation state of the current wizard page.
+            Provides methods for editing configuration settings in the user's project.
+            
+            The Save method must be called to save any changes.
+            </summary>
+            <remarks>
+            This class does not preserve whitespace in the appSettings section.
+            
+            Instances of this class are provided by the Connected Services infrastructure.  It is not intended that you inherit from this class from your production code.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.EditableXmlConfigHelper.#ctor">
+            <summary>
+            This constructor supports unit testing your extension and is not intended to be used directly from your production code.
             </summary>
         </member>
-        <member name="M:Microsoft.VisualStudio.ConnectedServices.EnableNavigationEventArgs.#ctor">
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.EditableXmlConfigHelper.Save">
             <summary>
-            Initializes a new instance of the EnableNavigationEventArgs class.
+            Writes the configuration settings contained within this System.Configuration.Configuration
+            object to the current XML configuration file.
             </summary>
         </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.EnableNavigationEventArgs.State">
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.EditableXmlConfigHelper.SetAppSetting(System.String,System.String,System.String)">
             <summary>
-            Gets or sets the navigation button state of the wizard.
+            Ensures there is a key-value pair in the appSettings config section with the specified key and value.
             </summary>
+            <param name="key">
+            The key of the app setting.
+            </param>
+            <param name="value">
+            The value of the app setting.
+            </param>
+            <param name="comment">
+            An optional xml comment to add before the app setting.
+            </param>
         </member>
         <member name="T:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceAuthenticator">
             <summary>
@@ -170,7 +475,7 @@
             Gets or sets the Framework Element that should be displayed in the UI to allow the user to authenticate to the service.
             </summary>
             <remarks>
-            The space available for this view is 192px width X 64px height.
+            The space available for this view is 192px (w) X 64px (h).
             </remarks>
         </member>
         <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceAuthenticator.OnAuthenticationChanged(Microsoft.VisualStudio.ConnectedServices.AuthenticationChangedEventArgs)">
@@ -262,27 +567,47 @@
             </para>
             </remarks>
         </member>
-        <member name="T:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceInstanceContext">
+        <member name="T:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerContext">
             <summary>
-            The context information given to ConnectedServiceHandler instances during AddServiceInstanceAsync.
+            The context information and services given to ConnectedServiceHandler instances during AddServiceInstanceAsync and UpdateServiceInstanceAsync.
+            </summary>
+            <remarks>
+            Instances of this class are provided by the Connected Services infrastructure.  It is not intended that you inherit from this class from your production code.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerContext.#ctor">
+            <summary>
+            This constructor supports unit testing your extension and is not intended to be used directly from your production code.
             </summary>
         </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceInstanceContext.ProjectHierarchy">
-            <summary>
-            Gets the current project context where the service should be added.
-            </summary>
-        </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceInstanceContext.ServiceInstance">
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerContext.ServiceInstance">
             <summary>
             Gets the instance of the service to add to the project.
             </summary>
         </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceInstanceContext.Logger">
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerContext.Logger">
             <summary>
             Gets a logger that can be used to write any messages to the caller. This will include
             warnings of steps that did not succeed but can be fixed by the end user or errors
             that caused the operation to fail.
             </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerContext.HandlerHelper">
+            <summary>
+            Gets a ConnectedServiceHandlerHelper that can be used to perform project configuration
+            tasks such as adding references, manipulating configuration files, and adding files to the project.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerContext.CreateEditableXmlConfigHelper">
+            <summary>
+            Creates an EditableXmlConfigHelper that can be used to read or write xml configuration files.
+            </summary>
+            <returns>
+            A new EditableXmlConfigHelper object which can be used to read or write xml configuration files.
+            </returns>
+            <remarks>
+            Xml configuration files are typically app.config or web.config files in the project.
+            </remarks>
         </member>
         <member name="T:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandler">
             <summary>
@@ -296,26 +621,43 @@
             Initializes a new instance of the ConnectedServiceHandler class.
             </summary>
         </member>
-        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandler.AddServiceInstanceAsync(Microsoft.VisualStudio.ConnectedServices.ConnectedServiceInstanceContext,System.Threading.CancellationToken)">
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandler.AddServiceInstanceAsync(Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerContext,System.Threading.CancellationToken)">
             <summary>
             Given a connected service instance, add the necessary files and SDKs to the project in order
             to enable the given service.
             </summary>
             <param name="context">
-            The service instance that should be added to the project, including the project that it should be added to.
+            The handler context containing information such as the ConnectedServiceInstance that should be added to the project, 
+            the project that it should be added to, and other services.
             </param>
             <param name="ct">
             Cancellation Token to track cancellation.
             </param>
             <returns>
-            Returns a Task that can be waited on to be notified when the service instance has been added to the project
-            or if anything went wrong.
+            Returns an AddServiceInstanceResult that contains information for the service folder and launching GettingStarted information
+            after AddServiceInstanceAsync has completed.
             </returns>
             <remarks>
-            The logger will write any status messages to the caller. This will include
+            The context's logger will write any status messages to the caller. This will include
             warnings and failures that occurred while trying to add a new file, SDK references,
             or injecting code.
             </remarks>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandler.UpdateServiceInstanceAsync(Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerContext,System.Threading.CancellationToken)">
+            <summary>
+            Given an existing connected service instance, update the necessary files and SDKs in the project in order
+            to enable the given service.
+            </summary>
+            <param name="context">
+            The service instance that should be added to the project, including the project that it should be added to and other information.
+            </param>
+            <param name="ct">
+            Cancellation Token to track cancellation.
+            </param>
+            <returns>
+            Returns an UpdateServiceInstanceResult that contains information for launching GettingStarted information
+            after UpdateServiceInstanceAsync has completed.
+            </returns>
         </member>
         <member name="T:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceProvider">
             <summary>
@@ -368,12 +710,12 @@
             and description are not enough for the user to understand.
             </summary>
         </member>
-        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceProvider.CreateConfiguratorAsync(Microsoft.VisualStudio.ConnectedServices.ConnectedServiceProviderHost)">
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceProvider.CreateConfiguratorAsync(Microsoft.VisualStudio.ConnectedServices.ConnectedServiceProviderContext)">
             <summary>
             Creates the view model object used for displaying the service configuration dialog.
             </summary>
-            <param name="host">
-            A host object that can provide services to the ConnectedServiceConfigurator.
+            <param name="context">
+            A context object that can provide information and other services to the ConnectedServiceConfigurator.
             </param>
             <returns>
             A ConnectedServiceConfigurator object that will be used as the view model in the service configuration dialog.
@@ -718,17 +1060,20 @@
             </para>
             </remarks>
         </member>
-        <member name="T:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceProviderHost">
+        <member name="T:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceProviderContext">
             <summary>
-            The host object for a Connected Service Provider.  It provides services to provider extensions.
+            The context information and services given to ConnectedServiceProvider instances during CreateConfiguratorAsync.
+            </summary>
+            <remarks>
+            Instances of this class are provided by the Connected Services infrastructure.  It is not intended that you inherit from this class from your production code.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceProviderContext.#ctor">
+            <summary>
+            This constructor supports unit testing your extension and is not intended to be used directly from your production code.
             </summary>
         </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceProviderHost.ProjectHierarchy">
-            <summary>
-            Gets the project's IVsHierarchy that the current Connected Service dialog is operating on.
-            </summary>
-        </member>
-        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceProviderHost.StartBusyIndicator(System.String)">
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceProviderContext.StartBusyIndicator(System.String)">
             <summary>
             Shows a busy indicator and message to the user to indicate that Visual Studio is actively working
             on processing the current request.
@@ -750,11 +1095,6 @@
             A ConnectedServiceConfigurator that is capable of displaying multiple pages before the service is added to the project.
             </summary>
         </member>
-        <member name="E:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizard.EnableNavigation">
-            <summary>
-            Event for enabling the navigation buttons (Previous, Next, or Finish)
-            </summary>
-        </member>
         <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizard.#ctor">
             <summary>
             Initializes a new instance of the ConnectedServiceWizard class.
@@ -765,13 +1105,20 @@
             Gets the collection of pages in the wizard.  Each page is a “step” in the wizard.
             </summary>
         </member>
-        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizard.OnEnableNavigation(Microsoft.VisualStudio.ConnectedServices.NavigationEnabledState)">
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizard.IsPreviousEnabled">
             <summary>
-            Raises the EnableNavigation event to enable/disable the wizard navigation buttons.
+            Gets or sets a value indicating whether the Previous button is enabled.
             </summary>
-            <param name="state">
-            The navigation button state of the wizard.
-            </param>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizard.IsNextEnabled">
+            <summary>
+            Gets or sets a value indicating whether the Next button is enabled.
+            </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizard.IsFinishEnabled">
+            <summary>
+            Gets or sets a value indicating whether the Finish button is enabled.
+            </summary>
         </member>
         <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizard.GetFinishedServiceInstanceAsync">
             <summary>
@@ -782,72 +1129,96 @@
             A Task that returns the completed ConnectedServiceInstance.
             </returns>
         </member>
-        <member name="T:Microsoft.VisualStudio.ConnectedServices.IConnectedServiceMetadata">
+        <member name="T:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerHelper">
             <summary>
-            Metadata for finding, filtering, and describing ConnectedServices Providers and Handlers.
-            </summary>
-        </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.IConnectedServiceMetadata.ProviderId">
-            <summary>
-            Gets the unique Provider ID for the provider/handler.  This is used to match
-            a provider with its handler.
-            </summary>
-        </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.IConnectedServiceMetadata.AppliesTo">
-            <summary>
-            Gets the "AppliesTo" query string for matching a connected service handler to a project's
-            capabilities.
-            </summary>
-        </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.IConnectedServiceMetadata.TargetPlatform">
-            <summary>
-            Gets the "TargetPlatform" string for matching a connected service handler to a project's
-            target platform.
-            </summary>
-        </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.IConnectedServiceMetadata.TargetPlatformVersion">
-            <summary>
-            Gets the "TargetPlatformVersion" string for matching a connected service handler to a project's
-            target platform version.
+            A class that contains helper methods that ConnectedServiceHandler objects
+            commonly use.
             </summary>
             <remarks>
-            The syntax for specifying a version range is the same syntax as used in the .vsixmanifest InstallationTarget Version
-            attribute.  For more information, see http://msdn.microsoft.com/en-us/library/ee943167.aspx.
+            The ConnectedServiceHandlerHelper operates on the same Visual Studio project as the corresponding
+            ConnectedServiceInstanceContext that it was retrieved from.
+            
+            Instances of this class are provided by the Connected Services infrastructure.  It is not intended that you inherit from this class from your production code.
             </remarks>
         </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.IConnectedServiceMetadata.SupportedOutputType">
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerHelper.#ctor">
             <summary>
-            Gets the "OutputType" string for matching a connected service handler to a project's
-            target platform.
+            This constructor supports unit testing your extension and is not intended to be used directly from your production code.
             </summary>
         </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.IConnectedServiceMetadata.SupportedProjectTypes">
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerHelper.TokenReplacementValues">
             <summary>
-            Gets the "ProjectTypes" query string for matching a connected service handler to a project's
-            target platform.
+            Gets a dictionary of token replacement key and values that will be used to replace 
+            tokens in AddFilesAsync and PerformTokenReplacement.
             </summary>
-            <remarks>
-            The Guids can be in the following formats:
-            "N": 32 digits: 00000000000000000000000000000000.
-            "D": 32 digits separated by hyphens: 00000000-0000-0000-0000-000000000000.
-            You can use the same syntax as the 'AppliesTo' attribute for building a query string.
-            </remarks>
         </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.IConnectedServiceMetadata.CustomEvaluator">
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerHelper.AddAssemblyReference(System.String)">
             <summary>
-            Gets a value indicating whether a connected service handler contains its own logic to
-            specify if it supports a project.  If true, the handler should implement the IVsHierarchyCustomEvaluator
-            interface.
+            Adds a reference to the specified assembly to the project.
             </summary>
-            <remarks>
-            For performance reasons, it is recommended to use the other properties if possible.  That way
-            fewer extensions need to be loaded.
-            </remarks>
+            <param name="assemblyPath">
+            The assembly to which to add a reference.  This can be specified either as a simple .NET Framework object name, such 
+            as "System.Web", or as a .NET Framework file name, such as "C:\path\program.dll".
+            </param>
+            <exception cref="T:System.InvalidOperationException">
+            Thrown when the assembly reference is not successfully added to the project.
+            </exception>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerHelper.AddFileAsync(System.String,System.String,Microsoft.VisualStudio.ConnectedServices.AddFileOptions)">
+            <summary>
+            Add the specified file to the project after doing token replacement.
+            </summary>
+            <param name="filename">
+            The file to copy and add to the project.
+            </param>
+            <param name="targetPath">
+            The full or relative path where the file should be added.  If specifying a full path, the path must be in a sub-directory
+            of the project's directory.
+            </param>
+            <param name="addFileOptions">
+            The options to use while adding the file.
+            </param>
+            <returns>
+            Returns the path to the file that was added.
+            </returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerHelper.GetServiceArtifactsRootFolder">
+            <summary>
+            Gets the name of the root folder to place the service related artifacts in.  Typcially each provider
+            instance should create its own subfolder under this root folder.
+            </summary>
+            <returns>
+            The name of the root folder.
+            </returns>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerHelper.PerformTokenReplacement(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Given an input, replace any tokens found in TokenReplacementValues or the specified dictionary with the specified values.
+            </summary>
+            <param name="input">
+            The text to update.
+            </param>
+            <param name="additionalReplacementValues">
+            A dictionary of key/value pairs that will be used to replace tokens in the input.
+            These values are additional to the values in TokenReplacementValues.  In the case of conflicts, the
+            values specified in additionalReplacementValues will override the TokenReplacementValues.
+            </param>
+            <returns>
+            Returns a new string with the tokens replaced.
+            </returns>
         </member>
         <member name="T:Microsoft.VisualStudio.ConnectedServices.ConnectedServicesManager">
             <summary>
             A MEF contract implemented by the Connected Services to expose externally
             callable Connected Services functionality.
+            </summary>
+            <remarks>
+            Instances of this class are provided by the Connected Services infrastructure.  It is not intended that you inherit from this class from your production code.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServicesManager.#ctor">
+            <summary>
+            This constructor supports unit testing your extension and is not intended to be used directly from your production code.
             </summary>
         </member>
         <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServicesManager.ShowConnectedServicesManager(Microsoft.VisualStudio.Shell.Interop.IVsHierarchy)">
@@ -919,6 +1290,14 @@
             <summary>
             A logging service which can be used to provide information to end user developers.
             </summary>
+            <remarks>
+            Instances of this class are provided by the Connected Services infrastructure.  It is not intended that you inherit from this class from your production code.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceLogger.#ctor">
+            <summary>
+            This constructor supports unit testing your extension and is not intended to be used directly from your production code.
+            </summary>
         </member>
         <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceLogger.WriteMessageAsync(Microsoft.VisualStudio.ConnectedServices.LoggerMessageCategory,System.String,System.Object[])">
             <summary>
@@ -939,9 +1318,17 @@
             Represents a page, or step, in a wizard.
             </summary>
         </member>
-        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizardPage.#ctor">
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizardPage.#ctor(Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizard)">
             <summary>
             Initializes a new instance of the ConnectedServiceWizardPage class.
+            </summary>
+            <param name="wizard">
+            The parent ConnectedServiceWizard view model that contains this page.
+            </param>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizardPage.Wizard">
+            <summary>
+            Gets the parent ConnectedServiceWizard view model that contains this page.
             </summary>
         </member>
         <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizardPage.Title">
@@ -953,6 +1340,18 @@
             <summary>
             Gets or sets the description of the page that is shown at the top of the wizard when the page is active.
             </summary>
+        </member>
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizardPage.DisableScrollbars">
+            <summary>
+            Gets or sets a value indicating whether or not the default scrollbar functionality for the page should be disabled.
+            </summary>
+            <remarks>
+            The default scrollbar functionality is to automatically add a vertical scrollbar if the vertical content is too large
+            to fit in the available vertical space.
+            
+            If the default scrollbar functionality is disabled, the desired scrollbar functionality must be handled within the page's
+            View control.
+            </remarks>
         </member>
         <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizardPage.Legend">
             <summary>
@@ -978,6 +1377,9 @@
             <summary>
             Gets or sets the WPF UI Element that describes the content of the page.
             </summary>
+            <remarks>
+            The default/minimum space available for this view is 588px (w) X 372px (h).
+            </remarks>
         </member>
         <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizardPage.OnPageEnteringAsync(Microsoft.VisualStudio.ConnectedServices.WizardEnteringArgs)">
             <summary>
@@ -986,9 +1388,6 @@
             <param name="args">
             Provides context on the page entering event.
             </param>
-            <returns>
-            A NavigationEnabledState object that describes which navigation buttons should be enabled/disabled.
-            </returns>
         </member>
         <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizardPage.OnPageLeavingAsync(Microsoft.VisualStudio.ConnectedServices.WizardLeavingArgs)">
             <summary>
@@ -1021,49 +1420,14 @@
             true if the IVsHierarchy is supported; otherwise, false.
             </returns>
         </member>
-        <member name="T:Microsoft.VisualStudio.ConnectedServices.NavigationEnabledState">
-            <summary>
-            A class that contains the navigation state for the Previous, Next, and Finish buttons of the wizard.
-            </summary>
-        </member>
-        <member name="M:Microsoft.VisualStudio.ConnectedServices.NavigationEnabledState.#ctor(System.Nullable{System.Boolean},System.Nullable{System.Boolean},System.Nullable{System.Boolean})">
-            <summary>
-            Initializes a new instance of the NavigationEnabledState class.
-            </summary>
-            <param name="isPreviousEnabled">
-            A value indicating whether or not the Previous action should be enabled.
-            A null value is used when the state shouldn't change from its current state.
-            </param>
-            <param name="isNextEnabled">
-            A value indicating whether or not the Next action should be enabled.
-            A null value is used when the state shouldn't change from its current state.
-            </param>
-            <param name="isFinishEnabled">
-            A value indicating whether or not the Finish action should be enabled.
-            A null value is used when the state shouldn't change from its current state.
-            </param>
-        </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.NavigationEnabledState.IsPreviousEnabled">
-            <summary>
-            Gets or sets a value indicating whether or not the Previous action should be enabled.
-            A null value is used when the state shouldn't change from its current state.
-            </summary>
-        </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.NavigationEnabledState.IsNextEnabled">
-            <summary>
-            Gets or sets a value indicating whether or not the Next action should be enabled.
-            A null value is used when the state shouldn't change from its current state.
-            </summary>
-        </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.NavigationEnabledState.IsFinishEnabled">
-            <summary>
-            Gets or sets a value indicating whether or not the Finish action should be enabled.
-            A null value is used when the state shouldn't change from its current state.
-            </summary>
-        </member>
         <member name="T:Microsoft.VisualStudio.ConnectedServices.WizardEnteringArgs">
             <summary>
             The input arguments to the ConnectedServiceWizardPage.OnPageEnteringAsync method.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.WizardEnteringArgs.#ctor(Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizardPage)">
+            <summary>
+            Initializes a new instance of the WizardEnteringArgs class.
             </summary>
         </member>
         <member name="P:Microsoft.VisualStudio.ConnectedServices.WizardEnteringArgs.PreviousPage">
@@ -1074,6 +1438,11 @@
         <member name="T:Microsoft.VisualStudio.ConnectedServices.WizardLeavingArgs">
             <summary>
             The input arguments to the ConnectedServiceWizardPage.OnPageLeavingAsync method.
+            </summary>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.WizardLeavingArgs.#ctor(Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizardPage)">
+            <summary>
+            Initializes a new instance of the WizardEnteringArgs class.
             </summary>
         </member>
         <member name="P:Microsoft.VisualStudio.ConnectedServices.WizardLeavingArgs.NextPage">

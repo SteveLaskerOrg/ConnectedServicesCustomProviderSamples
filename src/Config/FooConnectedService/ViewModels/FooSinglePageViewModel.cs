@@ -27,7 +27,7 @@ namespace Microsoft.ConnectedServices.Samples.ViewModels {
             set {
                 if (value != _redirectUrl) {
                     _redirectUrl = value;
-                    this.OnNotifyPropertyChanged("RedirectUrl");
+                    this.OnPropertyChanged("RedirectUrl");
                 }
             }
         }
