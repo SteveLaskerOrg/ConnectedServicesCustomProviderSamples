@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace Microsoft.ConnectedServices.Samples
 {
-    [Export(typeof(ConnectedServiceHandler))]
-    [ExportMetadata("ProviderId", "Microsoft.ConnectedServiceSamples.FooService.SinglePage")]
-    [ExportMetadata("AppliesTo", "CSharp")]
+    [ConnectedServiceHandlerExport(
+        "Microsoft.ConnectedServiceSamples.FooService.SinglePage",
+        AppliesTo = "CSharp")]
     internal class FooHander : ConnectedServiceHandler
     {
         public override async Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken ct)

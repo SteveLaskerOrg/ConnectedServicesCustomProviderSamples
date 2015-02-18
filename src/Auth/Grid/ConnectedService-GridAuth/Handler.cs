@@ -1,14 +1,12 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
-using System;
-using System.ComponentModel.Composition;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Microsoft.ConnectedServices.Samples
 {
-    [Export(typeof(ConnectedServiceHandler))]
-    [ExportMetadata("ProviderId", "Microsoft.ConnectedServices.Samples.FooService.GridAuth")]
-    [ExportMetadata("AppliesTo", "CSharp")]
+    [ConnectedServiceHandlerExport(
+        "Microsoft.ConnectedServices.Samples.FooService.GridAuth",
+        AppliesTo = "CSharp")]
     internal class Handler : ConnectedServiceHandler
     {
         /// <summary>

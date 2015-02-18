@@ -1,15 +1,16 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
-using System.ComponentModel.Composition;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Microsoft.ConnectedServices.Samples
 {
-    [Export(typeof(ConnectedServiceHandler))]
-    [ExportMetadata("ProviderId", "Microsoft.ConnectedServiceSamples.FooService.Config")]
-    [ExportMetadata("AppliesTo", "CSharp")]
-    internal class FooHander : ConnectedServiceHandler {
-        public override async Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken ct) {
+    [ConnectedServiceHandlerExport(
+        "Microsoft.ConnectedServiceSamples.FooService.Config",
+        AppliesTo = "CSharp")]
+    internal class FooHander : ConnectedServiceHandler
+    {
+        public override async Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken ct)
+        {
             // See Handler Samples for how to work with the project system 
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Handler Invoked");
             await UpdateConfigFileAsync(context);
@@ -17,7 +18,8 @@ namespace Microsoft.ConnectedServices.Samples
             return new AddServiceInstanceResult("FooConfig", null);
         }
 
-        private static async Task UpdateConfigFileAsync(ConnectedServiceHandlerContext context) {
+        private static async Task UpdateConfigFileAsync(ConnectedServiceHandlerContext context)
+        {
             // Push an update to the progress notifications
             // Introduce Resources as the means to manage strings shown to users, which may get localized
             // Or, at least verified by someone that should be viewing strings, not buried in the code
@@ -27,7 +29,8 @@ namespace Microsoft.ConnectedServices.Samples
             FooConnectedServiceInstance fooInstance = (FooConnectedServiceInstance)context.ServiceInstance;
 
             // Launch the EditableConfigHelper to write several entries to the Config file
-            using (EditableXmlConfigHelper configHelper = context.CreateEditableXmlConfigHelper()) {
+            using (EditableXmlConfigHelper configHelper = context.CreateEditableXmlConfigHelper())
+            {
                 // We ahve the option to write name/value pairs
                 configHelper.SetAppSetting("ConsumerKey",
                     fooInstance.ConfigOptions.ConsumerKey,
@@ -42,13 +45,13 @@ namespace Microsoft.ConnectedServices.Samples
                 // Write the values to disk
                 configHelper.Save();
             }
+         
             // Some updates to the progress dialog
             System.Threading.Thread.Sleep(1000);
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Doing Something Else");
             System.Threading.Thread.Sleep(1000);
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Another Entry to show progress");
             System.Threading.Thread.Sleep(1000);
-
         }
     }
 }

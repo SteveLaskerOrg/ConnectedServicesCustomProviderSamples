@@ -1,16 +1,17 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 using System;
+using System.Collections.Generic;
 using System.Reflection;
-using System.ComponentModel.Composition;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
-using System.Collections.Generic;
 
-namespace Microsoft.ConnectedServices.Samples {
-    [Export(typeof(ConnectedServiceProvider))]
-    [ExportMetadata("ProviderId", "Microsoft.ConnectedServiceSamples.FooService.Wizard")]
-    internal class FooProvider : ConnectedServiceProvider {
-        public FooProvider() {
+namespace Microsoft.ConnectedServices.Samples
+{
+    [ConnectedServiceProviderExport("Microsoft.ConnectedServiceSamples.FooService.Wizard")]
+    internal class FooProvider : ConnectedServiceProvider
+    {
+        public FooProvider()
+        {
             this.Name = "Sample: Wizard Template";
             this.Category = "Foo";
             this.Description = "A sample provider demonstrating the Wizard UI template";
@@ -20,7 +21,8 @@ namespace Microsoft.ConnectedServices.Samples {
             this.MoreInfoUri = new Uri("http://Microsoft.com");
         }
 
-        public override IEnumerable<Tuple<string, Uri>> GetSupportedTechnologyLinks() {
+        public override IEnumerable<Tuple<string, Uri>> GetSupportedTechnologyLinks()
+        {
             // A list of supported technolgoies, such as which services it supports
             // If a Provider configured Dynamics CRM with Azure Redis Cache and Azure Auth, 
             // it would include the following
@@ -28,7 +30,9 @@ namespace Microsoft.ConnectedServices.Samples {
             yield return Tuple.Create("Azure Redis Cache", new Uri("http://azure.microsoft.com/en-us/services/cache/"));
             yield return Tuple.Create("Azure Active Directory", new Uri("http://azure.microsoft.com/en-us/services/active-directory/"));
         }
-        public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context) {
+
+        public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context)
+        {
             return Task.FromResult<ConnectedServiceConfigurator>(new ViewModels.FooServiceWizard());
         }
     }

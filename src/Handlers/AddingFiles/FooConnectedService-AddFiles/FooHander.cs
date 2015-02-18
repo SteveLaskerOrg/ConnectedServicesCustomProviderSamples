@@ -1,15 +1,14 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 using System;
-using System.ComponentModel.Composition;
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Microsoft.ConnectedServices.Samples
 {
-    [Export(typeof(ConnectedServiceHandler))]
-    [ExportMetadata("ProviderId", "Microsoft.ConnectedServiceSamples.FooService.AddingFiles")]
-    [ExportMetadata("AppliesTo", "CSharp")]
+    [ConnectedServiceHandlerExport(
+        "Microsoft.ConnectedServiceSamples.FooService.AddingFiles",
+        AppliesTo = "CSharp")]
     internal class FooHander : ConnectedServiceHandler
     {
         public override async Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken ct)

@@ -1,15 +1,13 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 using System;
+using System.Collections.Generic;
 using System.Reflection;
-using System.ComponentModel.Composition;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
-using System.Collections.Generic;
 
 namespace Microsoft.ConnectedServices.Samples
 {
-    [Export(typeof(ConnectedServiceProvider))]
-    [ExportMetadata("ProviderId", "Microsoft.ConnectedServiceSamples.FooService.AddingFiles")]
+    [ConnectedServiceProviderExport("Microsoft.ConnectedServiceSamples.FooService.AddingFiles")]
     internal class FooProvider : ConnectedServiceProvider
     {
         public FooProvider()

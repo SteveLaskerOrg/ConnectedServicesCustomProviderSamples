@@ -1,14 +1,12 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.Composition;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
 namespace Microsoft.ConnectedServices.Samples
 {
-    [Export(typeof(ConnectedServiceProvider))]
-    [ExportMetadata("ProviderId", "Microsoft.ConnectedServices.Samples.FooService.GridAuth")]
+    [ConnectedServiceProviderExport("Microsoft.ConnectedServices.Samples.FooService.GridAuth")]
     internal class Provider : ConnectedServiceProvider
     {
         public Provider()
