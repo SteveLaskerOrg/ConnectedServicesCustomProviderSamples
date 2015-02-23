@@ -37,16 +37,6 @@
             A base class for the ConnectedServiceProviderContext and ConnectedServiceHandlerContext classes.
             </summary>
         </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceContext.ExtendedDesignerData">
-            <summary>
-            Gets the designer data for the connected service that is stored in the ConnectedServices.json file for the
-            service.  This data is read/writeable both when the service instance is being added as well as being updated.
-            </summary>
-            <remarks>
-            The Type of values that may be added to the dictionary are Byte, SByte, Int16, Int32, Int64, UInt16, UInt32,
-            UInt64, Double, Single, String, Char, Guid, Boolean, DateTime or an array of theses types.
-            </remarks>
-        </member>
         <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceContext.ProjectHierarchy">
             <summary>
             Gets the project's IVsHierarchy that the current Connected Service dialog is operating on.
@@ -73,6 +63,34 @@
             <remarks>
             Xml configuration files are typically app.config or web.config files in the project.
             </remarks>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceContext.SetExtendedDesignerData``1(``0)">
+            <summary>
+            Sets the designer data for the connected service that is stored in the ConnectedServices.json file for the
+            service upon successfully adding/updating the service.
+            </summary>
+            <typeparam name="TData">
+            The type of data being stored.
+            </typeparam>
+            <param name="data">
+            The extended designer data to store in the ConnectedServices.json file.
+            </param>
+            <remarks>
+            The DataContractAttribute and DataMemberAttribute can be used to control how the object is serialized.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceContext.GetExtendedDesignerData``1">
+            <summary>
+            Gets the designer data for the connected service that is stored in the ConnectedServices.json file for the
+            service.
+            </summary>
+            <typeparam name="TData">
+            The type of data being retrieved.
+            </typeparam>
+            <returns>
+            The extended designer data that is stored in the ConnectedServices.json file.  Null is returned if no
+            extended designer data exists.
+            </returns>
         </member>
         <member name="T:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceUpdateContext">
             <summary>
@@ -1168,7 +1186,7 @@
             <summary>
             Add the specified file to the project after doing token replacement.
             </summary>
-            <param name="filename">
+            <param name="fileName">
             The file to copy and add to the project.
             </param>
             <param name="targetPath">
@@ -1185,7 +1203,7 @@
         <member name="M:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceHandlerHelper.GetServiceArtifactsRootFolder">
             <summary>
             Gets the name of the root folder to place the service related artifacts in.  Typcially each provider
-            instance should create its own subfolder under this root folder.
+            will create its own subfolder under this root folder.
             </summary>
             <returns>
             The name of the root folder.
@@ -1341,15 +1359,15 @@
             Gets or sets the description of the page that is shown at the top of the wizard when the page is active.
             </summary>
         </member>
-        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizardPage.DisableScrollbars">
+        <member name="P:Microsoft.VisualStudio.ConnectedServices.ConnectedServiceWizardPage.DisableScrollBars">
             <summary>
-            Gets or sets a value indicating whether or not the default scrollbar functionality for the page should be disabled.
+            Gets or sets a value indicating whether or not the default scroll bar functionality for the page should be disabled.
             </summary>
             <remarks>
-            The default scrollbar functionality is to automatically add a vertical scrollbar if the vertical content is too large
+            The default scroll bar functionality is to automatically add a vertical scroll bar if the vertical content is too large
             to fit in the available vertical space.
             
-            If the default scrollbar functionality is disabled, the desired scrollbar functionality must be handled within the page's
+            If the default scroll bar functionality is disabled, the desired scroll bar functionality must be handled within the page's
             View control.
             </remarks>
         </member>
