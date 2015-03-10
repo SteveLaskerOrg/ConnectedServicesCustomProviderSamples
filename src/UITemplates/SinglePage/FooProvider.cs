@@ -7,14 +7,14 @@ using System.Windows.Media.Imaging;
 
 namespace Microsoft.ConnectedServices.Samples
 {
-    [ConnectedServiceProviderExport("Microsoft.ConnectedServiceSamples.FooService.Wizard")]
+    [ConnectedServiceProviderExport("Microsoft.ConnectedServiceSamples.FooService.SinglePage")]
     internal class FooProvider : ConnectedServiceProvider
     {
         public FooProvider()
         {
-            this.Name = "Sample: Wizard Template";
+            this.Name = "Sample: SinglePage Template";
             this.Category = "Foo";
-            this.Description = "A sample provider demonstrating the Wizard UI template";
+            this.Description = "A sample provider demonstrating the Single Page UI template";
             this.Icon = new BitmapImage(new Uri("pack://application:,,/" + Assembly.GetExecutingAssembly().ToString() + ";component/" + "Resources/Icon.png"));
             this.CreatedBy = "Microsoft";
             this.Version = new Version(1, 0, 0);
@@ -33,7 +33,7 @@ namespace Microsoft.ConnectedServices.Samples
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context)
         {
-            return Task.FromResult<ConnectedServiceConfigurator>(new ViewModels.FooServiceWizard());
+            return Task.FromResult<ConnectedServiceConfigurator>(new ViewModels.FooSinglePageViewModel());
         }
     }
 }
