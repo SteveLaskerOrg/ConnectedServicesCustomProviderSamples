@@ -14,10 +14,8 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles.ViewModels
         {
             this.Title = "Samples";
             this.Description = "Adding Files to the Project";
-            //this.View = new Views.FooSinglePageView();
-            //this.View.DataContext = this;
 
-            this.ServiceName = "FooService";
+            this.ServiceName = "Contoso Service";
             this.ExtraInformation = "Default Extra Information";
         }
 

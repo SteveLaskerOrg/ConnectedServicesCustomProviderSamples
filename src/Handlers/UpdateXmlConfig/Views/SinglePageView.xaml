@@ -6,11 +6,7 @@
              mc:Ignorable="d" 
              xmlns:local="clr-namespace:Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig.ViewModels"
              d:DesignHeight="300" d:DesignWidth="300">
-<!--
-    <UserControl.DataContext>
-        <local:FooSinglePageViewModel/>
-    </UserControl.DataContext>
--->
+
     <StackPanel >
         <Label HorizontalAlignment="Center" FontSize="24">Values provided by the user</Label>
         <Label>Redirect URL:</Label>

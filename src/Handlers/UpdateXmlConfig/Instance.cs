@@ -7,8 +7,8 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig
 
         public Instance()
         {
-            this.InstanceId = "FooService";
-            this.Name = Resources.ConnectedServiceInstance_Name;
+            this.InstanceId = "Contoso Service";
+            this.Name = "Contoso Service";
             this.ConfigOptions = new Models.ConfigOptions();
         }
 

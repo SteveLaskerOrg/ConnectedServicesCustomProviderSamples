@@ -9,7 +9,7 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles
     [ConnectedServiceHandlerExport(
         "Microsoft.Samples.AddingFiles",
         AppliesTo = "CSharp")]
-    internal class Hander : ConnectedServiceHandler
+    internal class Handler : ConnectedServiceHandler
     {
         public override async Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken ct)
         {

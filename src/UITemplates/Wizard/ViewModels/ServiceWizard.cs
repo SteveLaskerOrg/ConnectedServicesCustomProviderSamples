@@ -15,7 +15,7 @@ namespace Microsoft.ConnectedServices.Samples.UITemplates.Wizard.ViewModels
         public override Task<ConnectedServiceInstance> GetFinishedServiceInstanceAsync()
         {
             ConnectedServiceInstance instance = new ConnectedServiceInstance();
-            instance.Name = "SpecificFooInstance";
+            instance.Name = "Contoso Service";
             return Task.FromResult(instance);
         }
     }

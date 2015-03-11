@@ -9,7 +9,7 @@ namespace Microsoft.ConnectedServices.Samples.UpdateSupport
     [ConnectedServiceHandlerExport(
         "Microsoft.Samples.UpdateSupport",
         AppliesTo = "CSharp")]
-    internal class Hander : ConnectedServiceHandler
+    internal class Handler : ConnectedServiceHandler
     {
         private const string GettingStartedUrl = "https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples";
 
@@ -23,7 +23,7 @@ namespace Microsoft.ConnectedServices.Samples.UpdateSupport
             // Adds the 'ConnectedService.json' and 'Getting Started' artifacts to the project in the "SampleSinglePage" directory and opens the page
             // This would be your guidance on how a developer would complete development for the service
             // What Happened, and required Next Steps, and Sample code
-            return new AddServiceInstanceResult(context.ServiceInstance.Name, new Uri(Hander.GettingStartedUrl));
+            return new AddServiceInstanceResult(context.ServiceInstance.Name, new Uri(Handler.GettingStartedUrl));
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Microsoft.ConnectedServices.Samples.UpdateSupport
             return new UpdateServiceInstanceResult()
             {
                 // ensure the GettingStartedUrl is up to date
-                GettingStartedUrl = new Uri(Hander.GettingStartedUrl)
+                GettingStartedUrl = new Uri(Handler.GettingStartedUrl)
             };
         }
 

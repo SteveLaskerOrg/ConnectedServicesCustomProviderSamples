@@ -12,7 +12,7 @@ namespace Microsoft.ConnectedServices.Samples.Authentication.SinglePage
         public Provider()
         {
             // Set the values to be displayed in the first Connected Services Selection UI
-            this.Category = "Foo";
+            this.Category = "Contoso";
             this.Name = "Sample: Single Page Auth";
             this.Description = "Sample Provider with Single Page Auth functionality.";
             this.Icon = new BitmapImage(new Uri("pack://application:,,/" + this.GetType().Assembly.ToString() + ";component/Resources/Icon.png"));

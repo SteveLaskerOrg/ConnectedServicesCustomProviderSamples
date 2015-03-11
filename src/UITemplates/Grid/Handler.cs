@@ -2,18 +2,18 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.UITemplates.Wizard
+namespace Microsoft.ConnectedServices.Samples.UITemplates.Grid
 {
     [ConnectedServiceHandlerExport(
-        "Microsoft.Samples.WizardUITemplate",
+        "Microsoft.Samples.GridUITemplate",
         AppliesTo = "CSharp")]
-    internal class Hander : ConnectedServiceHandler
+    internal class Handler : ConnectedServiceHandler
     {
         public override async Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken ct)
         {
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Handler Invoked");
 
-            return new AddServiceInstanceResult("FooWizard", null);
+            return new AddServiceInstanceResult("GridUITemplate", null);
         }
     }
 }

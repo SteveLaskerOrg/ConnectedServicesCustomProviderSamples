@@ -7,7 +7,7 @@ namespace Microsoft.ConnectedServices.Samples.Authentication.SinglePage.ViewMode
     {
         public SinglePageViewModel()
         {
-            this.Title = "Foo Service";
+            this.Title = "Contoso Service";
             this.Description = "Sample SinglePage with Auth";
             this.View = new Views.SinglePageView();
             this.View.DataContext = this;

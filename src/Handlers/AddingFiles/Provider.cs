@@ -13,7 +13,7 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles
         public Provider()
         {
             this.Name = "Sample: Adding Files";
-            this.Category = "Foo";
+            this.Category = "Contoso";
             this.Description = "A sample handler demonstrating Adding Files to the project";
             this.Icon = new BitmapImage(new Uri("pack://application:,,/" + Assembly.GetExecutingAssembly().ToString() + ";component/" + "Resources/Icon.png"));
             this.CreatedBy = "Microsoft";

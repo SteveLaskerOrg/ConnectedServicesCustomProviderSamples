@@ -11,13 +11,13 @@ namespace Microsoft.ConnectedServices.Samples.UITemplates.Grid.ViewModels
         private List<ConnectedServiceInstance> _instances;
         public GridViewModel()
         {
-            this.Description = "Description: Configure the Foo Service";
+            this.Description = "Description: Configure the Contoso Service";
             // Enables the Configure Service link above the grid. 
             // Implication is configuration to the overall service, not one of the consumption units of the service
             // For instance, Configure the overall Azure Storage service, vs. some storage containers
             this.CanConfigureService = true;
             // Text displayed. At one point, there was no default text. 
-            this.ConfigureServiceText = "Config Servico";
+            this.ConfigureServiceText = "Config Service";
 
             // Toggles the Create button in the bottom left corner allowing the developer to create new instances 
             // and populate rows in the grid

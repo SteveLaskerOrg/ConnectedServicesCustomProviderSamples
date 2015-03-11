@@ -11,7 +11,7 @@ namespace Microsoft.ConnectedServices.Samples.Authentication.Grid
     {
         public Provider()
         {
-            this.Category = "Foo";
+            this.Category = "Contoso";
             this.Name = "Sample: Grid Auth";
             this.Description = "Sample Provider with Grid Auth functionality.";
             this.Icon = new BitmapImage(new Uri("pack://application:,,/" + this.GetType().Assembly.ToString() + ";component/Resources/Icon.png"));

@@ -13,7 +13,7 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig.ViewModel
             this.View.DataContext = this;
             //}
             this.Title = "Title: Single Page Config";
-            this.Description = "Description: Configure the Foo Service";
+            this.Description = "Description: Configure the Contoso Service";
             this.IsFinishEnabled = true;
             this.RedirectUrl = "http://MyCompanyLoginUrl.dot";
         }

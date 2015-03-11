@@ -13,7 +13,7 @@ namespace Microsoft.ConnectedServices.Samples.UITemplates.Grid
         public Provider()
         {
             this.Name = "Sample: Grid Template";
-            this.Category = "Foo";
+            this.Category = "Contoso";
             this.Description = "A sample provider demonstrating the Grid UI template";
             this.Icon = new BitmapImage(new Uri("pack://application:,,/" + Assembly.GetExecutingAssembly().ToString() + ";component/" + "Resources/Icon.png"));
             this.CreatedBy = "Microsoft";

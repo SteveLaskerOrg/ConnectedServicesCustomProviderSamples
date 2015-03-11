@@ -18,7 +18,7 @@ namespace Microsoft.ConnectedServices.Samples.Authentication.Grid
             // See Handler Samples for how to work with the project system 
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Handler Invoked");
 
-            return new AddServiceInstanceResult("FooGridAuth", null);
+            return new AddServiceInstanceResult("GridAuth", null);
         }
     }
 }

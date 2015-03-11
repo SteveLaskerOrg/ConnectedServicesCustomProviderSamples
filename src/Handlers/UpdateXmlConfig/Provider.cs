@@ -13,7 +13,7 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig
         public Provider()
         {
             this.Name = "Sample: Config Management";
-            this.Category = "Foo";
+            this.Category = "Contoso";
             this.Description = "A sample provider demonstrating config management";
             this.Icon = new BitmapImage(new Uri("pack://application:,,/" + Assembly.GetExecutingAssembly().ToString() + ";component/" + "Resources/Icon.png"));
             this.CreatedBy = "Microsoft";

@@ -10,7 +10,7 @@ namespace Microsoft.ConnectedServices.Samples.UITemplates.SinglePage.ViewModels
 
             this.View = new Views.SinglePageView();
             this.Title = "Title: Single Page Config";
-            this.Description = "Description: Configure the Foo Service";
+            this.Description = "Description: Configure the Contoso Service";
             this.IsFinishEnabled = true;
         }
 
@@ -24,7 +24,7 @@ namespace Microsoft.ConnectedServices.Samples.UITemplates.SinglePage.ViewModels
         public override Task<ConnectedServiceInstance> GetFinishedServiceInstanceAsync()
         {
             ConnectedServiceInstance instance = new ConnectedServiceInstance();
-            instance.Name = "Foo Service";
+            instance.Name = "Contoso Service";
             return Task.FromResult(instance);
         }
     }

@@ -18,7 +18,7 @@ namespace Microsoft.ConnectedServices.Samples.Authentication.SinglePage
             // See Handler Samples for how to work with the project system 
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Handler Invoked");
 
-            return new AddServiceInstanceResult("FooSinglePageAuth", null);
+            return new AddServiceInstanceResult("SinglePageAuth", null);
         }
     }
 }
