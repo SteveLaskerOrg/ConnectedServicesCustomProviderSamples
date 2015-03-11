@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.ConnectedServices;
+﻿using Microsoft.ConnectedServices.Samples.UpdateSupport.Views;
+using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading.Tasks;
 
 namespace Microsoft.ConnectedServices.Samples.UpdateSupport.ViewModels
@@ -15,6 +16,8 @@ namespace Microsoft.ConnectedServices.Samples.UpdateSupport.ViewModels
         {
             this.Title = "Samples";
             this.Description = "Updating a Connected Service";
+            this.View = new SinglePageView();
+            this.View.DataContext = this;
 
             this.ServiceName = "SampleService";
             this.ExtraInformation = "Default Extra Information";

@@ -8,7 +8,8 @@ namespace Microsoft.ConnectedServices.Samples.UITemplates.Grid.ViewModels
 {
     internal class GridViewModel : ConnectedServiceGrid
     {
-        private List<ConnectedServiceInstance> _instances;
+        private List<ConnectedServiceInstance> instances;
+
         public GridViewModel()
         {
             this.Description = "Description: Configure the Contoso Service";
@@ -82,14 +83,14 @@ namespace Microsoft.ConnectedServices.Samples.UITemplates.Grid.ViewModels
             // for the purposes of this sample, we re-create them each time
             // In a real scenario, you'd like call a discovery api on your service to retrieve the info
             // Notice that clicking Refresh replaces all the instances
-            this._instances = new List<ConnectedServiceInstance>(){
+            this.instances = new List<ConnectedServiceInstance>(){
                 // Note: CreateInstance is method in this class that generalizes adding Columns and Metadata 
                 // to a grid row, or a specific instance
                 this.CreateInstance("#1", "1st column2", "1st Column3", "1st detail1", "1st detail2", "1st detail3"),
                 this.CreateInstance("#2", "2nd column2", "2nd Column3", "2nd detail1", "2nd detail2", "2nd detail3"),
             };
 
-            return Task.FromResult<IEnumerable<ConnectedServiceInstance>>(this._instances);
+            return Task.FromResult<IEnumerable<ConnectedServiceInstance>>(this.instances);
         }
 
         /// <summary>
@@ -124,7 +125,7 @@ namespace Microsoft.ConnectedServices.Samples.UITemplates.Grid.ViewModels
         public override Task<ConnectedServiceInstance> CreateServiceInstanceAsync(CancellationToken ct)
         {
             // Called by the Create link in the bottom left corner, if enabled
-            int instanceNumber = this._instances.Count + 1;
+            int instanceNumber = this.instances.Count + 1;
             ConnectedServiceInstance newInstance = this.CreateInstance(
                 "#" + instanceNumber,
                 instanceNumber + " column2",
@@ -132,7 +133,7 @@ namespace Microsoft.ConnectedServices.Samples.UITemplates.Grid.ViewModels
                 instanceNumber + " detail1",
                 instanceNumber + " detail2",
                 instanceNumber + " detail3");
-            this._instances.Add(newInstance);
+            this.instances.Add(newInstance);
 
             return Task.FromResult(newInstance);
         }

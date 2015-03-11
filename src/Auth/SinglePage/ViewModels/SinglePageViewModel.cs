@@ -1,63 +1,64 @@
-﻿using Microsoft.VisualStudio.ConnectedServices;
+﻿using Microsoft.ConnectedServices.Samples.Authentication.SinglePage.Views;
+using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading.Tasks;
 
 namespace Microsoft.ConnectedServices.Samples.Authentication.SinglePage.ViewModels
 {
     internal class SinglePageViewModel : ConnectedServiceSinglePage
     {
+        private string serviceName;
+        private string authenticateMessage;
+        private AuthenticatorViewModel authenticator;
+
         public SinglePageViewModel()
         {
             this.Title = "Contoso Service";
             this.Description = "Sample SinglePage with Auth";
-            this.View = new Views.SinglePageView();
+            this.View = new SinglePageView();
             this.View.DataContext = this;
 
             this.ServiceName = "SampleService";
         }
 
-        private string _serviceName;
         /// <summary>
         /// Gets or sets the first value that the user can enter.
         /// </summary>
         public string ServiceName
         {
-            get { return this._serviceName; }
+            get { return this.serviceName; }
             set
             {
-                this._serviceName = value;
+                this.serviceName = value;
                 this.OnPropertyChanged();
                 this.CalculateIsFinishEnabled();
             }
         }
 
-
-        private string _authenticateMessage;
         /// <summary>
         /// Gets or sets the message shown to the user when he is not signed in.
         /// </summary>
         public string AuthenticateMessage
         {
-            get { return this._authenticateMessage; }
+            get { return this.authenticateMessage; }
             set
             {
-                this._authenticateMessage = value;
+                this.authenticateMessage = value;
                 this.OnPropertyChanged();
             }
         }
 
-        private AuthenticatorViewModel _authenticator;
         // Hosts the Authentication ViewModel
         public AuthenticatorViewModel Authenticator
         {
             get
             {
-                if (this._authenticator == null)
+                if (this.authenticator == null)
                 {
-                    this._authenticator = new AuthenticatorViewModel();
-                    this._authenticator.AuthenticationChanged += Authenticator_AuthenticationChanged;
+                    this.authenticator = new AuthenticatorViewModel();
+                    this.authenticator.AuthenticationChanged += Authenticator_AuthenticationChanged;
                     this.CalculateAuthentication();
                 }
-                return this._authenticator;
+                return this.authenticator;
             }
         }
 

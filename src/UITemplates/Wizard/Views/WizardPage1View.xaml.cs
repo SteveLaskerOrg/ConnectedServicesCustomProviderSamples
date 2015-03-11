@@ -3,11 +3,11 @@
 namespace Microsoft.ConnectedServices.Samples.UITemplates.Wizard.Views
 {
     /// <summary>
-    /// Interaction logic for AuthenticatorView.xaml
+    /// Interaction logic for WizardPage1View.xaml
     /// </summary>
-    public partial class AuthenticatorView : UserControl
+    public partial class WizardPage1View : UserControl
     {
-        public AuthenticatorView()
+        public WizardPage1View()
         {
             InitializeComponent();
         }

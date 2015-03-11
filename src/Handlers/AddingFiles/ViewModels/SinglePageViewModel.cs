@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.ConnectedServices;
+﻿using Microsoft.ConnectedServices.Samples.Handlers.AddingFiles.Views;
+using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading.Tasks;
 
 namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles.ViewModels
@@ -14,6 +15,8 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles.ViewModels
         {
             this.Title = "Samples";
             this.Description = "Adding Files to the Project";
+            this.View = new SinglePageView();
+            this.View.DataContext = this;
 
             this.ServiceName = "Contoso Service";
             this.ExtraInformation = "Default Extra Information";

@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.ConnectedServices;
+﻿using Microsoft.ConnectedServices.Samples.Authentication.SinglePage.Views;
+using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Windows;
 using System.Windows.Input;
@@ -10,51 +11,52 @@ namespace Microsoft.ConnectedServices.Samples.Authentication.SinglePage.ViewMode
     /// </summary>
     internal class AuthenticatorViewModel : ConnectedServiceAuthenticator
     {
+        private string linkText;
+        private string userName;
+        private ICommand changeAuthentication;
+
         public AuthenticatorViewModel()
         {
             this.LinkText = "Sign In";
-            this._changeAuthentication = new ChangeAuthenticationCommand(this);
+            this.changeAuthentication = new ChangeAuthenticationCommand(this);
 
-            this.View = new Views.AuthenticatorView();
+            this.View = new AuthenticatorView();
             this.View.DataContext = this;
         }
 
-        private string _linkText;
         /// <summary>
         /// Gets or sets the text of the hyperlink.
         /// Set with properties to support localization and toggling the state
         /// </summary>
         public string LinkText
         {
-            get { return this._linkText; }
+            get { return this.linkText; }
             set
             {
-                this._linkText = value;
+                this.linkText = value;
                 this.OnPropertyChanged();
             }
         }
 
-        private string _userName;
         /// <summary>
         /// Gets or sets the currently logged in user's name.
         /// </summary>
         public string UserName
         {
-            get { return this._userName; }
+            get { return this.userName; }
             set
             {
-                this._userName = value;
+                this.userName = value;
                 this.OnPropertyChanged();
             }
         }
 
-        private ICommand _changeAuthentication;
         /// <summary>
         /// The command that will be invoked when the user clicks the hyperlink.
         /// </summary>
         public ICommand ChangeAuthentication
         {
-            get { return this._changeAuthentication; }
+            get { return this.changeAuthentication; }
         }
 
         /// <summary>

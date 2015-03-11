@@ -9,7 +9,7 @@ namespace Microsoft.ConnectedServices.Samples.UITemplates.Wizard.ViewModels
             this.Title = "Page 1";
             this.Description = "Page 1 Description";
             this.Legend = "Page 1 Legend";
-            this.View = new Views.WizardPage1Viiew();
+            this.View = new Views.WizardPage1View();
             this.View.DataContext = this;
         }
     }

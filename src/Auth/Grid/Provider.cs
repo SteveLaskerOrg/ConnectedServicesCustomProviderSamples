@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.ConnectedServices;
+﻿using Microsoft.ConnectedServices.Samples.Authentication.Grid.ViewModels;
+using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace Microsoft.ConnectedServices.Samples.Authentication.Grid
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context)
         {
-            ConnectedServiceConfigurator configurator = new ViewModels.GridViewModel();
+            ConnectedServiceConfigurator configurator = new GridViewModel();
             return Task.FromResult(configurator);
         }
     }

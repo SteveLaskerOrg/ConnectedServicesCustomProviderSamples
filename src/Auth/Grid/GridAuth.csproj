@@ -64,7 +64,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.ConnectedServices">
-      <HintPath>..\..\..\..\Externals\Microsoft.VisualStudio.ConnectedServices.dll</HintPath>
+      <HintPath>..\..\..\Externals\Microsoft.VisualStudio.ConnectedServices.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

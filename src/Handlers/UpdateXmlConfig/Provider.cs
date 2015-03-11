@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.ConnectedServices;
+﻿using Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig.ViewModels;
+using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -28,7 +29,7 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context)
         {
-            return Task.FromResult<ConnectedServiceConfigurator>(new ViewModels.SinglePageViewModel());
+            return Task.FromResult<ConnectedServiceConfigurator>(new SinglePageViewModel());
         }
     }
 }

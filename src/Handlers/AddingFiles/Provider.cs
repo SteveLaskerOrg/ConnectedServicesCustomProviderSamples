@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.ConnectedServices;
+﻿using Microsoft.ConnectedServices.Samples.Handlers.AddingFiles.ViewModels;
+using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -29,17 +30,8 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context)
         {
-            // To get Designtime binding, setting the DataContext in XAML, we need to order the creation of objects properly
-            // Not ordering them can create a stack overflow of views instancing viewmodels
-
-            // First create the View we'll use
-            Views.SinglePageView view = new Views.SinglePageView();
-            // Grab the datacontext set in XAML 
-            ViewModels.SinglePageViewModel vm = (ViewModels.SinglePageViewModel)view.DataContext;
-
-            // Close the loop
-            vm.View = view;
-            return Task.FromResult<ConnectedServiceConfigurator>(vm);
+            ConnectedServiceConfigurator configurator = new SinglePageViewModel();
+            return Task.FromResult<ConnectedServiceConfigurator>(configurator);
         }
     }
 }

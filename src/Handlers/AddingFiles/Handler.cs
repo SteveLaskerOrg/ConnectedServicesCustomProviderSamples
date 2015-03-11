@@ -18,12 +18,12 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles
             // Place service specific scaffolded code under the service folder
             string templateResourceUri = "pack://application:,,/" + this.GetType().Assembly.ToString() + ";component/Templates/SampleServiceTemplate.cs";
             string serviceFolder = Path.Combine(context.HandlerHelper.GetServiceArtifactsRootFolder(), context.ServiceInstance.Name);
-            await context.HandlerHelper.AddFileAsync(templateResourceUri, serviceFolder + "SampleSinglePage.cs");
+            await context.HandlerHelper.AddFileAsync(templateResourceUri, serviceFolder + " SampleSinglePage.cs");
 
             // Adds the 'ConnectedService.json' and 'Getting Started' artifacts to the project in the "SampleSinglePage" directory and opens the page
             // This would be your guidance on how a developer would complete development for the service
             // What Happened, and required Next Steps, and Sample code
-            return new AddServiceInstanceResult(context.ServiceInstance.Name, new Uri("https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples"));
+            return new AddServiceInstanceResult(context.ServiceInstance.Name + " AddingFiles", new Uri("https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples"));
         }
     }
 }

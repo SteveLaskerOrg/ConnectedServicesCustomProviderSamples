@@ -62,7 +62,7 @@
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.ConnectedServices, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Externals\Microsoft.VisualStudio.ConnectedServices.dll</HintPath>
+      <HintPath>..\..\..\Externals\Microsoft.VisualStudio.ConnectedServices.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -80,8 +80,8 @@
     <Compile Include="Views\AuthenticatorView.xaml.cs">
       <DependentUpon>AuthenticatorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FooSinglePageView.xaml.cs">
-      <DependentUpon>FooSinglePageView.xaml</DependentUpon>
+    <Compile Include="Views\SinglePageView.xaml.cs">
+      <DependentUpon>SinglePageView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -106,7 +106,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\FooSinglePageView.xaml">
+    <Page Include="Views\SinglePageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

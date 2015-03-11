@@ -61,7 +61,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.ConnectedServices">
-      <HintPath>..\..\..\..\Externals\Microsoft.VisualStudio.ConnectedServices.dll</HintPath>
+      <HintPath>..\..\..\Externals\Microsoft.VisualStudio.ConnectedServices.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -78,11 +78,8 @@
     <Compile Include="ViewModels\WizardPage3ViewModel.cs" />
     <Compile Include="ViewModels\WizardPage2ViewModel.cs" />
     <Compile Include="ViewModels\WizardPage1ViewModel.cs" />
-    <Compile Include="Views\AuthenticatorView.xaml.cs">
-      <DependentUpon>AuthenticatorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\WizardPage1Viiew.xaml.cs">
-      <DependentUpon>WizardPage1Viiew.xaml</DependentUpon>
+    <Compile Include="Views\WizardPage1View.xaml.cs">
+      <DependentUpon>WizardPage1View.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WizardPage2View.xaml.cs">
       <DependentUpon>WizardPage2View.xaml</DependentUpon>
@@ -109,11 +106,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\AuthenticatorView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\WizardPage1Viiew.xaml">
+    <Page Include="Views\WizardPage1View.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

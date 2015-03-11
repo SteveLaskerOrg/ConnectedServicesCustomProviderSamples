@@ -23,7 +23,7 @@ namespace Microsoft.ConnectedServices.Samples.UpdateSupport
             // Adds the 'ConnectedService.json' and 'Getting Started' artifacts to the project in the "SampleSinglePage" directory and opens the page
             // This would be your guidance on how a developer would complete development for the service
             // What Happened, and required Next Steps, and Sample code
-            return new AddServiceInstanceResult(context.ServiceInstance.Name, new Uri(Handler.GettingStartedUrl));
+            return new AddServiceInstanceResult(Handler.GetServiceReferenceFolderName(context), new Uri(Handler.GettingStartedUrl));
         }
 
         /// <summary>
@@ -36,7 +36,7 @@ namespace Microsoft.ConnectedServices.Samples.UpdateSupport
             return new UpdateServiceInstanceResult()
             {
                 // ensure the GettingStartedUrl is up to date
-                GettingStartedUrl = new Uri(Handler.GettingStartedUrl)
+                GettingStartedDocument= new GettingStartedDocument(new Uri(Handler.GettingStartedUrl))
             };
         }
 
@@ -55,12 +55,17 @@ namespace Microsoft.ConnectedServices.Samples.UpdateSupport
             }
             else
             {
-                serviceFolder = Path.Combine(context.HandlerHelper.GetServiceArtifactsRootFolder(), context.ServiceInstance.Name);
+                serviceFolder = Path.Combine(context.HandlerHelper.GetServiceArtifactsRootFolder(), Handler.GetServiceReferenceFolderName(context));
             }
 
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Generating SampleSinglePage.cs code in '{0}'...", serviceFolder);
 
             await context.HandlerHelper.AddFileAsync(templateResourceUri, Path.Combine(serviceFolder, "SampleSinglePage.cs"));
+        }
+
+        private static string GetServiceReferenceFolderName(ConnectedServiceHandlerContext context)
+        {
+            return context.ServiceInstance.Name + " UpdateSupport";
         }
     }
 }

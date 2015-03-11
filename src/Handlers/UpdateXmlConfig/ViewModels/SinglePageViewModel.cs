@@ -6,27 +6,26 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig.ViewModel
 {
     internal class SinglePageViewModel : ConnectedServiceSinglePage
     {
+        private string redirectUrl;
+
         public SinglePageViewModel()
         {
-            //if (!(bool)(DesignerProperties.IsInDesignModeProperty.GetMetadata(typeof(DependencyObject)).DefaultValue)) {
             this.View = new Views.SinglePageView();
             this.View.DataContext = this;
-            //}
             this.Title = "Title: Single Page Config";
             this.Description = "Description: Configure the Contoso Service";
             this.IsFinishEnabled = true;
             this.RedirectUrl = "http://MyCompanyLoginUrl.dot";
         }
 
-        private string _redirectUrl;
         public string RedirectUrl
         {
-            get { return _redirectUrl; }
+            get { return redirectUrl; }
             set
             {
-                if (value != _redirectUrl)
+                if (value != redirectUrl)
                 {
-                    _redirectUrl = value;
+                    redirectUrl = value;
                     this.OnPropertyChanged("RedirectUrl");
                 }
             }

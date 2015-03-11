@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.ConnectedServices;
+﻿using Microsoft.ConnectedServices.Samples.UITemplates.Grid.ViewModels;
+using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
@@ -33,7 +34,7 @@ namespace Microsoft.ConnectedServices.Samples.UITemplates.Grid
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context)
         {
-            return Task.FromResult<ConnectedServiceConfigurator>(new ViewModels.GridViewModel());
+            return Task.FromResult<ConnectedServiceConfigurator>(new GridViewModel());
         }
     }
 }

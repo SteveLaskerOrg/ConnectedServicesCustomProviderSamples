@@ -61,7 +61,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.ConnectedServices">
-      <HintPath>..\..\..\..\Externals\Microsoft.VisualStudio.ConnectedServices.dll</HintPath>
+      <HintPath>..\..\..\Externals\Microsoft.VisualStudio.ConnectedServices.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -78,9 +78,6 @@
     <Compile Include="ViewModels\AuthenticatorViewModel.cs" />
     <Compile Include="Views\AuthenticatorView.xaml.cs">
       <DependentUpon>AuthenticatorView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\GridView.xaml.cs">
-      <DependentUpon>GridView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -102,10 +99,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\AuthenticatorView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\GridView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
