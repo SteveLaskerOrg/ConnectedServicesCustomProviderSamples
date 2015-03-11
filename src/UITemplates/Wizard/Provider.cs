@@ -5,12 +5,12 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Microsoft.ConnectedServices.Samples
+namespace Microsoft.ConnectedServices.Samples.UITemplates.Wizard
 {
-    [ConnectedServiceProviderExport("Microsoft.ConnectedServiceSamples.FooService.Wizard")]
-    internal class FooProvider : ConnectedServiceProvider
+    [ConnectedServiceProviderExport("Microsoft.Samples.WizardUITemplate")]
+    internal class Provider : ConnectedServiceProvider
     {
-        public FooProvider()
+        public Provider()
         {
             this.Name = "Sample: Wizard Template";
             this.Category = "Foo";
@@ -33,7 +33,7 @@ namespace Microsoft.ConnectedServices.Samples
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context)
         {
-            return Task.FromResult<ConnectedServiceConfigurator>(new ViewModels.FooServiceWizard());
+            return Task.FromResult<ConnectedServiceConfigurator>(new ViewModels.ServiceWizard());
         }
     }
 }

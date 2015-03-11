@@ -1,11 +1,11 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Windows.Input;
-namespace Microsoft.ConnectedServices.Samples.ViewModels
+
+namespace Microsoft.ConnectedServices.Samples.UITemplates.Grid.ViewModels
 {
     internal class AuthenticatorViewModel : ConnectedServiceAuthenticator
     {
-
         public AuthenticatorViewModel()
         {
             this.LoginLinkText = "Sign in";

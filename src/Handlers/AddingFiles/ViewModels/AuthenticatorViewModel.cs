@@ -1,10 +1,8 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Input;
-namespace Microsoft.ConnectedServices.Samples.ViewModels
+namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles.ViewModels
 {
     /// <summary>
     /// A simple authenticator that shows a "Sign In/Out" hyperlink

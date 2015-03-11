@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Microsoft.VisualStudio.ConnectedServices;
+using System;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.ConnectedServices;
-using Microsoft.ConnectedServices.Samples;
-using System.ComponentModel;
-using System.Windows;
 
-namespace Microsoft.ConnectedServices.Samples.ViewModels {
-    internal class FooSinglePageViewModel : ConnectedServiceSinglePage {
-        public FooSinglePageViewModel() {
+namespace Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig.ViewModels
+{
+    internal class SinglePageViewModel : ConnectedServiceSinglePage
+    {
+        public SinglePageViewModel()
+        {
             //if (!(bool)(DesignerProperties.IsInDesignModeProperty.GetMetadata(typeof(DependencyObject)).DefaultValue)) {
-            this.View = new Views.FooSinglePageView();
+            this.View = new Views.SinglePageView();
             this.View.DataContext = this;
             //}
             this.Title = "Title: Single Page Config";
@@ -22,27 +19,32 @@ namespace Microsoft.ConnectedServices.Samples.ViewModels {
         }
 
         private string _redirectUrl;
-        public string RedirectUrl {
+        public string RedirectUrl
+        {
             get { return _redirectUrl; }
-            set {
-                if (value != _redirectUrl) {
+            set
+            {
+                if (value != _redirectUrl)
+                {
                     _redirectUrl = value;
                     this.OnPropertyChanged("RedirectUrl");
                 }
             }
         }
 
-        public override Task<ConnectedServiceAuthenticator> CreateAuthenticatorAsync() {
+        public override Task<ConnectedServiceAuthenticator> CreateAuthenticatorAsync()
+        {
             // Add Authentication to the Auth UI Block
             // See the Auth Samples for additional info
             return Task.FromResult<ConnectedServiceAuthenticator>(new AuthenticatorViewModel());
         }
 
-        public override Task<ConnectedServiceInstance> GetFinishedServiceInstanceAsync() {
+        public override Task<ConnectedServiceInstance> GetFinishedServiceInstanceAsync()
+        {
             // Construct an instance, specific to this service
             // Used to more easily pass information to the various handlers, 
             // without having to use the instance.Metadata property bag
-            FooConnectedServiceInstance instance = new FooConnectedServiceInstance();
+            Instance instance = new Instance();
 
             // Pass some specific values over, which may be generated as a result
             // of creating an OAuth endopint on the service

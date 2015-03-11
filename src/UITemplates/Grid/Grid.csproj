@@ -33,8 +33,8 @@
     <ProjectGuid>{DB9E1DAD-012C-4795-AE97-D3CE1B99E8FC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.ConnectedServices.Samples</RootNamespace>
-    <AssemblyName>ConnectedServiceSampleGridTemplate</AssemblyName>
+    <RootNamespace>Microsoft.ConnectedServices.Samples.UITemplates.Grid</RootNamespace>
+    <AssemblyName>Microsoft.ConnectedServices.Samples.UITemplates.Grid</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
@@ -83,16 +83,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FooHander.cs" />
-    <Compile Include="FooProvider.cs" />
-    <Compile Include="ViewModels\FooServiceGridViewModel.cs" />
+    <Compile Include="Hander.cs" />
+    <Compile Include="Provider.cs" />
+    <Compile Include="ViewModels\GridViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AuthenticatorViewModel.cs" />
     <Compile Include="Views\AuthenticatorView.xaml.cs">
       <DependentUpon>AuthenticatorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\FooGridView.xaml.cs">
-      <DependentUpon>FooGridView.xaml</DependentUpon>
+    <Compile Include="Views\GridView.xaml.cs">
+      <DependentUpon>GridView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -117,7 +117,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\FooGridView.xaml">
+    <Page Include="Views\GridView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

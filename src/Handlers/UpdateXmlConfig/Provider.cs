@@ -5,16 +5,16 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Microsoft.ConnectedServices.Samples
+namespace Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig
 {
-    [ConnectedServiceProviderExport("Microsoft.ConnectedServiceSamples.FooService.Grid")]
-    internal class FooProvider : ConnectedServiceProvider
+    [ConnectedServiceProviderExport("Microsoft.Samples.UpdateXmlConfig")]
+    internal class Provider : ConnectedServiceProvider
     {
-        public FooProvider()
+        public Provider()
         {
-            this.Name = "Sample: Grid Template";
+            this.Name = "Sample: Config Management";
             this.Category = "Foo";
-            this.Description = "A sample provider demonstrating the Grid UI template";
+            this.Description = "A sample provider demonstrating config management";
             this.Icon = new BitmapImage(new Uri("pack://application:,,/" + Assembly.GetExecutingAssembly().ToString() + ";component/" + "Resources/Icon.png"));
             this.CreatedBy = "Microsoft";
             this.Version = new Version(1, 0, 0);
@@ -23,17 +23,12 @@ namespace Microsoft.ConnectedServices.Samples
 
         public override IEnumerable<Tuple<string, Uri>> GetSupportedTechnologyLinks()
         {
-            // A list of supported technolgoies, such as which services it supports
-            // If a Provider configured Dynamics CRM with Azure Redis Cache and Azure Auth, 
-            // it would include the following
-            yield return Tuple.Create("Dynamics CRM", new Uri("http://www.microsoft.com/en-us/dynamics/crm.aspx"));
             yield return Tuple.Create("Azure Redis Cache", new Uri("http://azure.microsoft.com/en-us/services/cache/"));
-            yield return Tuple.Create("Azure Active Directory", new Uri("http://azure.microsoft.com/en-us/services/active-directory/"));
         }
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context)
         {
-            return Task.FromResult<ConnectedServiceConfigurator>(new ViewModels.FooServiceGridViewModel());
+            return Task.FromResult<ConnectedServiceConfigurator>(new ViewModels.SinglePageViewModel());
         }
     }
 }

@@ -1,9 +1,9 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.ViewModels
+namespace Microsoft.ConnectedServices.Samples.UpdateSupport.ViewModels
 {
-    internal class FooSinglePageViewModel : ConnectedServiceSinglePage
+    internal class SinglePageViewModel : ConnectedServiceSinglePage
     {
         private ConnectedServiceProviderContext context;
         private string serviceName;
@@ -11,12 +11,12 @@ namespace Microsoft.ConnectedServices.Samples.ViewModels
         private string authenticateMessage;
         private AuthenticatorViewModel authenticator;
 
-        public FooSinglePageViewModel()
+        public SinglePageViewModel()
         {
             this.Title = "Samples";
             this.Description = "Updating a Connected Service";
 
-            this.ServiceName = "FooService";
+            this.ServiceName = "SampleService";
             this.ExtraInformation = "Default Extra Information";
         }
 
@@ -34,7 +34,7 @@ namespace Microsoft.ConnectedServices.Samples.ViewModels
                 if (this.context != null && this.context.IsUpdating)
                 {
                     this.ServiceName = this.context.UpdateContext.ServiceFolder.Text;
-                    FooDesignerData designerData = this.context.GetExtendedDesignerData<FooDesignerData>();
+                    DesignerData designerData = this.context.GetExtendedDesignerData<DesignerData>();
                     if (designerData != null)
                     {
                         this.ExtraInformation = designerData.ExtraInformation;
@@ -172,7 +172,7 @@ namespace Microsoft.ConnectedServices.Samples.ViewModels
             // store some extra designer data, so it can be read back during update
             if (this.Context != null)
             {
-                this.Context.SetExtendedDesignerData(new FooDesignerData() { ExtraInformation = this.ExtraInformation });
+                this.Context.SetExtendedDesignerData(new DesignerData() { ExtraInformation = this.ExtraInformation });
             }
 
             return Task.FromResult(instance);

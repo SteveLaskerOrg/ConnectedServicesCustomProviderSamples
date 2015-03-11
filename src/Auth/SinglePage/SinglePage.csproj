@@ -36,8 +36,8 @@
     <ProjectGuid>{B1583337-3C54-4DE2-B653-E685D06E1AA1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.ConnectedServices.Samples</RootNamespace>
-    <AssemblyName>ConnectedServiceSampleSinglePageAuth</AssemblyName>
+    <RootNamespace>Microsoft.ConnectedServices.Samples.Authentication.SinglePage</RootNamespace>
+    <AssemblyName>Microsoft.ConnectedServices.Samples.Authentication.SinglePage</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
@@ -90,10 +90,10 @@
     </Compile>
     <Compile Include="Handler.cs" />
     <Compile Include="Provider.cs" />
-    <Compile Include="ViewModels\FooSinglePageViewModel.cs" />
+    <Compile Include="ViewModels\SinglePageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\FooSinglePageView.xaml.cs">
-      <DependentUpon>FooSinglePageView.xaml</DependentUpon>
+    <Compile Include="Views\SinglePageView.xaml.cs">
+      <DependentUpon>SinglePageView.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -121,7 +121,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\FooSinglePageView.xaml">
+    <Page Include="Views\SinglePageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

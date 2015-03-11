@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Microsoft.ConnectedServices.Samples
+namespace Microsoft.ConnectedServices.Samples.Authentication.SinglePage
 {
-    [ConnectedServiceProviderExport("Microsoft.ConnectedServices.Samples.FooService.SinglePageAuth")]
+    [ConnectedServiceProviderExport("Microsoft.Samples.SinglePageAuth")]
     internal class Provider : ConnectedServiceProvider
     {
         public Provider()
@@ -29,7 +29,7 @@ namespace Microsoft.ConnectedServices.Samples
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context)
         {
-            ConnectedServiceConfigurator configurator = new ViewModels.FooSinglePageViewModel();
+            ConnectedServiceConfigurator configurator = new ViewModels.SinglePageViewModel();
             return Task.FromResult(configurator);
         }
     }

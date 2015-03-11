@@ -3,11 +3,11 @@
 namespace Microsoft.ConnectedServices.Samples.UITemplates.Grid.Views
 {
     /// <summary>
-    /// Interaction logic for AuthenticatorView.xaml
+    /// Interaction logic for GridView.xaml
     /// </summary>
-    public partial class AuthenticatorView : UserControl
+    public partial class GridView : UserControl
     {
-        public AuthenticatorView()
+        public GridView()
         {
             InitializeComponent();
         }

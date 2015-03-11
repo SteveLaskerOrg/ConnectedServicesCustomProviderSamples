@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Microsoft.ConnectedServices.Samples
+namespace Microsoft.ConnectedServices.Samples.Authentication.Grid
 {
-    [ConnectedServiceProviderExport("Microsoft.ConnectedServices.Samples.FooService.GridAuth")]
+    [ConnectedServiceProviderExport("Microsoft.Samples.GridAuth")]
     internal class Provider : ConnectedServiceProvider
     {
         public Provider()

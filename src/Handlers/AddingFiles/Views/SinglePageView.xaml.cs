@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Microsoft.ConnectedServices.Samples.UITemplates.SinglePage.Views
+namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles.Views
 {
     /// <summary>
     /// Interaction logic for SinglePageView.xaml

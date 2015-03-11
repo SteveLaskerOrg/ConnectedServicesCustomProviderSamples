@@ -1,15 +1,15 @@
-﻿using System;
+﻿using Microsoft.VisualStudio.ConnectedServices;
+using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
-using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading;
+using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.ViewModels
+namespace Microsoft.ConnectedServices.Samples.UITemplates.Grid.ViewModels
 {
-    internal class FooServiceGridViewModel : ConnectedServiceGrid
+    internal class GridViewModel : ConnectedServiceGrid
     {
         private List<ConnectedServiceInstance> _instances;
-        public FooServiceGridViewModel()
+        public GridViewModel()
         {
             this.Description = "Description: Configure the Foo Service";
             // Enables the Configure Service link above the grid. 

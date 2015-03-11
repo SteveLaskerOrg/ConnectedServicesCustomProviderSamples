@@ -3,11 +3,11 @@
 namespace Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig.Views
 {
     /// <summary>
-    /// Interaction logic for AuthenticatorView.xaml
+    /// Interaction logic for SinglePageView.xaml
     /// </summary>
-    public partial class AuthenticatorView : UserControl
+    public partial class SinglePageView : UserControl
     {
-        public AuthenticatorView()
+        public SinglePageView()
         {
             InitializeComponent();
         }

@@ -1,10 +1,9 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
-using Microsoft.ConnectedServices.Samples;
 using System;
 using System.Windows;
 using System.Windows.Input;
 
-namespace Microsoft.ConnectedServices.Samples.ViewModels
+namespace Microsoft.ConnectedServices.Samples.Authentication.Grid.ViewModels
 {
     /// <summary>
     /// A simple authenticator that shows a "Sign In/Out" hyperlink

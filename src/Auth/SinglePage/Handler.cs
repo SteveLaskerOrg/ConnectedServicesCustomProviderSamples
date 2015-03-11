@@ -2,10 +2,10 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples
+namespace Microsoft.ConnectedServices.Samples.Authentication.SinglePage
 {
     [ConnectedServiceHandlerExport(
-        "Microsoft.ConnectedServices.Samples.FooService.SinglePageAuth",
+        "Microsoft.Samples.SinglePageAuth",
         AppliesTo = "CSharp")]
     internal class Handler : ConnectedServiceHandler
     {

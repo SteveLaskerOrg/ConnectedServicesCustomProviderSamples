@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.ConnectedServices;
-using Microsoft.ConnectedServices.Samples;
-namespace Microsoft.ConnectedServices.Samples.ViewModels
+
+namespace Microsoft.ConnectedServices.Samples.UITemplates.SinglePage.ViewModels
 {
-    internal class FooSinglePageViewModel : ConnectedServiceSinglePage
+    internal class SinglePageViewModel : ConnectedServiceSinglePage
     {
-        public FooSinglePageViewModel()
+        public SinglePageViewModel()
         {
 
-            this.View = new Views.FooSinglePageView();
+            this.View = new Views.SinglePageView();
             this.Title = "Title: Single Page Config";
             this.Description = "Description: Configure the Foo Service";
             this.IsFinishEnabled = true;

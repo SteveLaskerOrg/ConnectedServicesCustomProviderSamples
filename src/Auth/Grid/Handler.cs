@@ -2,10 +2,10 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples
+namespace Microsoft.ConnectedServices.Samples.Authentication.Grid
 {
     [ConnectedServiceHandlerExport(
-        "Microsoft.ConnectedServices.Samples.FooService.GridAuth",
+        "Microsoft.Samples.GridAuth",
         AppliesTo = "CSharp")]
     internal class Handler : ConnectedServiceHandler
     {

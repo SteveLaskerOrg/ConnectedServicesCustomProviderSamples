@@ -2,12 +2,12 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples
+namespace Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig
 {
     [ConnectedServiceHandlerExport(
-        "Microsoft.ConnectedServiceSamples.FooService.Config",
+        "Microsoft.Samples.UpdateXmlConfig",
         AppliesTo = "CSharp")]
-    internal class FooHander : ConnectedServiceHandler
+    internal class Handler : ConnectedServiceHandler
     {
         public override async Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken ct)
         {
@@ -26,7 +26,7 @@ namespace Microsoft.ConnectedServices.Samples
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, Resources.LogMessage_UpdatingConfigFile);
             // Now that we're passing more elaborate values between the provider and the handler
             // We'll start using a specific Instance so we can get stronger type verification
-            FooConnectedServiceInstance fooInstance = (FooConnectedServiceInstance)context.ServiceInstance;
+            Instance fooInstance = (Instance)context.ServiceInstance;
 
             // Launch the EditableConfigHelper to write several entries to the Config file
             using (EditableXmlConfigHelper configHelper = context.CreateEditableXmlConfigHelper())
@@ -45,7 +45,7 @@ namespace Microsoft.ConnectedServices.Samples
                 // Write the values to disk
                 configHelper.Save();
             }
-         
+
             // Some updates to the progress dialog
             System.Threading.Thread.Sleep(1000);
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Doing Something Else");

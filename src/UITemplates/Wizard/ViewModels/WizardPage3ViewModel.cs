@@ -1,8 +1,11 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 
-namespace Microsoft.ConnectedServices.Samples.ViewModels {
-    internal class WizardPage3ViewModel : ConnectedServiceWizardPage {
-        public WizardPage3ViewModel(FooServiceWizard wizard) : base(wizard) {
+namespace Microsoft.ConnectedServices.Samples.UITemplates.Wizard.ViewModels
+{
+    internal class WizardPage3ViewModel : ConnectedServiceWizardPage
+    {
+        public WizardPage3ViewModel(ServiceWizard wizard) : base(wizard)
+        {
             this.Title = "Page 3";
             this.Description = "Page 3 Description";
             this.Legend = "Page 3 Legend";

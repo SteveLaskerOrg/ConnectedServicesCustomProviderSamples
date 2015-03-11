@@ -5,12 +5,12 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Microsoft.ConnectedServices.Samples
+namespace Microsoft.ConnectedServices.Samples.UITemplates.SinglePage
 {
-    [ConnectedServiceProviderExport("Microsoft.ConnectedServiceSamples.FooService.SinglePage")]
-    internal class FooProvider : ConnectedServiceProvider
+    [ConnectedServiceProviderExport("Microsoft.Samples.SinglePageUITemplate")]
+    internal class Provider : ConnectedServiceProvider
     {
-        public FooProvider()
+        public Provider()
         {
             this.Name = "Sample: SinglePage Template";
             this.Category = "Foo";
@@ -33,7 +33,7 @@ namespace Microsoft.ConnectedServices.Samples
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context)
         {
-            return Task.FromResult<ConnectedServiceConfigurator>(new ViewModels.FooSinglePageViewModel());
+            return Task.FromResult<ConnectedServiceConfigurator>(new ViewModels.SinglePageViewModel());
         }
     }
 }

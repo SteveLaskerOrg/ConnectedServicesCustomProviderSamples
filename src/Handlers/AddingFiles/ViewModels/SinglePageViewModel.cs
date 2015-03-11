@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.ConnectedServices;
-using Microsoft.ConnectedServices.Samples;
-namespace Microsoft.ConnectedServices.Samples.ViewModels
+
+namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles.ViewModels
 {
-    internal class FooSinglePageViewModel : ConnectedServiceSinglePage
+    internal class SinglePageViewModel : ConnectedServiceSinglePage
     {
         private string serviceName;
         private string extraInformation;
         private string authenticateMessage;
         private AuthenticatorViewModel authenticator;
 
-        public FooSinglePageViewModel()
+        public SinglePageViewModel()
         {
             this.Title = "Samples";
             this.Description = "Adding Files to the Project";

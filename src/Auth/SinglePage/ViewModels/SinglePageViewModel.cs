@@ -1,14 +1,15 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.ViewModels {
-    internal class FooSinglePageViewModel : ConnectedServiceSinglePage
+namespace Microsoft.ConnectedServices.Samples.Authentication.SinglePage.ViewModels
+{
+    internal class SinglePageViewModel : ConnectedServiceSinglePage
     {
-        public FooSinglePageViewModel()
+        public SinglePageViewModel()
         {
             this.Title = "Foo Service";
             this.Description = "Sample SinglePage with Auth";
-            this.View = new Views.FooSinglePageView();
+            this.View = new Views.SinglePageView();
             this.View.DataContext = this;
 
             this.ServiceName = "SampleService";

@@ -1,14 +1,12 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples {
-    internal class FooConnectedServiceInstance : ConnectedServiceInstance {
+namespace Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig
+{
+    internal class Instance : ConnectedServiceInstance
+    {
 
-        public FooConnectedServiceInstance() {
+        public Instance()
+        {
             this.InstanceId = "FooService";
             this.Name = Resources.ConnectedServiceInstance_Name;
             this.ConfigOptions = new Models.ConfigOptions();

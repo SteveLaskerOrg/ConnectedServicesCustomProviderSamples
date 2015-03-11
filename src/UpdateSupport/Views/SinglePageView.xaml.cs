@@ -1,9 +1,9 @@
 ﻿using System.Windows.Controls;
 
-namespace Microsoft.ConnectedServices.Samples.UITemplates.SinglePage.Views
+namespace Microsoft.ConnectedServices.Samples.UpdateSupport.Views
 {
     /// <summary>
-    /// Interaction logic for SinglePageView.xaml
+    /// Interaction logic for SingPageView.xaml
     /// </summary>
     public partial class SinglePageView : UserControl
     {

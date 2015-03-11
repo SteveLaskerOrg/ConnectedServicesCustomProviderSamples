@@ -1,9 +1,6 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
-using System;
-using System.Windows.Controls;
-using System.Windows.Documents;
-using System.Windows.Input;
-namespace Microsoft.ConnectedServices.Samples.ViewModels
+
+namespace Microsoft.ConnectedServices.Samples.UITemplates.SinglePage.ViewModels
 {
     internal class AuthenticatorViewModel : ConnectedServiceAuthenticator
     {

@@ -2,12 +2,12 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples
+namespace Microsoft.ConnectedServices.Samples.UITemplates.Grid
 {
     [ConnectedServiceHandlerExport(
-        "Microsoft.ConnectedServiceSamples.FooService.Grid",
+        "Microsoft.Samples.GridUITemplate",
         AppliesTo = "CSharp")]
-    internal class FooHander : ConnectedServiceHandler
+    internal class Hander : ConnectedServiceHandler
     {
         public override async Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken ct)
         {

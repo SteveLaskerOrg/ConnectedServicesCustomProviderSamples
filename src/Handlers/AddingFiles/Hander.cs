@@ -4,12 +4,12 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples
+namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles
 {
     [ConnectedServiceHandlerExport(
-        "Microsoft.ConnectedServiceSamples.FooService.AddingFiles",
+        "Microsoft.Samples.AddingFiles",
         AppliesTo = "CSharp")]
-    internal class FooHander : ConnectedServiceHandler
+    internal class Hander : ConnectedServiceHandler
     {
         public override async Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken ct)
         {
