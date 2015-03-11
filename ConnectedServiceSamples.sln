@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Authentication", "Authentic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Handlers", "Handlers", "{30B96EE3-8C33-44C9-850D-B285CB053EA0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grid", "src\Auth\Grid\Grid.csproj", "{3147DA62-3B57-4EB1-B185-F03BEDC57E80}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GridAuth", "src\Auth\Grid\GridAuth.csproj", "{3147DA62-3B57-4EB1-B185-F03BEDC57E80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SinglePage", "src\Auth\SinglePage\SinglePage.csproj", "{B1583337-3C54-4DE2-B653-E685D06E1AA1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SinglePageAuth", "src\Auth\SinglePage\SinglePageAuth.csproj", "{B1583337-3C54-4DE2-B653-E685D06E1AA1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddingFiles", "src\Handlers\AddingFiles\AddingFiles.csproj", "{C0833BC8-74ED-4471-823A-7A5DDC49DD5A}"
 EndProject

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Microsoft.Connected.Service.Sample.Wizard.e30335d6-f9c7-4d08-b66a-f011f3f18477" Version="1.0" Language="en-US" Publisher="Microsoft" />
-    <DisplayName>Microsoft Connected Service Sample Wizard</DisplayName>
+    <Identity Id="Microsoft.Connected.Service.Sample.WizardTemplate.e30335d6-f9c7-4d08-b66a-f011f3f18477" Version="1.0" Language="en-US" Publisher="Microsoft" />
+    <DisplayName>Microsoft Connected Service Sample Wizard UI Template</DisplayName>
     <Description xml:space="preserve">A sample for building a Connected Service Provider with the Wizard template</Description>
     <Icon>Resources\ExtensionIcon.png</Icon>
     <PreviewImage>Resources\ExtensionPreviewImage.png</PreviewImage>
