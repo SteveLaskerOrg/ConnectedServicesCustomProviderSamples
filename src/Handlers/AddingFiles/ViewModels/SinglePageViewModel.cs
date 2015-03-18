@@ -1,8 +1,8 @@
-﻿using Microsoft.ConnectedServices.Samples.Handlers.AddingFiles.Views;
+﻿using Contoso.Samples.ConnectedServices.Handlers.AddingFiles.Views;
 using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles.ViewModels
+namespace Contoso.Samples.ConnectedServices.Handlers.AddingFiles.ViewModels
 {
     internal class SinglePageViewModel : ConnectedServiceSinglePage
     {

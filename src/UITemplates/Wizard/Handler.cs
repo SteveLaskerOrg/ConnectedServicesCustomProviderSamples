@@ -2,10 +2,10 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.UITemplates.Wizard
+namespace Contoso.Samples.ConnectedServices.UITemplates.Wizard
 {
     [ConnectedServiceHandlerExport(
-        "Microsoft.Samples.WizardUITemplate",
+        "Contoso.Samples.WizardUITemplate",
         AppliesTo = "CSharp")]
     internal class Handler : ConnectedServiceHandler
     {

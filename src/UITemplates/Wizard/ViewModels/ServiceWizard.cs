@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.UITemplates.Wizard.ViewModels
+namespace Contoso.Samples.ConnectedServices.UITemplates.Wizard.ViewModels
 {
     internal class ServiceWizard : ConnectedServiceWizard
     {

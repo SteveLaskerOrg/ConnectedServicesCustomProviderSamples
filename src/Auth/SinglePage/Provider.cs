@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Microsoft.ConnectedServices.Samples.Authentication.SinglePage
+namespace Contoso.Samples.ConnectedServices.Authentication.SinglePage
 {
-    [ConnectedServiceProviderExport("Microsoft.Samples.SinglePageAuth")]
+    [ConnectedServiceProviderExport("Contoso.Samples.SinglePageAuth")]
     internal class Provider : ConnectedServiceProvider
     {
         public Provider()

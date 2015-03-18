@@ -1,8 +1,8 @@
-﻿using Microsoft.ConnectedServices.Samples.ViewModels;
+﻿using Contoso.Samples.ConnectedServices.ViewModels;
 using Microsoft.VisualStudio.ConnectedServices;
 using System.Collections.Generic;
 
-namespace Microsoft.ConnectedServices.Samples
+namespace Contoso.Samples.ConnectedServices
 {
     /// <summary>
     /// A connected service instance that contains the objects the user selected within the object picker control.

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Microsoft.ConnectedServices.Samples.UITemplates.SinglePage.Views
+namespace Contoso.Samples.ConnectedServices.UITemplates.SinglePage.Views
 {
     /// <summary>
     /// Interaction logic for AuthenticatorView.xaml

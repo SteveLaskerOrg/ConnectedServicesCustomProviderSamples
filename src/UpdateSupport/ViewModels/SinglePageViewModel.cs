@@ -1,8 +1,8 @@
-﻿using Microsoft.ConnectedServices.Samples.UpdateSupport.Views;
+﻿using Contoso.Samples.ConnectedServices.UpdateSupport.Views;
 using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.UpdateSupport.ViewModels
+namespace Contoso.Samples.ConnectedServices.UpdateSupport.ViewModels
 {
     internal class SinglePageViewModel : ConnectedServiceSinglePage
     {

@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Microsoft.ConnectedServices.Samples.Authentication.Grid.Views
+namespace Contoso.Samples.ConnectedServices.Authentication.Grid.Views
 {
     /// <summary>
     /// Interaction logic for AuthenticatorView.xaml

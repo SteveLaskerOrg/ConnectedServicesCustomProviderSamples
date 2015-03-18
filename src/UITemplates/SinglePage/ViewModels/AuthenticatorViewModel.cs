@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 
-namespace Microsoft.ConnectedServices.Samples.UITemplates.SinglePage.ViewModels
+namespace Contoso.Samples.ConnectedServices.UITemplates.SinglePage.ViewModels
 {
     internal class AuthenticatorViewModel : ConnectedServiceAuthenticator
     {

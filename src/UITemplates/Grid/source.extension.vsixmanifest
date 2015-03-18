@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Microsoft.Connected.Service.Sample.GridTemplate.e30335d6-f9c7-5d08-b66a-f011f3f18499" Version="1.0" Language="en-US" Publisher="Microsoft" />
-    <DisplayName>Microsoft Connected Service Sample Grid</DisplayName>
+    <Identity Id="Contoso.Samples.ConnectedServices.GridTemplate.e30335d6-f9c7-5d08-b66a-f011f3f18499" Version="1.0" Language="en-US" Publisher="Microsoft" />
+    <DisplayName>Connected Service Sample Grid</DisplayName>
     <Description xml:space="preserve">A sample for building a Connected Service Provider with the Single Page template</Description>
     <Icon>ExtensionIcon.png</Icon>
     <PreviewImage>ExtensionPreviewImage.png</PreviewImage>

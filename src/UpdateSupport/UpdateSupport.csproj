@@ -33,8 +33,8 @@
     <ProjectGuid>{159CFFFB-E869-4F28-A1DB-6F412F99970F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.ConnectedServices.Samples.UpdateSupport</RootNamespace>
-    <AssemblyName>Microsoft.ConnectedServices.Samples.UpdateSupport</AssemblyName>
+    <RootNamespace>Contoso.Samples.ConnectedServices.UpdateSupport</RootNamespace>
+    <AssemblyName>Contoso.Samples.ConnectedServices.UpdateSupport</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>

@@ -1,16 +1,16 @@
-﻿using Microsoft.ConnectedServices.Samples.ViewModels;
+﻿using Contoso.Samples.ConnectedServices.ViewModels;
 using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Microsoft.ConnectedServices.Samples
+namespace Contoso.Samples.ConnectedServices
 {
     /// <summary>
     /// A connected service provider that shows how an object picker control can be implemented.
     /// </summary>
-    [ConnectedServiceProviderExport("Microsoft.Samples.ObjectPicker")]
+    [ConnectedServiceProviderExport("Contoso.Samples.ObjectPicker")]
     internal class Provider : ConnectedServiceProvider
     {
         public Provider()

@@ -1,4 +1,4 @@
-﻿using Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig.ViewModels;
+﻿using Contoso.Samples.ConnectedServices.Handlers.UpdateXmlConfig.ViewModels;
 using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Collections.Generic;
@@ -6,9 +6,9 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig
+namespace Contoso.Samples.ConnectedServices.Handlers.UpdateXmlConfig
 {
-    [ConnectedServiceProviderExport("Microsoft.Samples.UpdateXmlConfig")]
+    [ConnectedServiceProviderExport("Contoso.Samples.UpdateXmlConfig")]
     internal class Provider : ConnectedServiceProvider
     {
         public Provider()

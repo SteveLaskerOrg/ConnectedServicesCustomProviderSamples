@@ -1,8 +1,8 @@
-﻿using Microsoft.ConnectedServices.Samples.Authentication.SinglePage.Views;
+﻿using Contoso.Samples.ConnectedServices.Authentication.SinglePage.Views;
 using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.Authentication.SinglePage.ViewModels
+namespace Contoso.Samples.ConnectedServices.Authentication.SinglePage.ViewModels
 {
     internal class SinglePageViewModel : ConnectedServiceSinglePage
     {

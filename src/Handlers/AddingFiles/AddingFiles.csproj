@@ -33,8 +33,8 @@
     <ProjectGuid>{C0833BC8-74ED-4471-823A-7A5DDC49DD5A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.ConnectedServices.Samples.Handlers.AddingFiles</RootNamespace>
-    <AssemblyName>Microsoft.ConnectedServices.Samples.Handlers.AddingFiles</AssemblyName>
+    <RootNamespace>Contoso.Samples.ConnectedServices.Handlers.AddingFiles</RootNamespace>
+    <AssemblyName>Contoso.Samples.ConnectedServices.Handlers.AddingFiles</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>

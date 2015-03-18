@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Microsoft.ConnectedServices.Samples.UITemplates.Wizard")]
+[assembly: AssemblyTitle("Contoso.Samples.ConnectedServices.UITemplates.Wizard")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Microsoft.ConnectedServices.Samples.UITemplates.Wizard")]
+[assembly: AssemblyProduct("Contoso.Samples.ConnectedServices.UITemplates.Wizard")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

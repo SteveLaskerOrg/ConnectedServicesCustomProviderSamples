@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Microsoft.Connected.Service.Sample.GridAUth.154df38c-335c-443e-8512-f0d7423fec0e" Version="1.0" Language="en-US" Publisher="Microsoft" />
-    <DisplayName>Microsoft Connected Service Sample Grid Auth</DisplayName>
+    <Identity Id="Contoso.Samples.ConnectedServices.GridAuth.154df38c-335c-443e-8512-f0d7423fec0e" Version="1.0" Language="en-US" Publisher="Microsoft" />
+    <DisplayName>Connected Service Sample Grid Auth</DisplayName>
     <Description xml:space="preserve">Sample Provider using the Grid Template with custom Auth</Description>
     <Icon>Resources\ExtensionIcon.png</Icon>
     <PreviewImage>Resources\ExtensionPreviewImage.png</PreviewImage>

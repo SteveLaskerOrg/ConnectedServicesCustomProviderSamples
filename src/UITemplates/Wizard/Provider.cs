@@ -1,4 +1,4 @@
-﻿using Microsoft.ConnectedServices.Samples.UITemplates.Wizard.ViewModels;
+﻿using Contoso.Samples.ConnectedServices.UITemplates.Wizard.ViewModels;
 using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Collections.Generic;
@@ -6,9 +6,9 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Microsoft.ConnectedServices.Samples.UITemplates.Wizard
+namespace Contoso.Samples.ConnectedServices.UITemplates.Wizard
 {
-    [ConnectedServiceProviderExport("Microsoft.Samples.WizardUITemplate")]
+    [ConnectedServiceProviderExport("Contoso.Samples.WizardUITemplate")]
     internal class Provider : ConnectedServiceProvider
     {
         public Provider()

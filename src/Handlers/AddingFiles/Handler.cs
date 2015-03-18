@@ -4,10 +4,10 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles
+namespace Contoso.Samples.ConnectedServices.Handlers.AddingFiles
 {
     [ConnectedServiceHandlerExport(
-        "Microsoft.Samples.AddingFiles",
+        "Contoso.Samples.AddingFiles",
         AppliesTo = "CSharp")]
     internal class Handler : ConnectedServiceHandler
     {

@@ -1,4 +1,4 @@
-﻿using Microsoft.ConnectedServices.Samples.Views;
+﻿using Contoso.Samples.ConnectedServices.Views;
 using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.ViewModels
+namespace Contoso.Samples.ConnectedServices.ViewModels
 {
     /// <summary>
     /// A view model for a single page configurator that contains an object picker control.

@@ -1,15 +1,15 @@
-﻿using Microsoft.ConnectedServices.Samples.ViewModels;
+﻿using Contoso.Samples.ConnectedServices.ViewModels;
 using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples
+namespace Contoso.Samples.ConnectedServices
 {
     /// <summary>
     /// A connected service provider that shows how the objects that the user selected within the object picker control can be accessed.
     /// </summary>
     [ConnectedServiceHandlerExport(
-        "Microsoft.Samples.ObjectPicker",
+        "Contoso.Samples.ObjectPicker",
         AppliesTo = "CSharp")]
     internal class Hander : ConnectedServiceHandler
     {

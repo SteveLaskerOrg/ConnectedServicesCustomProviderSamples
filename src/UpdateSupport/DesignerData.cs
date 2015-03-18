@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace Microsoft.ConnectedServices.Samples.UpdateSupport
+namespace Contoso.Samples.ConnectedServices.UpdateSupport
 {
     /// <summary>
     /// A data structure that holds the designer information in the ConnectedService.json file.

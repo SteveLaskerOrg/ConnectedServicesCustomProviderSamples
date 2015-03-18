@@ -1,10 +1,10 @@
-﻿using Microsoft.ConnectedServices.Samples.Authentication.Grid.Views;
+﻿using Contoso.Samples.ConnectedServices.Authentication.Grid.Views;
 using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Windows;
 using System.Windows.Input;
 
-namespace Microsoft.ConnectedServices.Samples.Authentication.Grid.ViewModels
+namespace Contoso.Samples.ConnectedServices.Authentication.Grid.ViewModels
 {
     /// <summary>
     /// A simple authenticator that shows a "Sign In/Out" hyperlink

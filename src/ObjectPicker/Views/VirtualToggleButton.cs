@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using System.Windows.Input;
 
-namespace Microsoft.ConnectedServices.Samples.Views
+namespace Contoso.Samples.ConnectedServices.Views
 {
     /// <summary>
     /// Represents a virtual toggle button.  This is used when it is necessary for 

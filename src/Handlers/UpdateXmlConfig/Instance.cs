@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 
-namespace Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig
+namespace Contoso.Samples.ConnectedServices.Handlers.UpdateXmlConfig
 {
     internal class Instance : ConnectedServiceInstance
     {

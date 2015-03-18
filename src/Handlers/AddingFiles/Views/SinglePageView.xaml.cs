@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles.Views
+namespace Contoso.Samples.ConnectedServices.Handlers.AddingFiles.Views
 {
     /// <summary>
     /// Interaction logic for SinglePageView.xaml

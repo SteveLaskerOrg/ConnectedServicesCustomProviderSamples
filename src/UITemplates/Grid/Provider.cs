@@ -1,4 +1,4 @@
-﻿using Microsoft.ConnectedServices.Samples.UITemplates.Grid.ViewModels;
+﻿using Contoso.Samples.ConnectedServices.UITemplates.Grid.ViewModels;
 using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Collections.Generic;
@@ -6,9 +6,9 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Microsoft.ConnectedServices.Samples.UITemplates.Grid
+namespace Contoso.Samples.ConnectedServices.UITemplates.Grid
 {
-    [ConnectedServiceProviderExport("Microsoft.Samples.GridUITemplate")]
+    [ConnectedServiceProviderExport("Contoso.Samples.GridUITemplate")]
     internal class Provider : ConnectedServiceProvider
     {
         public Provider()

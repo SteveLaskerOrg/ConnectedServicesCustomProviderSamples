@@ -1,9 +1,9 @@
-﻿using Microsoft.ConnectedServices.Samples.ViewModels;
+﻿using Contoso.Samples.ConnectedServices.ViewModels;
 using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Microsoft.ConnectedServices.Samples.Views
+namespace Contoso.Samples.ConnectedServices.Views
 {
     /// <summary>
     /// A control that displays a set of objects in a hierarchical view and allows the user to select

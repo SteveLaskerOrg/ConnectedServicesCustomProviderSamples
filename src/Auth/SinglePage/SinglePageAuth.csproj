@@ -36,8 +36,8 @@
     <ProjectGuid>{B1583337-3C54-4DE2-B653-E685D06E1AA1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.ConnectedServices.Samples.Authentication.SinglePage</RootNamespace>
-    <AssemblyName>Microsoft.ConnectedServices.Samples.Authentication.SinglePage</AssemblyName>
+    <RootNamespace>Contoso.Samples.ConnectedServices.Authentication.SinglePage</RootNamespace>
+    <AssemblyName>Contoso.Samples.ConnectedServices.Authentication.SinglePage</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Microsoft.Connected.Service.Sample.SinglePageAuth.032D91A0-623B-4FD6-8558-A93AD5B75110" Version="1.0" Language="en-US" Publisher="Microsoft" />
-    <DisplayName>Microsoft Connected Service Sample SinglePage Auth</DisplayName>
+    <Identity Id="Contoso.Samples.ConnectedServices.SinglePageAuth.032D91A0-623B-4FD6-8558-A93AD5B75110" Version="1.0" Language="en-US" Publisher="Microsoft" />
+    <DisplayName>Connected Service Sample SinglePage Auth</DisplayName>
     <Description xml:space="preserve">A Sample for building a Connected Services Provider using the Single Page Template with Custom Auth</Description>
     <Icon>Resources\ExtensionIcon.png</Icon>
     <PreviewImage>Resources\ExtensionPreviewImage.png</PreviewImage>

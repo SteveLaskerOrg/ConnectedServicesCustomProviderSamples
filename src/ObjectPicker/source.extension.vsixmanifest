@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
   <Metadata>
-    <Identity Id="Microsoft.Connected.Service.Sample.ObjectPicker.cf2da55b-6d96-4a30-97e1-c872acc80760" Version="1.0" Language="en-US" Publisher="Microsoft" />
-    <DisplayName>Microsoft Conntected Service Sample ObjectPicker</DisplayName>
+    <Identity Id="Contoso.Samples.ConnectedServices.ObjectPicker.cf2da55b-6d96-4a30-97e1-c872acc80760" Version="1.0" Language="en-US" Publisher="Microsoft" />
+    <DisplayName>Connected Service Sample ObjectPicker</DisplayName>
     <Description xml:space="preserve">A sample for building a Connected Service Provider that contains an ObjectPicker control.</Description>
     <Icon>Resources\ExtensionIcon.png</Icon>
     <PreviewImage>Resources\ExtensionPreviewImage.png</PreviewImage>

@@ -2,10 +2,10 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig
+namespace Contoso.Samples.ConnectedServices.Handlers.UpdateXmlConfig
 {
     [ConnectedServiceHandlerExport(
-        "Microsoft.Samples.UpdateXmlConfig",
+        "Contoso.Samples.UpdateXmlConfig",
         AppliesTo = "CSharp")]
     internal class Handler : ConnectedServiceHandler
     {

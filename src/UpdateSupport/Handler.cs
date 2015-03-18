@@ -3,10 +3,10 @@ using System;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.UpdateSupport
+namespace Contoso.Samples.ConnectedServices.UpdateSupport
 {
     [ConnectedServiceHandlerExport(
-        "Microsoft.Samples.UpdateSupport",
+        "Contoso.Samples.UpdateSupport",
         AppliesTo = "CSharp")]
     internal class Handler : ConnectedServiceHandler
     {

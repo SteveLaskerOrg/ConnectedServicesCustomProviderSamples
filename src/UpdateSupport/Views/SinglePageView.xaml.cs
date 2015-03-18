@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Microsoft.ConnectedServices.Samples.UpdateSupport.Views
+namespace Contoso.Samples.ConnectedServices.UpdateSupport.Views
 {
     /// <summary>
     /// Interaction logic for SingPageView.xaml

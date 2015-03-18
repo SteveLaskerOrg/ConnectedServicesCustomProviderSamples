@@ -1,8 +1,8 @@
-﻿using Microsoft.ConnectedServices.Samples.ViewModels;
+﻿using Contoso.Samples.ConnectedServices.ViewModels;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Microsoft.ConnectedServices.Samples.Views
+namespace Contoso.Samples.ConnectedServices.Views
 {
     /// <summary>
     /// Interaction logic for SinglePageView.xaml

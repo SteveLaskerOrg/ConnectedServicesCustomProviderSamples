@@ -1,4 +1,4 @@
-﻿using Microsoft.ConnectedServices.Samples.Handlers.AddingFiles.ViewModels;
+﻿using Contoso.Samples.ConnectedServices.Handlers.AddingFiles.ViewModels;
 using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Collections.Generic;
@@ -6,9 +6,9 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles
+namespace Contoso.Samples.ConnectedServices.Handlers.AddingFiles
 {
-    [ConnectedServiceProviderExport("Microsoft.Samples.AddingFiles")]
+    [ConnectedServiceProviderExport("Contoso.Samples.AddingFiles")]
     internal class Provider : ConnectedServiceProvider
     {
         public Provider()

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.Authentication.Grid.ViewModels
+namespace Contoso.Samples.ConnectedServices.Authentication.Grid.ViewModels
 {
     /// <summary>
     /// A sample grid provider that:

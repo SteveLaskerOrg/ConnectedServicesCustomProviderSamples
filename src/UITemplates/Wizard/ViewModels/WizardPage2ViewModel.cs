@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 
-namespace Microsoft.ConnectedServices.Samples.UITemplates.Wizard.ViewModels
+namespace Contoso.Samples.ConnectedServices.UITemplates.Wizard.ViewModels
 {
     internal class WizardPage2ViewModel : ConnectedServiceWizardPage
     {

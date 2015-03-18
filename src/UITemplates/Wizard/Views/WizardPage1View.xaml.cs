@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Microsoft.ConnectedServices.Samples.UITemplates.Wizard.Views
+namespace Contoso.Samples.ConnectedServices.UITemplates.Wizard.Views
 {
     /// <summary>
     /// Interaction logic for WizardPage1View.xaml

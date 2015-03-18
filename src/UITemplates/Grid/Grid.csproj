@@ -33,8 +33,8 @@
     <ProjectGuid>{DB9E1DAD-012C-4795-AE97-D3CE1B99E8FC}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.ConnectedServices.Samples.UITemplates.Grid</RootNamespace>
-    <AssemblyName>Microsoft.ConnectedServices.Samples.UITemplates.Grid</AssemblyName>
+    <RootNamespace>Contoso.Samples.ConnectedServices.UITemplates.Grid</RootNamespace>
+    <AssemblyName>Contoso.Samples.ConnectedServices.UITemplates.Grid</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>

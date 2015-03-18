@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 using System.Threading.Tasks;
 
-namespace Microsoft.ConnectedServices.Samples.UITemplates.SinglePage.ViewModels
+namespace Contoso.Samples.ConnectedServices.UITemplates.SinglePage.ViewModels
 {
     internal class SinglePageViewModel : ConnectedServiceSinglePage
     {

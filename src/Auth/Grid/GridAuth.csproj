@@ -36,8 +36,8 @@
     <ProjectGuid>{3147DA62-3B57-4EB1-B185-F03BEDC57E80}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.ConnectedServices.Samples.Authentication.Grid</RootNamespace>
-    <AssemblyName>Microsoft.ConnectedServices.Samples.Authentication.Grid</AssemblyName>
+    <RootNamespace>Contoso.Samples.ConnectedServices.Authentication.Grid</RootNamespace>
+    <AssemblyName>Contoso.Samples.ConnectedServices.Authentication.Grid</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>

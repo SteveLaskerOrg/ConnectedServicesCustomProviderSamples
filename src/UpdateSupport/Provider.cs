@@ -1,14 +1,14 @@
-﻿using Microsoft.ConnectedServices.Samples.UpdateSupport.ViewModels;
+﻿using Contoso.Samples.ConnectedServices.UpdateSupport.ViewModels;
 using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Microsoft.ConnectedServices.Samples.UpdateSupport
+namespace Contoso.Samples.ConnectedServices.UpdateSupport
 {
     [ConnectedServiceProviderExport(
-        "Microsoft.Samples.UpdateSupport",
+        "Contoso.Samples.UpdateSupport",
         SupportsUpdate = true)]
     internal class Provider : ConnectedServiceProvider
     {

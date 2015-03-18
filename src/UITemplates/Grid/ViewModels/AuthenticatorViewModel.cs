@@ -2,7 +2,7 @@
 using System;
 using System.Windows.Input;
 
-namespace Microsoft.ConnectedServices.Samples.UITemplates.Grid.ViewModels
+namespace Contoso.Samples.ConnectedServices.UITemplates.Grid.ViewModels
 {
     internal class AuthenticatorViewModel : ConnectedServiceAuthenticator
     {

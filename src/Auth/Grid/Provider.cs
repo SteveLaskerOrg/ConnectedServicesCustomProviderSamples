@@ -1,13 +1,13 @@
-﻿using Microsoft.ConnectedServices.Samples.Authentication.Grid.ViewModels;
+﻿using Contoso.Samples.ConnectedServices.Authentication.Grid.ViewModels;
 using Microsoft.VisualStudio.ConnectedServices;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 
-namespace Microsoft.ConnectedServices.Samples.Authentication.Grid
+namespace Contoso.Samples.ConnectedServices.Authentication.Grid
 {
-    [ConnectedServiceProviderExport("Microsoft.Samples.GridAuth")]
+    [ConnectedServiceProviderExport("Contoso.Samples.GridAuth")]
     internal class Provider : ConnectedServiceProvider
     {
         public Provider()

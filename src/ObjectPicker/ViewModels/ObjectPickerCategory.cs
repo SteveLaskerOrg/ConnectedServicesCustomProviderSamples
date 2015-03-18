@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Microsoft.ConnectedServices.Samples.ViewModels
+namespace Contoso.Samples.ConnectedServices.ViewModels
 {
     /// <summary>
     /// Represents a category that groups similar objects within the ObjectPicker.

@@ -1,4 +1,4 @@
-﻿namespace Microsoft.ConnectedServices.Samples.ViewModels
+﻿namespace Contoso.Samples.ConnectedServices.ViewModels
 {
     /// <summary>
     /// Represents a selectable object within the ObjectPicker.

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Microsoft.ConnectedServices.Samples.ViewModels
+namespace Contoso.Samples.ConnectedServices.ViewModels
 {
     /// <summary>
     /// Represents an item within the ObjectPicker.

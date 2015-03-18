@@ -33,8 +33,8 @@
     <ProjectGuid>{F6DDFE80-413F-4380-B741-9F26602CC69D}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Microsoft.ConnectedServices.Samples.UITemplates.SinglePage</RootNamespace>
-    <AssemblyName>Microsoft.ConnectedServices.Samples.UITemplates.SinglePage</AssemblyName>
+    <RootNamespace>Contoso.Samples.ConnectedServices.UITemplates.SinglePage</RootNamespace>
+    <AssemblyName>Contoso.Samples.ConnectedServices.UITemplates.SinglePage</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <GeneratePkgDefFile>false</GeneratePkgDefFile>
