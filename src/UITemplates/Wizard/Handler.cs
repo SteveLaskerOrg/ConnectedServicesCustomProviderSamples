@@ -13,7 +13,7 @@ namespace Microsoft.ConnectedServices.Samples.UITemplates.Wizard
         {
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Handler Invoked");
 
-            return new AddServiceInstanceResult("WizardUITemplate", null);
+            return new AddServiceInstanceResult("SampleServiceWizardUITemplate", null);
         }
     }
 }

@@ -24,7 +24,7 @@ namespace Microsoft.ConnectedServices.Samples
                 await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Handler doing something with the selected '{0}' object.", obj.Name);
             }
 
-            return new AddServiceInstanceResult("ObjectPicker", null);
+            return new AddServiceInstanceResult("SampleServiceObjectPicker", null);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Microsoft.ConnectedServices.Samples.UITemplates.SinglePage
             // See Handler Samples for how to work with the project system 
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Handler Invoked");
 
-            return new AddServiceInstanceResult("SinglePageUITemplate", null);
+            return new AddServiceInstanceResult("SampleServiceSinglePageUITemplate", null);
         }
     }
 }

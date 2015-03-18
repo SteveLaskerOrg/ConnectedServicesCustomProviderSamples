@@ -16,7 +16,7 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles.ViewModels
             this.View = new SinglePageView();
             this.View.DataContext = this;
 
-            this.ServiceName = "Contoso Service";
+            this.ServiceName = "SampleService";
             this.ExtraInformation = "Default Extra Information";
         }
 

@@ -13,7 +13,7 @@ namespace Microsoft.ConnectedServices.Samples.UITemplates.Grid
         {
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Handler Invoked");
 
-            return new AddServiceInstanceResult("GridUITemplate", null);
+            return new AddServiceInstanceResult("SampleServiceGridUITemplate", null);
         }
     }
 }

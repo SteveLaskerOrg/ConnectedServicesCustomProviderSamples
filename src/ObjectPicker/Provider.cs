@@ -15,7 +15,7 @@ namespace Microsoft.ConnectedServices.Samples
     {
         public Provider()
         {
-            this.Name = "Sample: ObjectPicker";
+            this.Name = "Sample: Object Picker";
             this.Category = "Contoso";
             this.Description = "A sample provider that demonstrates an object picker control.";
             this.Icon = new BitmapImage(new Uri("pack://application:,,/" + Assembly.GetExecutingAssembly().ToString() + ";component/" + "Resources/Icon.png"));

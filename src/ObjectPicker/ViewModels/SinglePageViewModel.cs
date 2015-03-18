@@ -58,7 +58,7 @@ namespace Microsoft.ConnectedServices.Samples.ViewModels
         {
             using (this.context.StartBusyIndicator("Loading Objects..."))
             {
-                await Task.Delay(500);  // A delay that illustrates the progress indicator functionality.
+                await Task.Delay(2000);  // A delay that illustrates the progress indicator functionality.
 
                 try
                 {

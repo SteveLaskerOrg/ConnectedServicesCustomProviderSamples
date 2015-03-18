@@ -15,7 +15,7 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Handler Invoked");
             await UpdateConfigFileAsync(context);
 
-            return new AddServiceInstanceResult("UpdateXmlConfig", null);
+            return new AddServiceInstanceResult("SampleServiceUpdateXmlConfig", null);
         }
 
         private static async Task UpdateConfigFileAsync(ConnectedServiceHandlerContext context)
