@@ -31,13 +31,6 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.UpdateXmlConfig.ViewModel
             }
         }
 
-        public override Task<ConnectedServiceAuthenticator> CreateAuthenticatorAsync()
-        {
-            // Add Authentication to the Auth UI Block
-            // See the Auth Samples for additional info
-            return Task.FromResult<ConnectedServiceAuthenticator>(new AuthenticatorViewModel());
-        }
-
         public override Task<ConnectedServiceInstance> GetFinishedServiceInstanceAsync()
         {
             // Construct an instance, specific to this service

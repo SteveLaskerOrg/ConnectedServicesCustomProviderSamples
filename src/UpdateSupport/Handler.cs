@@ -1,6 +1,5 @@
 ﻿using Microsoft.VisualStudio.ConnectedServices;
 using System;
-using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -18,12 +17,13 @@ namespace Microsoft.ConnectedServices.Samples.UpdateSupport
         /// </summary>
         public override async Task<AddServiceInstanceResult> AddServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken ct)
         {
-            await this.GenerateCodeFiles(context);
+            // See Handler samples for examples of how to work with the project system 
+            await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Handler Invoked to Add Project Artifacts");
 
             // Adds the 'ConnectedService.json' and 'Getting Started' artifacts to the project in the "SampleSinglePage" directory and opens the page
             // This would be your guidance on how a developer would complete development for the service
             // What Happened, and required Next Steps, and Sample code
-            return new AddServiceInstanceResult(Handler.GetServiceReferenceFolderName(context), new Uri(Handler.GettingStartedUrl));
+            return new AddServiceInstanceResult(context.ServiceInstance.Name + " UpdateSupport", new Uri(Handler.GettingStartedUrl));
         }
 
         /// <summary>
@@ -31,41 +31,14 @@ namespace Microsoft.ConnectedServices.Samples.UpdateSupport
         /// </summary>
         public override async Task<UpdateServiceInstanceResult> UpdateServiceInstanceAsync(ConnectedServiceHandlerContext context, CancellationToken ct)
         {
-            await this.GenerateCodeFiles(context);
+            // See Handler samples for examples of how to work with the project system 
+            await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Handler Invoked to Update Project Artifacts");
 
             return new UpdateServiceInstanceResult()
             {
                 // ensure the GettingStartedUrl is up to date
-                GettingStartedDocument= new GettingStartedDocument(new Uri(Handler.GettingStartedUrl))
+                GettingStartedDocument = new GettingStartedDocument(new Uri(Handler.GettingStartedUrl))
             };
-        }
-
-        private async Task GenerateCodeFiles(ConnectedServiceHandlerContext context)
-        {
-            string templateResourceUri = "pack://application:,,/" + this.GetType().Assembly.ToString() + ";component/Templates/SampleServiceTemplate.cs";
-
-            // Generate a code file into the user's project from a template.
-            // The tokens in the template will be replaced by the HandlerHelper.
-            // Place service specific scaffolded code under the service folder
-
-            string serviceFolder;
-            if (context.IsUpdating)
-            {
-                serviceFolder = context.UpdateContext.ServiceFolder.CanonicalName;
-            }
-            else
-            {
-                serviceFolder = Path.Combine(context.HandlerHelper.GetServiceArtifactsRootFolder(), Handler.GetServiceReferenceFolderName(context));
-            }
-
-            await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Generating SampleSinglePage.cs code in '{0}'...", serviceFolder);
-
-            await context.HandlerHelper.AddFileAsync(templateResourceUri, Path.Combine(serviceFolder, "SampleSinglePage.cs"));
-        }
-
-        private static string GetServiceReferenceFolderName(ConnectedServiceHandlerContext context)
-        {
-            return context.ServiceInstance.Name + " UpdateSupport";
         }
     }
 }

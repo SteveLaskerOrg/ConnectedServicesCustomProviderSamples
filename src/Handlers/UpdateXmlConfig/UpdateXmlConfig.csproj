@@ -77,10 +77,6 @@
     <Compile Include="Models\ConfigOptions.cs" />
     <Compile Include="ViewModels\SinglePageViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\AuthenticatorViewModel.cs" />
-    <Compile Include="Views\AuthenticatorView.xaml.cs">
-      <DependentUpon>AuthenticatorView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\SinglePageView.xaml.cs">
       <DependentUpon>SinglePageView.xaml</DependentUpon>
     </Compile>
@@ -103,10 +99,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\AuthenticatorView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\SinglePageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

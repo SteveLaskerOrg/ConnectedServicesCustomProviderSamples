@@ -25,7 +25,7 @@ namespace Microsoft.ConnectedServices.Samples.UpdateSupport
 
         public override Task<ConnectedServiceConfigurator> CreateConfiguratorAsync(ConnectedServiceProviderContext context)
         {
-            ConnectedServiceConfigurator configurator = new SinglePageViewModel();
+            ConnectedServiceConfigurator configurator = new SinglePageViewModel(context);
             return Task.FromResult(configurator);
         }
     }

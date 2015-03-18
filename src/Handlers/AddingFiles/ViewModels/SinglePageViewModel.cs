@@ -8,8 +8,6 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles.ViewModels
     {
         private string serviceName;
         private string extraInformation;
-        private string authenticateMessage;
-        private AuthenticatorViewModel authenticator;
 
         public SinglePageViewModel()
         {
@@ -51,70 +49,12 @@ namespace Microsoft.ConnectedServices.Samples.Handlers.AddingFiles.ViewModels
         }
 
         /// <summary>
-        /// Gets or sets the message shown to the user when he is not signed in.
-        /// </summary>
-        public string AuthenticateMessage
-        {
-            get { return this.authenticateMessage; }
-            set
-            {
-                this.authenticateMessage = value;
-                this.OnPropertyChanged();
-            }
-        }
-
-        public AuthenticatorViewModel Authenticator
-        {
-            get
-            {
-                if (this.authenticator == null)
-                {
-                    this.authenticator = new AuthenticatorViewModel();
-                    this.authenticator.AuthenticationChanged += Authenticator_AuthenticationChanged;
-                    this.CalculateAuthentication();
-                }
-                return this.authenticator;
-            }
-        }
-
-        /// <summary>
-        /// The event handler that is called when the user signs in and out.
-        /// </summary>
-        private void Authenticator_AuthenticationChanged(object sender, AuthenticationChangedEventArgs e)
-        {
-            this.CalculateAuthentication();
-        }
-
-        private void CalculateAuthentication()
-        {
-            if (this.Authenticator.IsAuthenticated)
-            {
-                this.AuthenticateMessage = null;
-            }
-            else
-            {
-                this.AuthenticateMessage = "Please click 'Sign In'";
-            }
-
-            this.CalculateIsFinishEnabled();
-        }
-
-        /// <summary>
-        /// Creates the ConnectedServiceAuthenticator object, which controls whether the user is signed in.
-        /// </summary>
-        public override Task<ConnectedServiceAuthenticator> CreateAuthenticatorAsync()
-        {
-            return Task.FromResult<ConnectedServiceAuthenticator>(this.Authenticator);
-        }
-
-        /// <summary>
         /// The logic that sets whether the user can finish configuring the service.
         /// </summary>
         private void CalculateIsFinishEnabled()
         {
             // basic example for toggling the state of the Add/Update/Finish button
-            this.IsFinishEnabled = this.Authenticator.IsAuthenticated &&
-                !string.IsNullOrEmpty(this.ServiceName) &&
+            this.IsFinishEnabled = !string.IsNullOrEmpty(this.ServiceName) &&
                 !string.IsNullOrEmpty(this.ExtraInformation);
         }
 
