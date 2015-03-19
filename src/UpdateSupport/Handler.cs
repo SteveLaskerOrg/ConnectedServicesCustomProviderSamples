@@ -10,7 +10,7 @@ namespace Contoso.Samples.ConnectedServices.UpdateSupport
         AppliesTo = "CSharp")]
     internal class Handler : ConnectedServiceHandler
     {
-        private const string GettingStartedUrl = "https://github.com/SteveLasker/ConnectedServicesCustomProviderSamples";
+        private const string GettingStartedUrl = "https://github.com/Microsoft/ConnectedServices-ProviderAuthorSamples";
 
         /// <summary>
         /// Called to add a new Connected Service to the project.
