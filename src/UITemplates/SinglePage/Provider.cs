@@ -12,7 +12,7 @@ namespace Contoso.Samples.ConnectedServices.UITemplates.SinglePage
     {
         public Provider()
         {
-            this.Name = "Sample: SinglePage Template";
+            this.Name = "Sample: Single Page Template";
             this.Category = "Contoso";
             this.Description = "A sample provider demonstrating the Single Page UI template";
             this.Icon = new BitmapImage(new Uri("pack://application:,,/" + Assembly.GetExecutingAssembly().ToString() + ";component/" + "Resources/Icon.png"));

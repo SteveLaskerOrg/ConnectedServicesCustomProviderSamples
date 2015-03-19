@@ -15,7 +15,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SinglePageAuth", "src\Auth\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddingFiles", "src\Handlers\AddingFiles\AddingFiles.csproj", "{C0833BC8-74ED-4471-823A-7A5DDC49DD5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateXmlConfig", "src\Handlers\UpdateXmlConfig\UpdateXmlConfig.csproj", "{AA5C98CA-6467-4C0C-BBA2-98D67957C5EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlConfigManagement", "src\Handlers\XmlConfigManagement\XmlConfigManagement.csproj", "{AA5C98CA-6467-4C0C-BBA2-98D67957C5EB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Grid", "src\UITemplates\Grid\Grid.csproj", "{DB9E1DAD-012C-4795-AE97-D3CE1B99E8FC}"
 EndProject

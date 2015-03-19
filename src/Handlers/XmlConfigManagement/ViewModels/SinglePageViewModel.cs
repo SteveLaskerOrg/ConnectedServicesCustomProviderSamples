@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Contoso.Samples.ConnectedServices.Handlers.UpdateXmlConfig.ViewModels
+namespace Contoso.Samples.ConnectedServices.Handlers.XmlConfigManagement.ViewModels
 {
     internal class SinglePageViewModel : ConnectedServiceSinglePage
     {

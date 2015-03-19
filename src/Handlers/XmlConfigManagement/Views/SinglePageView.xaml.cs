@@ -1,6 +1,6 @@
 ﻿using System.Windows.Controls;
 
-namespace Contoso.Samples.ConnectedServices.Handlers.UpdateXmlConfig.Views
+namespace Contoso.Samples.ConnectedServices.Handlers.XmlConfigManagement.Views
 {
     /// <summary>
     /// Interaction logic for SinglePageView.xaml

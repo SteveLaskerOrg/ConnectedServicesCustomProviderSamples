@@ -2,10 +2,10 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Contoso.Samples.ConnectedServices.Handlers.UpdateXmlConfig
+namespace Contoso.Samples.ConnectedServices.Handlers.XmlConfigManagement
 {
     [ConnectedServiceHandlerExport(
-        "Contoso.Samples.UpdateXmlConfig",
+        "Contoso.Samples.XmlConfigManagement",
         AppliesTo = "CSharp")]
     internal class Handler : ConnectedServiceHandler
     {
@@ -15,7 +15,7 @@ namespace Contoso.Samples.ConnectedServices.Handlers.UpdateXmlConfig
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Handler Invoked");
             await UpdateConfigFileAsync(context);
 
-            return new AddServiceInstanceResult("SampleServiceUpdateXmlConfig", null);
+            return new AddServiceInstanceResult("SampleServiceXmlConfigManagement", null);
         }
 
         private static async Task UpdateConfigFileAsync(ConnectedServiceHandlerContext context)

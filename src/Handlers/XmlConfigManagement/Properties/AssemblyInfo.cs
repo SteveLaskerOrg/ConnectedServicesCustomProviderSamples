@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Contoso.Samples.ConnectedServices.Handlers.UpdateXmlConfig")]
+[assembly: AssemblyTitle("Contoso.Samples.ConnectedServices.Handlers.XmlConfigManagement")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("Contoso.Samples.ConnectedServices.Handlers.UpdateXmlConfig")]
+[assembly: AssemblyProduct("Contoso.Samples.ConnectedServices.Handlers.XmlConfigManagement")]
 [assembly: AssemblyCopyright("")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
