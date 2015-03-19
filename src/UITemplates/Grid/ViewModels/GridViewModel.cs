@@ -76,8 +76,6 @@ namespace Contoso.Samples.ConnectedServices.UITemplates.Grid.ViewModels
         /// Retrieve the service instances
         /// Called by the Refresh link as well. 
         /// </summary>
-        /// <param name="ct"></param>
-        /// <returns></returns>
         public override Task<IEnumerable<ConnectedServiceInstance>> EnumerateServiceInstancesAsync(CancellationToken ct)
         {
             // for the purposes of this sample, we re-create them each time
@@ -96,8 +94,6 @@ namespace Contoso.Samples.ConnectedServices.UITemplates.Grid.ViewModels
         /// <summary>
         /// Configured the overall service
         /// </summary>
-        /// <param name="ct"></param>
-        /// <returns></returns>
         public override Task ConfigureServiceAsync(CancellationToken ct)
         {
             System.Windows.MessageBox.Show("Configure Your Service", "Connected Service", System.Windows.MessageBoxButton.OKCancel, System.Windows.MessageBoxImage.Information);
@@ -107,8 +103,6 @@ namespace Contoso.Samples.ConnectedServices.UITemplates.Grid.ViewModels
         /// <summary>
         /// Configures the specific instance, a unit within the overall service
         /// </summary>
-        /// <param name="instance"></param>
-        /// <param name="ct"></param>
         /// <returns></returns>
         public override Task<bool> ConfigureServiceInstanceAsync(ConnectedServiceInstance instance, CancellationToken ct)
         {
@@ -120,8 +114,6 @@ namespace Contoso.Samples.ConnectedServices.UITemplates.Grid.ViewModels
         /// <summary>
         /// Creates an entry displayed in the grid
         /// </summary>
-        /// <param name="ct"></param>
-        /// <returns></returns>
         public override Task<ConnectedServiceInstance> CreateServiceInstanceAsync(CancellationToken ct)
         {
             // Called by the Create link in the bottom left corner, if enabled

@@ -47,11 +47,11 @@ namespace Contoso.Samples.ConnectedServices.Handlers.UpdateXmlConfig
             }
 
             // Some updates to the progress dialog
-            System.Threading.Thread.Sleep(1000);
+            Thread.Sleep(1000);
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Doing Something Else");
-            System.Threading.Thread.Sleep(1000);
+            Thread.Sleep(1000);
             await context.Logger.WriteMessageAsync(LoggerMessageCategory.Information, "Another Entry to show progress");
-            System.Threading.Thread.Sleep(1000);
+            Thread.Sleep(1000);
         }
     }
 }
